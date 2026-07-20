@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <div className="pt-[72px]">
       {/* HERO */}
-      <section className="relative overflow-hidden hero-navy-gradient text-white">
-        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('${IMG.meeting}')`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-mce-navy via-mce-navy/90 to-mce-navy/40" />
+      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#050f22' }}>
+        <div className="absolute inset-0" style={{ backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/hwoxv3xw_hero.png')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(5,15,34,0.95) 0%, rgba(5,15,34,0.78) 40%, rgba(5,15,34,0.35) 70%, rgba(5,15,34,0.10) 100%)' }} />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 fade-up">
             <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]">
@@ -70,10 +70,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative fade-up">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img src={IMG.meeting} alt="\u00c9quipe MCE" className="w-full h-[440px] object-cover" />
-              <div className="absolute right-4 bottom-4 bg-mce-navy/90 backdrop-blur text-white px-5 py-4 rounded-lg border border-white/10 shadow-xl max-w-[280px]">
+          <div className="lg:col-span-5 relative fade-up hidden lg:block">
+            <div className="space-y-4">
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-5 py-4 shadow-xl">
                 <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-white">
                   <Globe className="w-4 h-4 text-mce-gold" />
                   FRANCE &middot; S&Eacute;N&Eacute;GAL &middot; MAROC
@@ -81,6 +80,24 @@ export default function Home() {
                 <p className="text-[12px] text-white/80 mt-2 leading-relaxed">
                   Une pr&eacute;sence internationale<br />au service de votre croissance.
                 </p>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black text-mce-gold leading-none">+1000</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Talents accompagn&eacute;s</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black text-mce-teal leading-none">+200</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Projets men&eacute;s avec succ&egrave;s</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black text-white leading-none">20+</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Ann&eacute;es d&rsquo;expertise</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black text-mce-gold leading-none">98%</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Clients satisfaits</p>
+                </div>
               </div>
             </div>
           </div>

@@ -91,6 +91,14 @@ export default function SolutionsDigitales() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mt-8">
             {DIGITAL_EXPERTISES.map((e, i) => {
               const Ico = ICONS[e.icon];
+              const routes = [
+                '/solutions-digitales/saas-logiciels',
+                '/solutions-digitales/saas-logiciels',
+                '/solutions-digitales/sites-plateformes',
+                '/solutions-digitales/sites-plateformes',
+                '/solutions-digitales/hebergement-securite',
+                '/solutions-digitales/hebergement-securite',
+              ];
               return (
                 <div key={i} className="rounded-xl bg-white border border-gray-100 shadow-sm p-5 card-hover">
                   <div className="w-14 h-14 rounded-xl bg-mce-teal/10 flex items-center justify-center mb-3">
@@ -98,9 +106,9 @@ export default function SolutionsDigitales() {
                   </div>
                   <h3 className="font-bold text-[14px] text-mce-teal leading-tight">{e.title}</h3>
                   <p className="text-[12px] text-mce-navy/70 mt-2 leading-relaxed">{e.desc}</p>
-                  <a href="#" className="text-[12px] font-semibold text-mce-teal inline-flex items-center gap-1 mt-3 hover:gap-2 transition-all">
+                  <Link to={routes[i]} className="text-[12px] font-semibold text-mce-teal inline-flex items-center gap-1 mt-3 hover:gap-2 transition-all">
                     En savoir plus <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  </Link>
                 </div>
               );
             })}

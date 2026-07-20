@@ -5,6 +5,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SolutionsDigitales from './pages/SolutionsDigitales';
+import SaaSLogiciels from './pages/SaaSLogiciels';
+import SitesPlateformes from './pages/SitesPlateformes';
+import HebergementSecurite from './pages/HebergementSecurite';
 import TalentsRH from './pages/TalentsRH';
 import AccompagnementEvenements from './pages/AccompagnementEvenements';
 import MCEPartenaires from './pages/MCEPartenaires';
@@ -26,6 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solutions-digitales" element={<SolutionsDigitales />} />
+          <Route path="/solutions-digitales/saas-logiciels" element={<SaaSLogiciels />} />
+          <Route path="/solutions-digitales/sites-plateformes" element={<SitesPlateformes />} />
+          <Route path="/solutions-digitales/hebergement-securite" element={<HebergementSecurite />} />
           <Route path="/talents-rh" element={<TalentsRH />} />
           <Route path="/accompagnement-evenements" element={<AccompagnementEvenements />} />
           <Route path="/mce-partenaires" element={<MCEPartenaires />} />

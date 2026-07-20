@@ -128,34 +128,117 @@ export default function HebergementSecurite() {
 
       {/* JOURNEY / TIMELINE */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h2 className="section-title mb-2">UN PARTENAIRE DANS LA <span className="text-mce-teal">DURÉE</span></h2>
-          <p className="text-center text-mce-navy/60 mb-12 text-[13.5px]">Voici ce qui se passe après la mise en ligne.</p>
+        <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
+          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-gold">APRÈS LA MISE EN LIGNE</p>
+          <h2 className="section-title mt-3">
+            Un partenaire dans la <span className="text-mce-gold">durée</span>
+          </h2>
+          <p className="text-center text-mce-navy/60 mt-3 text-[13.5px]">
+            Voici concrètement ce que nous prenons en charge, jour après jour.
+          </p>
+          <div className="h-1 w-16 bg-mce-gold mx-auto rounded-full mt-4 mb-14" />
 
           <div className="relative">
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-mce-teal/20" />
-            <div className="space-y-6">
+            {/* vertical line */}
+            <div className="absolute left-6 md:left-1/2 top-2 bottom-2 w-0.5 bg-mce-gold/30 md:-translate-x-1/2" />
+
+            <div className="space-y-8">
               {[
-                { m: 'JOUR 1',    title: 'Mise en ligne',           desc: 'Déploiement, DNS, certificats SSL, monitoring activé. On surveille en direct.', icon: Zap },
-                { m: 'SEMAINE 1', title: 'Sauvegardes validées',    desc: 'Première restauration testée. Vous êtes couvert.', icon: RefreshCcw },
-                { m: 'MOIS 1',    title: 'Rapport de performance',  desc: 'Bilan trafic, vitesse, sécurité. Ajustements si nécessaire.', icon: Activity },
-                { m: 'MOIS 3',    title: 'Audit sécurité',           desc: 'Scan de vulnérabilités, mise à jour des composants, correctifs appliqués.', icon: ShieldCheck },
-                { m: 'CONTINU',   title: 'Support réactif',          desc: 'Une question, un souci ? Réponse sous 30 minutes en heures ouvrées.', icon: HeartPulse },
+                {
+                  m: 'JOUR 1',
+                  title: 'Mise en ligne sécurisée',
+                  desc: "Déploiement, configuration DNS, certificats SSL, activation du monitoring. Nous surveillons en direct pour intervenir immédiatement au moindre signal.",
+                  icon: Zap,
+                  bullets: ['Vérifications techniques complètes', 'Certificats SSL A+', 'Monitoring 24/7 activé'],
+                },
+                {
+                  m: 'SEMAINE 1',
+                  title: 'Sauvegardes validées',
+                  desc: "Nous testons la première restauration pour garantir que vos données sont réellement récupérables. Pas de sauvegarde théorique — une preuve concrète.",
+                  icon: RefreshCcw,
+                  bullets: ['Sauvegardes quotidiennes automatiques', 'Restauration testée en conditions réelles', 'Redondance hors site'],
+                },
+                {
+                  m: 'MOIS 1',
+                  title: 'Rapport de performance',
+                  desc: "Bilan détaillé : trafic, vitesse, disponibilité, sécurité. Nous ajustons la configuration pour optimiser l'expérience utilisateur.",
+                  icon: Activity,
+                  bullets: ['Analyse de charge & vitesse', 'Optimisation base de données', 'Recommandations personnalisées'],
+                },
+                {
+                  m: 'MOIS 3',
+                  title: 'Audit sécurité approfondi',
+                  desc: "Scan complet de vulnérabilités, mise à jour des composants critiques, application des correctifs. Rapport clair remis à votre équipe.",
+                  icon: ShieldCheck,
+                  bullets: ['Scan de vulnérabilités', 'Mise à jour des dépendances', 'Rapport de conformité'],
+                },
+                {
+                  m: 'EN CONTINU',
+                  title: 'Support réactif & évolutions',
+                  desc: "Une question, un souci ? Réponse sous 30 minutes en heures ouvrées. Un point trimestriel pour anticiper vos prochaines évolutions.",
+                  icon: HeartPulse,
+                  bullets: ['Support < 30 min en heures ouvrées', 'Point stratégique trimestriel', 'Évolutions planifiées'],
+                },
               ].map((step, i) => (
-                <div key={i} className={`grid grid-cols-1 md:grid-cols-2 gap-6 items-center ${i % 2 === 0 ? '' : 'md:direction-rtl'}`}>
-                  <div className={`${i % 2 === 0 ? 'md:text-right md:pr-10' : 'md:col-start-2 md:pl-10'}`}>
-                    <p className="text-[11.5px] tracking-[0.3em] font-bold text-mce-teal">{step.m}</p>
-                    <h4 className="text-xl font-black text-mce-navy mt-1">{step.title}</h4>
-                    <p className="text-[13px] text-mce-navy/70 mt-2 leading-relaxed">{step.desc}</p>
-                  </div>
-                  <div className={`hidden md:flex items-center justify-center ${i % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1 md:row-start-1'}`}>
-                    <div className="relative w-14 h-14 rounded-full bg-white shadow-lg border-4 border-mce-teal flex items-center justify-center">
-                      <step.icon className="w-6 h-6 text-mce-teal" />
+                <div key={i} className="relative pl-16 md:pl-0 md:grid md:grid-cols-9 md:gap-6 items-start">
+                  {/* Icon on the line */}
+                  <div className="absolute left-0 top-0 md:static md:col-start-5 md:col-span-1 md:flex md:justify-center md:pt-2">
+                    <div className="w-12 h-12 rounded-full bg-mce-gold text-white flex items-center justify-center shadow-lg ring-4 ring-gray-50 relative z-10">
+                      <step.icon className="w-5 h-5" />
                     </div>
+                  </div>
+
+                  {/* Card */}
+                  <div
+                    className={`rounded-xl bg-white border border-gray-100 shadow-sm p-5 card-hover ${
+                      i % 2 === 0
+                        ? 'md:col-start-1 md:col-span-4 md:text-right'
+                        : 'md:col-start-6 md:col-span-4'
+                    }`}
+                  >
+                    <div className={`flex items-center gap-2 ${i % 2 === 0 ? 'md:justify-end' : ''}`}>
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-mce-gold/15 text-mce-gold text-[10.5px] font-bold tracking-[0.2em]">
+                        {step.m}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-black text-mce-navy mt-2">{step.title}</h4>
+                    <p className="text-[13px] text-mce-navy/70 mt-2 leading-relaxed">{step.desc}</p>
+                    <ul className={`mt-3 space-y-1.5 ${i % 2 === 0 ? 'md:text-right' : ''}`}>
+                      {step.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className={`flex items-center gap-2 text-[12.5px] text-mce-navy/85 ${
+                            i % 2 === 0 ? 'md:flex-row-reverse' : ''
+                          }`}
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-mce-gold shrink-0" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Summary card */}
+          <div className="mt-14 rounded-2xl bg-mce-navy text-white p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-5 relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-48 h-48 bg-mce-gold/15 rounded-full blur-3xl" />
+            <div className="w-14 h-14 rounded-xl bg-mce-gold flex items-center justify-center shrink-0 shadow-lg">
+              <ShieldCheck className="w-7 h-7 text-mce-navy" />
+            </div>
+            <div className="flex-1">
+              <p className="text-[15px] font-bold text-white leading-snug">
+                Vous ne payez pas juste un hébergeur. Vous vous offrez une équipe technique dédiée.
+              </p>
+              <p className="text-[13px] text-white/70 mt-1">
+                Un interlocuteur unique, des rapports clairs, des interventions rapides.
+              </p>
+            </div>
+            <Link to="/contact" className="btn-gold text-[12.5px] shrink-0">
+              <Calendar className="w-4 h-4" /> RÉSERVER UN ÉCHANGE
+            </Link>
           </div>
         </div>
       </section>

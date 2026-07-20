@@ -369,52 +369,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===================== FINAL CTA BAND ===================== */}
-      <section className="bg-mce-navy text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-12 grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-black leading-tight">
-              Prêt à <span className="text-mce-teal">passer à l&rsquo;action ?</span>
-              <br />
-              Parlons de votre projet.
-            </h3>
-            <p className="text-white/70 text-sm mt-3">Un échange suffit pour faire la différence.</p>
-          </div>
-          {[
-            {
-              icon: Calendar,
-              bg: 'bg-purple-500',
-              title: 'PRENDRE RENDEZ-VOUS',
-              sub: '(Calendly)\nÉchange découverte offert',
-            },
-            {
-              icon: FileText,
-              bg: 'bg-mce-teal',
-              title: 'DEMANDER UN DEVIS',
-              sub: 'Personnalisé\nRéponse sous 24h',
-            },
-            {
-              icon: MessageCircle,
-              bg: 'bg-green-500',
-              title: 'ÉCRIRE SUR WHATSAPP',
-              sub: 'Réponse immédiate',
-            },
-          ].map((c, i) => (
-            <Link to="/contact" key={i} className="flex items-start gap-3 group">
-              <div className={`${c.bg} w-11 h-11 rounded-lg flex items-center justify-center shrink-0`}>
-                <c.icon className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <div className="text-[13px] font-bold flex items-center gap-1 group-hover:text-mce-gold transition-colors">
-                  {c.title} <ArrowRight className="w-3.5 h-3.5 opacity-70" />
-                </div>
-                <div className="text-[11.5px] text-white/70 leading-snug whitespace-pre-line mt-0.5">{c.sub}</div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* Floating WhatsApp */}
       <a
         href="https://wa.me/221771234567"

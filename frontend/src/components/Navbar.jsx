@@ -20,13 +20,7 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur shadow-sm' : 'bg-white/80 backdrop-blur'}`}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex flex-col leading-none">
-            <span className="text-[26px] font-black tracking-tight">
-              <span className="text-mce-teal">M</span>
-              <span className="text-mce-navy">CE</span>
-            </span>
-            <span className="text-[10px] tracking-[0.35em] text-mce-navy/80 font-semibold -mt-0.5">SÉNÉGAL</span>
-          </div>
+          <img src="https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/g2pp2993_image.png" alt="MCE Sénégal" className="h-11 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

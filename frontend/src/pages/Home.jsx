@@ -160,15 +160,16 @@ export default function Home() {
       </section>
 
       {/* SOLUTIONS */}
-      <section className="py-20">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h2 className="section-title mb-2">NOS SOLUTIONS POUR VOTRE <span className="text-mce-teal underline decoration-4 underline-offset-4">RÉUSSITE</span></h2>
-          <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-2 mb-12" />
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d9488 0%, #14b8a6 50%, #0d9488 100%)' }}>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+          <h2 className="section-title mb-2 text-white">NOS SOLUTIONS POUR VOTRE <span className="text-mce-gold underline decoration-4 underline-offset-4">RÉUSSITE</span></h2>
+          <div className="h-1 w-16 bg-mce-gold mx-auto rounded-full mt-2 mb-12" />
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {HOME_SOLUTIONS.map((s, i) => {
               const c = COLOR_MAP[s.color];
               return (
-                <Link key={i} to={s.to} className="card-hover rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm group">
+                <Link key={i} to={s.to} className="card-hover rounded-xl overflow-hidden bg-white border border-white/20 shadow-lg group">
                   <div className="relative h-40 overflow-hidden">
                     <img src={IMG[s.img]} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className={`absolute -bottom-5 left-4 w-11 h-11 rounded-full ${c.accent} flex items-center justify-center shadow-lg`}>
@@ -224,17 +225,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PARTNERS BAR */}
-      <section className="py-10 bg-gray-50">
+      {/* PARTNERS CARDS */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h3 className="text-center section-title text-lg mb-8">ILS NOUS FONT <span className="text-mce-teal">CONFIANCE</span></h3>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
-            {PARTNERS.slice(0,8).map((p) => (
-              <div key={p.name} className="text-center opacity-80 hover:opacity-100 transition-opacity">
-                <div className="text-[13px] font-black tracking-widest text-mce-navy">{p.name}</div>
+          <h3 className="section-title mb-10">NOS <span className="text-mce-gold">PARTENAIRES</span> CLÉS</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'KEBA CONSULTING', accent: 'text-blue-700', border: 'border-blue-500', btn: 'bg-blue-600 hover:bg-blue-700', desc: 'Conseil en management, leadership et transformation organisationnelle.', img: IMG.team2, badge: 'KEBA' },
+              { name: 'WOMEN BUILD AFRICA', accent: 'text-rose-600', border: 'border-rose-500', btn: 'bg-rose-500 hover:bg-rose-600', desc: "Promouvoir l'entrepreneuriat féminin, l'inclusion et l'impact social à travers des actions concrètes.", img: IMG.women1, badge: 'WBA' },
+              { name: 'SPARCK PROJECT', accent: 'text-mce-navy', border: 'border-mce-navy', btn: 'bg-mce-navy hover:bg-mce-navy-3', desc: 'Innovation, digital et développement de projets à fort impact pour un avenir durable.', img: IMG.coding, badge: 'SPARCK' },
+            ].map((p, i) => (
+              <div key={i} className={`rounded-2xl bg-white border-t-4 ${p.border} shadow-md overflow-hidden card-hover`}>
+                <div className="grid grid-cols-5 gap-0">
+                  <div className="col-span-2 p-5 flex flex-col justify-center">
+                    <div className={`text-[15px] font-black tracking-wide leading-tight ${p.accent}`}>{p.name}</div>
+                  </div>
+                  <div className="col-span-3 relative min-h-[110px]">
+                    <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                </div>
+                <div className="px-5 pt-4 pb-5">
+                  <p className="text-[13px] text-mce-navy/75 leading-relaxed">{p.desc}</p>
+                  <button className={`mt-5 text-white text-[12px] font-bold px-4 py-2.5 rounded-md ${p.btn} transition-colors inline-flex items-center gap-2`}>
+                    DÉCOUVRIR LE PARTENARIAT <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             ))}
-            <span className="text-[13px] italic text-mce-navy/60">Et bien d’autres...</span>
           </div>
         </div>
       </section>

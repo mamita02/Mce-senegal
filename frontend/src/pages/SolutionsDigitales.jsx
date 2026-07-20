@@ -26,74 +26,47 @@ export default function SolutionsDigitales() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url('${IMG.heroDigital}')`,
+            backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/y0abfufz_image.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'right center',
+            backgroundPosition: 'center',
           }}
         />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(5,15,34,0.96) 0%, rgba(5,15,34,0.85) 40%, rgba(5,15,34,0.5) 65%, rgba(5,15,34,0.25) 100%)' }}
-        />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-md bg-mce-teal/15 border border-mce-teal/50 text-mce-teal text-[11.5px] font-bold tracking-[0.25em]">
-              SOLUTIONS DIGITALES
-            </span>
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05]">
-              Des solutions tech<br />pour des entreprises<br />performantes.
-            </h1>
-            <p className="mt-6 text-white/80 text-[14px] leading-relaxed max-w-2xl">
-              SaaS, logiciels métiers, applications, plateformes et sites web sur mesure : MCE conçoit des outils digitaux fiables, sécurisés et évolutifs pour accélérer votre croissance en France, au Sénégal, au Maroc et partout à l&rsquo;international.
-            </p>
+        {/* Dark overlay */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(5,15,34,0.65) 0%, rgba(5,15,34,0.55) 50%, rgba(5,15,34,0.75) 100%)' }} />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 max-w-3xl">
-              {[
-                { icon: Shield,        label: 'SÉCURISÉ\n& FIABLE',          sub: 'Vos données protégées' },
-                { icon: Zap,           label: 'PERFORMANT\n& ÉVOLUTIF',      sub: 'Des solutions qui grandissent avec vous' },
-                { icon: Globe,         label: 'DISPONIBLE\nPARTOUT',         sub: 'France · Sénégal · Maroc · Afrique · International' },
-                { icon: CheckCircle2,  label: 'ACCOMPAGNEMENT\nCOMPLET',     sub: 'De la stratégie à la mise en production' },
-              ].map((f, i) => (
-                <div key={i}>
-                  <f.icon className="w-7 h-7 text-mce-teal" />
-                  <p className="text-[12px] font-bold mt-2 leading-tight whitespace-pre-line">{f.label}</p>
-                  <p className="text-[11px] text-white/70 mt-1 leading-tight">{f.sub}</p>
-                </div>
-              ))}
-            </div>
+        <div className="relative max-w-[1100px] mx-auto px-6 lg:px-10 py-24 md:py-32 flex flex-col items-center text-center">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-md bg-mce-teal/15 border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.25em]">
+            SOLUTIONS DIGITALES
+          </span>
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.05]">
+            Des solutions tech<br />pour des entreprises <span className="text-mce-teal">performantes.</span>
+          </h1>
+          <p className="mt-6 text-white/85 text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
+            SaaS, logiciels métiers, applications, plateformes et sites web sur mesure : MCE conçoit des outils digitaux fiables, sécurisés et évolutifs pour accélérer votre croissance en France, au Sénégal, au Maroc et partout à l&rsquo;international.
+          </p>
 
-            <div className="flex flex-wrap gap-3 mt-9">
-              <button className="btn-primary">
-                DÉCOUVRIR NOS SOLUTIONS <ArrowRight className="w-4 h-4" />
-              </button>
-              <Link to="/contact" className="btn-outline-light">
-                <FileText className="w-4 h-4" />DEMANDER UN DEVIS
-              </Link>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 max-w-4xl w-full">
+            {[
+              { icon: Shield,       label: 'SÉCURISÉ\n& FIABLE',      sub: 'Vos données protégées' },
+              { icon: Zap,          label: 'PERFORMANT\n& ÉVOLUTIF',  sub: 'Grandit avec vous' },
+              { icon: Globe,        label: 'DISPONIBLE\nPARTOUT',     sub: 'France · Sénégal · Maroc' },
+              { icon: CheckCircle2, label: 'ACCOMPAGNEMENT\nCOMPLET', sub: 'De A à Z' },
+            ].map((f, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                <f.icon className="w-7 h-7 text-mce-teal" />
+                <p className="text-[12px] font-bold mt-2 leading-tight whitespace-pre-line">{f.label}</p>
+                <p className="text-[11px] text-white/70 mt-1 leading-tight">{f.sub}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="bg-mce-navy-3/60 backdrop-blur border border-white/10 rounded-2xl p-5">
-              <p className="text-[11px] tracking-[0.3em] font-bold text-white mb-4">
-                UNE PRÉSENCE<br />INTERNATIONALE
-              </p>
-              <div className="space-y-2.5">
-                {[
-                  'SÉNÉGAL – Dakar',
-                  'FRANCE – Paris',
-                  'MAROC – Casablanca',
-                  'Afrique de l\u2019Ouest',
-                  'International',
-                ].map((loc) => (
-                  <div key={loc} className="flex items-center gap-2 text-[13px]">
-                    <Globe className="w-4 h-4 text-mce-teal" /> {loc}
-                  </div>
-                ))}
-              </div>
-              <p className="text-[12px] text-white/70 mt-4 leading-relaxed">
-                Une équipe, plusieurs expertises,<br />une vision sans frontières.
-              </p>
-            </div>
+          <div className="flex flex-wrap gap-3 mt-10 justify-center">
+            <button className="btn-primary">
+              DÉCOUVRIR NOS SOLUTIONS <ArrowRight className="w-4 h-4" />
+            </button>
+            <Link to="/contact" className="btn-outline-light">
+              <FileText className="w-4 h-4" />DEMANDER UN DEVIS
+            </Link>
           </div>
         </div>
       </section>
@@ -220,36 +193,42 @@ export default function SolutionsDigitales() {
         </div>
       </section>
 
-      {/* ============ TECHNOLOGIES MAÎTRISÉES ============ */}
-      <section className="pb-10 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="rounded-xl bg-gray-50 border border-gray-100 p-5 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-2">
-              <p className="text-[11px] tracking-[0.3em] font-bold text-mce-navy leading-tight">TECHNOLOGIES<br />MAÎTRISÉES</p>
-            </div>
-            <div className="lg:col-span-6">
-              <div className="flex items-center gap-6 flex-wrap">
-                {TECHS.map((t) => (
-                  <div key={t} className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-md bg-white border border-gray-200 flex items-center justify-center">
-                      <Code2 className="w-4 h-4 text-mce-navy" />
-                    </div>
-                    <span className="text-[12.5px] font-semibold text-mce-navy/80">{t}</span>
+      {/* ============ TECHNOLOGIES MARQUEE ============ */}
+      <section className="py-14 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-6">
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <p className="text-[11px] tracking-[0.35em] font-bold text-mce-navy">TECHNOLOGIES MAÎTRISÉES</p>
+            <p className="text-[11px] tracking-[0.35em] font-bold text-mce-navy/70">PARTENAIRES TECHNOLOGIQUES</p>
+          </div>
+        </div>
+        <div className="marquee-mask overflow-hidden">
+          <div className="marquee-track">
+            {(() => {
+              const items = [
+                { name: 'React',    color: '#61dafb' },
+                { name: 'Next.js',  color: '#0a1e3a' },
+                { name: 'Node.js',  color: '#3c873a' },
+                { name: 'Laravel',  color: '#ff2d20' },
+                { name: 'Python',   color: '#3776ab' },
+                { name: 'Flutter',  color: '#02569b' },
+                { name: 'AWS',      color: '#ff9900' },
+                { name: 'Supabase', color: '#3ecf8e' },
+                { name: 'Docker',   color: '#2496ed' },
+                { name: 'Odoo',     color: '#875a7b' },
+                { name: 'OVHcloud', color: '#123f6d' },
+                { name: 'Cloudflare', color: '#f38020' },
+                { name: 'Stripe',   color: '#635bff' },
+              ];
+              const doubled = [...items, ...items];
+              return doubled.map((t, i) => (
+                <div key={i} className="flex items-center gap-3 shrink-0 px-2">
+                  <div className="w-11 h-11 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center shadow-sm">
+                    <Code2 className="w-5 h-5" style={{ color: t.color }} />
                   </div>
-                ))}
-              </div>
-            </div>
-            <div className="lg:col-span-2">
-              <p className="text-[11px] tracking-[0.3em] font-bold text-mce-navy leading-tight">PARTENAIRES<br />TECHNOLOGIQUES</p>
-            </div>
-            <div className="lg:col-span-2">
-              <div className="flex items-center gap-4 flex-wrap">
-                {TECH_PARTNERS.map((t) => (
-                  <span key={t} className="text-[12.5px] font-semibold text-mce-navy/80">{t}</span>
-                ))}
-                <span className="text-mce-navy/40 font-bold">…</span>
-              </div>
-            </div>
+                  <span className="text-[16px] font-bold" style={{ color: t.color }}>{t.name}</span>
+                </div>
+              ));
+            })()}
           </div>
         </div>
       </section>

@@ -17,20 +17,23 @@ export default function Home() {
   return (
     <div className="pt-[72px]">
       {/* HERO */}
-      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#050f22' }}>
+      <section className="relative overflow-hidden text-mce-navy" style={{ backgroundColor: '#ffffff' }}>
         <div className="absolute inset-0" style={{ backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/hwoxv3xw_hero.png')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(5,15,34,0.95) 0%, rgba(5,15,34,0.78) 40%, rgba(5,15,34,0.35) 70%, rgba(5,15,34,0.10) 100%)' }} />
+        {/* Right-side darkening layer on the image */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0) 55%, rgba(5,15,34,0.55) 100%)' }} />
+        {/* White gradient overlay: opaque left -> transparent right */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 40%, rgba(255,255,255,0.55) 62%, rgba(255,255,255,0) 82%)' }} />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 fade-up">
             <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]">
               CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; &Eacute;V&Eacute;NEMENTIEL
             </span>
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight">
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight text-mce-navy">
               Des solutions concr&egrave;tes<br />
               pour transformer<br />
               <span className="text-mce-gold">vos ambitions en r&eacute;sultats.</span>
             </h1>
-            <p className="mt-6 text-white/85 text-[15px] leading-relaxed max-w-2xl">
+            <p className="mt-6 text-mce-navy/70 text-[15px] leading-relaxed max-w-2xl">
               MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure, humaines et performantes.
             </p>
 
@@ -41,7 +44,7 @@ export default function Home() {
                 { icon: Briefcase, label: 'Accompagnement' },
                 { icon: PartyPopper, label: '\u00c9v\u00e9nements & Networking' },
               ].map((c, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white/5 border border-white/15 text-[12.5px] font-semibold hover:bg-white/10 transition-colors">
+                <span key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white border border-gray-200 text-mce-navy text-[12.5px] font-semibold hover:border-mce-teal transition-colors shadow-sm">
                   <c.icon className="w-4 h-4 text-mce-teal" /> {c.label}
                 </span>
               ))}
@@ -55,16 +58,16 @@ export default function Home() {
                   <span className="text-[10.5px] font-normal opacity-80">(Calendly)</span>
                 </span>
               </Link>
-              <Link to="/contact" className="btn-outline-light">
+              <Link to="/contact" className="inline-flex items-center gap-2 border-[1.5px] border-mce-navy/25 text-mce-navy px-6 py-3 rounded-md font-semibold hover:border-mce-navy transition-colors bg-white">
                 <FileText className="w-4 h-4" />
                 <span className="flex flex-col items-start leading-tight text-left">
                   <span>DEMANDER UN DEVIS</span>
-                  <span className="text-[10.5px] font-normal opacity-80">R&eacute;ponse rapide</span>
+                  <span className="text-[10.5px] font-normal opacity-70">R&eacute;ponse rapide</span>
                 </span>
               </Link>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-[13px] text-white/85">
+            <div className="mt-6 flex items-center gap-2 text-[13px] text-mce-navy/80">
               <CheckCircle2 className="w-4 h-4 text-mce-gold" />
               Un interlocuteur unique. Des solutions multiples.
             </div>
@@ -72,31 +75,31 @@ export default function Home() {
 
           <div className="lg:col-span-5 relative fade-up hidden lg:block">
             <div className="space-y-4">
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-5 py-4 shadow-xl">
-                <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-white">
+              <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl px-5 py-4 shadow-2xl">
+                <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-mce-navy">
                   <Globe className="w-4 h-4 text-mce-gold" />
                   FRANCE &middot; S&Eacute;N&Eacute;GAL &middot; MAROC
                 </div>
-                <p className="text-[12px] text-white/80 mt-2 leading-relaxed">
+                <p className="text-[12px] text-mce-navy/70 mt-2 leading-relaxed">
                   Une pr&eacute;sence internationale<br />au service de votre croissance.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
                   <div className="text-3xl font-black text-mce-gold leading-none">+1000</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Talents accompagn&eacute;s</p>
+                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Talents accompagn&eacute;s</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
                   <div className="text-3xl font-black text-mce-teal leading-none">+200</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Projets men&eacute;s avec succ&egrave;s</p>
+                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Projets men&eacute;s avec succ&egrave;s</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
-                  <div className="text-3xl font-black text-white leading-none">20+</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Ann&eacute;es d&rsquo;expertise</p>
+                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
+                  <div className="text-3xl font-black text-mce-navy leading-none">20+</div>
+                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Ann&eacute;es d&rsquo;expertise</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
                   <div className="text-3xl font-black text-mce-gold leading-none">98%</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Clients satisfaits</p>
+                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Clients satisfaits</p>
                 </div>
               </div>
             </div>

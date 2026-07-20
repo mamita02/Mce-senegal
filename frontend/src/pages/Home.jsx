@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="pt-[72px]">
       {/* ===================== HERO ===================== */}
-      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#050f22' }}>
+      <section className="relative overflow-hidden text-mce-navy" style={{ backgroundColor: '#ffffff' }}>
         <div
           className="absolute inset-0"
           style={{
@@ -20,11 +20,17 @@ export default function Home() {
             backgroundPosition: 'center',
           }}
         />
+        {/* subtle right-side darkening for image clarity */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0) 60%, rgba(5,15,34,0.35) 100%)' }}
+        />
+        {/* WHITE overlay: opaque left -> transparent right */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(90deg, rgba(5,15,34,0.95) 0%, rgba(5,15,34,0.78) 40%, rgba(5,15,34,0.35) 70%, rgba(5,15,34,0.10) 100%)',
+              'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 40%, rgba(255,255,255,0.55) 62%, rgba(255,255,255,0) 82%)',
           }}
         />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-14 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

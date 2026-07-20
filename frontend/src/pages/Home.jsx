@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Rocket, GraduationCap, Users, Target, Star, ArrowRight, Globe, ChevronRight, CheckCircle2, Compass, Award, Handshake, Megaphone, Sparkles, Calendar } from 'lucide-react';
+import { Rocket, GraduationCap, Users, Target, Star, ArrowRight, Globe, ChevronRight, CheckCircle2, Compass, Award, Handshake, Megaphone, Sparkles, Calendar, FileText, Monitor, Briefcase, PartyPopper, AlertTriangle } from 'lucide-react';
 import { IMG, HOME_STATS, HOME_SOLUTIONS, PARTNERS, EVENTS } from '../mock';
 import CTASection from '../components/CTASection';
 
@@ -18,49 +18,102 @@ export default function Home() {
     <div className="pt-[72px]">
       {/* HERO */}
       <section className="relative overflow-hidden hero-navy-gradient text-white">
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url('${IMG.heroHome}')`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-mce-navy via-mce-navy/85 to-transparent" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('${IMG.meeting}')`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-mce-navy via-mce-navy/90 to-mce-navy/40" />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight">
-              DES SOLUTIONS AUJOURD’HUI.<br />
-              DES COMPÉTENCES DEMAIN.<br />
-              <span className="text-mce-teal">UN IMPACT DURABLE.</span>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]">
+              CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; &Eacute;V&Eacute;NEMENTIEL
+            </span>
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight">
+              Des solutions concr&egrave;tes<br />
+              pour transformer<br />
+              <span className="text-mce-gold">vos ambitions en r&eacute;sultats.</span>
             </h1>
-            <p className="mt-6 text-white/80 text-[15px] leading-relaxed max-w-2xl">
-              MCE accompagne les entreprises, forme les talents, soutient les femmes entrepreneures et connecte les opportunités pour bâtir un avenir meilleur en Afrique et dans la diaspora.
+            <p className="mt-6 text-white/85 text-[15px] leading-relaxed max-w-2xl">
+              MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure, humaines et performantes.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-2xl">
+
+            <div className="flex flex-wrap gap-2.5 mt-7">
               {[
-                { icon: Rocket, label: 'Solutions digitales', sub: 'sur mesure' },
-                { icon: GraduationCap, label: 'Formations', sub: 'pratiques & certifiantes' },
-                { icon: Users, label: 'Networking &', sub: 'opportunités' },
-                { icon: Target, label: 'Impact social', sub: 'et économique' },
-              ].map((f, i) => (
-                <div key={i} className="flex flex-col items-start gap-2">
-                  <f.icon className="w-6 h-6 text-mce-teal" />
-                  <p className="text-[13px] font-semibold leading-tight">{f.label}<br /><span className="text-white/70 font-normal">{f.sub}</span></p>
-                </div>
+                { icon: Monitor, label: 'Digital & SaaS' },
+                { icon: GraduationCap, label: 'Formation & RH' },
+                { icon: Briefcase, label: 'Accompagnement' },
+                { icon: PartyPopper, label: '\u00c9v\u00e9nements & Networking' },
+              ].map((c, i) => (
+                <span key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white/5 border border-white/15 text-[12.5px] font-semibold hover:bg-white/10 transition-colors">
+                  <c.icon className="w-4 h-4 text-mce-teal" /> {c.label}
+                </span>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3 mt-9">
-              <Link to="/solutions-digitales" className="btn-primary bg-purple-500 hover:bg-purple-600">DÉCOUVRIR NOS SOLUTIONS <ArrowRight className="w-4 h-4" /></Link>
-              <Link to="/contact" className="btn-outline-light"><Calendar className="w-4 h-4" /> PRENDRE RENDEZ-VOUS (CALENDLY)</Link>
+
+            <div className="flex flex-wrap gap-3 mt-8">
+              <Link to="/contact" className="btn-primary">
+                <Calendar className="w-4 h-4" />
+                <span className="flex flex-col items-start leading-tight text-left">
+                  <span>PRENDRE RENDEZ-VOUS</span>
+                  <span className="text-[10.5px] font-normal opacity-80">(Calendly)</span>
+                </span>
+              </Link>
+              <Link to="/contact" className="btn-outline-light">
+                <FileText className="w-4 h-4" />
+                <span className="flex flex-col items-start leading-tight text-left">
+                  <span>DEMANDER UN DEVIS</span>
+                  <span className="text-[10.5px] font-normal opacity-80">R&eacute;ponse rapide</span>
+                </span>
+              </Link>
+            </div>
+
+            <div className="mt-6 flex items-center gap-2 text-[13px] text-white/85">
+              <CheckCircle2 className="w-4 h-4 text-mce-gold" />
+              Un interlocuteur unique. Des solutions multiples.
             </div>
           </div>
 
           <div className="lg:col-span-5 relative fade-up">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img src={IMG.heroHome} alt="Fondatrice" className="w-full h-[480px] object-cover" />
-              <div className="absolute -right-4 top-6 bg-white text-mce-navy px-5 py-4 rounded-lg shadow-2xl max-w-[280px] hidden md:block">
-                <p className="text-4xl text-mce-gold leading-none">“</p>
-                <p className="text-[12.5px] leading-relaxed -mt-2">Notre mission est simple : donner à chacun les moyens de se former, d’entreprendre, de se connecter et de réussir. Ensemble, transformons les ambitions en réussites durables.</p>
-                <p className="font-script text-2xl text-mce-navy mt-3">Mounia Amane</p>
-                <p className="text-[11px] text-mce-navy/60">Fondatrice & Directrice Générale<br />MCE GROUP</p>
-                <div className="flex gap-0.5 mt-2 text-mce-gold">{[...Array(5)].map((_,i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}</div>
+              <img src={IMG.meeting} alt="\u00c9quipe MCE" className="w-full h-[440px] object-cover" />
+              <div className="absolute right-4 bottom-4 bg-mce-navy/90 backdrop-blur text-white px-5 py-4 rounded-lg border border-white/10 shadow-xl max-w-[280px]">
+                <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-white">
+                  <Globe className="w-4 h-4 text-mce-gold" />
+                  FRANCE &middot; S&Eacute;N&Eacute;GAL &middot; MAROC
+                </div>
+                <p className="text-[12px] text-white/80 mt-2 leading-relaxed">
+                  Une pr&eacute;sence internationale<br />au service de votre croissance.
+                </p>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* gold wave divider */}
+        <div className="relative">
+          <svg viewBox="0 0 1440 40" className="w-full h-8" preserveAspectRatio="none">
+            <path d="M0,20 Q360,0 720,20 T1440,20 L1440,40 L0,40 Z" fill="#d4a017" />
+          </svg>
+        </div>
+      </section>
+
+      {/* Pain points strip */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-6 grid grid-cols-1 md:grid-cols-6 gap-5 items-center">
+          <div className="flex items-center gap-3 md:col-span-1">
+            <div className="w-11 h-11 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
+              <AlertTriangle className="w-5 h-5 text-amber-600" />
+            </div>
+            <p className="text-[13px] font-bold text-mce-navy leading-tight">Vos d&eacute;fis d&rsquo;aujourd&rsquo;hui<br /><span className="text-mce-navy/70 font-normal">sont nos missions quotidiennes</span></p>
+          </div>
+          {[
+            'Vous manquez\nde temps ?',
+            'Vos \u00e9quipes ont besoin\nde comp\u00e9tences ?',
+            'Vous cherchez\ndes talents fiables ?',
+            'Vous voulez digitaliser\nou automatiser ?',
+            'Vous souhaitez organiser\nun \u00e9v\u00e9nement impactant ?',
+          ].map((q, i) => (
+            <p key={i} className="text-[12.5px] text-mce-navy/80 whitespace-pre-line font-medium border-l border-gray-200 pl-4">
+              {q}
+            </p>
+          ))}
         </div>
       </section>
 

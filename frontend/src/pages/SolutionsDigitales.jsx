@@ -28,11 +28,11 @@ export default function SolutionsDigitales() {
           style={{
             backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/y0abfufz_image.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 15%',
           }}
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(5,15,34,0.65) 0%, rgba(5,15,34,0.55) 50%, rgba(5,15,34,0.75) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(3,10,22,0.82) 0%, rgba(3,10,22,0.75) 50%, rgba(3,10,22,0.88) 100%)' }} />
 
         <div className="relative max-w-[1100px] mx-auto px-6 lg:px-10 py-24 md:py-32 flex flex-col items-center text-center">
           <span className="inline-flex items-center px-4 py-1.5 rounded-md bg-mce-teal/15 border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.25em]">

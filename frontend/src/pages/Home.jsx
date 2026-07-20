@@ -1,40 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Rocket, GraduationCap, Users, Target, Star, ArrowRight, Globe, ChevronRight, CheckCircle2, Compass, Award, Handshake, Megaphone, Sparkles, Calendar, FileText, Monitor, Briefcase, PartyPopper, AlertTriangle } from 'lucide-react';
-import { IMG, HOME_STATS, HOME_SOLUTIONS, PARTNERS, EVENTS } from '../mock';
-import CTASection from '../components/CTASection';
-
-const COLOR_MAP = {
-  teal: { bg: 'bg-mce-teal/10', text: 'text-mce-teal', ring: 'ring-mce-teal/40', chip: 'text-mce-teal border-mce-teal/40', accent: 'bg-mce-teal' },
-  purple: { bg: 'bg-purple-500/10', text: 'text-purple-600', ring: 'ring-purple-500/40', chip: 'text-purple-600 border-purple-400', accent: 'bg-purple-500' },
-  gold:   { bg: 'bg-amber-400/15', text: 'text-amber-500', ring: 'ring-amber-400/40', chip: 'text-amber-600 border-amber-400', accent: 'bg-amber-500' },
-  red:    { bg: 'bg-rose-500/10', text: 'text-rose-600', ring: 'ring-rose-500/40', chip: 'text-rose-600 border-rose-400', accent: 'bg-rose-500' },
-  blue:   { bg: 'bg-blue-500/10', text: 'text-blue-600', ring: 'ring-blue-500/40', chip: 'text-blue-600 border-blue-400', accent: 'bg-blue-500' },
-  orange: { bg: 'bg-orange-500/10', text: 'text-orange-600', ring: 'ring-orange-500/40', chip: 'text-orange-600 border-orange-400', accent: 'bg-orange-500' },
-};
+import {
+  Monitor, GraduationCap, Briefcase, PartyPopper, Calendar, FileText, CheckCircle2,
+  Globe, AlertTriangle, ArrowRight, Users, Star, Award,
+  Cloud, MessageCircle, Building2, MapPin,
+} from 'lucide-react';
+import { IMG } from '../mock';
 
 export default function Home() {
   return (
     <div className="pt-[72px]">
-      {/* HERO */}
-      <section className="relative overflow-hidden text-mce-navy" style={{ backgroundColor: '#ffffff' }}>
-        <div className="absolute inset-0" style={{ backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/hwoxv3xw_hero.png')", backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        {/* Right-side darkening layer on the image */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0) 55%, rgba(5,15,34,0.55) 100%)' }} />
-        {/* White gradient overlay: opaque left -> transparent right */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 40%, rgba(255,255,255,0.55) 62%, rgba(255,255,255,0) 82%)' }} />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      {/* ===================== HERO ===================== */}
+      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#050f22' }}>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/hwoxv3xw_hero.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(5,15,34,0.95) 0%, rgba(5,15,34,0.78) 40%, rgba(5,15,34,0.35) 70%, rgba(5,15,34,0.10) 100%)',
+          }}
+        />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-14 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 fade-up">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]">
-              CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; &Eacute;V&Eacute;NEMENTIEL
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]" style={{ borderColor: 'rgba(8,145,178,0.6)', color: '#22d3ee' }}>
+              CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; ÉVÉNEMENTIEL
             </span>
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight text-mce-navy">
-              Des solutions concr&egrave;tes<br />
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight text-white">
+              Des solutions concrètes<br />
               pour transformer<br />
-              <span className="text-mce-gold">vos ambitions en r&eacute;sultats.</span>
+              <span className="text-mce-gold">vos ambitions en résultats.</span>
             </h1>
-            <p className="mt-6 text-mce-navy/70 text-[15px] leading-relaxed max-w-2xl">
-              MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure, humaines et performantes.
+            <p className="mt-6 text-white/85 text-[15px] leading-relaxed max-w-2xl">
+              MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure,
+              humaines et performantes.
             </p>
 
             <div className="flex flex-wrap gap-2.5 mt-7">
@@ -42,10 +47,13 @@ export default function Home() {
                 { icon: Monitor, label: 'Digital & SaaS' },
                 { icon: GraduationCap, label: 'Formation & RH' },
                 { icon: Briefcase, label: 'Accompagnement' },
-                { icon: PartyPopper, label: '\u00c9v\u00e9nements & Networking' },
+                { icon: PartyPopper, label: 'Événements & Networking' },
               ].map((c, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white border border-gray-200 text-mce-navy text-[12.5px] font-semibold hover:border-mce-teal transition-colors shadow-sm">
-                  <c.icon className="w-4 h-4 text-mce-teal" /> {c.label}
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white/10 border border-white/20 text-white text-[12.5px] font-semibold hover:bg-white/15 transition-colors"
+                >
+                  <c.icon className="w-4 h-4" style={{ color: '#22d3ee' }} /> {c.label}
                 </span>
               ))}
             </div>
@@ -58,16 +66,16 @@ export default function Home() {
                   <span className="text-[10.5px] font-normal opacity-80">(Calendly)</span>
                 </span>
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 border-[1.5px] border-mce-navy/25 text-mce-navy px-6 py-3 rounded-md font-semibold hover:border-mce-navy transition-colors bg-white">
+              <Link to="/contact" className="btn-outline-light">
                 <FileText className="w-4 h-4" />
                 <span className="flex flex-col items-start leading-tight text-left">
                   <span>DEMANDER UN DEVIS</span>
-                  <span className="text-[10.5px] font-normal opacity-70">R&eacute;ponse rapide</span>
+                  <span className="text-[10.5px] font-normal opacity-80">Réponse rapide</span>
                 </span>
               </Link>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-[13px] text-mce-navy/80">
+            <div className="mt-6 flex items-center gap-2 text-[13px] text-white/85">
               <CheckCircle2 className="w-4 h-4 text-mce-gold" />
               Un interlocuteur unique. Des solutions multiples.
             </div>
@@ -75,38 +83,38 @@ export default function Home() {
 
           <div className="lg:col-span-5 relative fade-up hidden lg:block">
             <div className="space-y-4">
-              <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl px-5 py-4 shadow-2xl">
-                <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-mce-navy">
+              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-5 py-4 shadow-xl">
+                <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-white">
                   <Globe className="w-4 h-4 text-mce-gold" />
-                  FRANCE &middot; S&Eacute;N&Eacute;GAL &middot; MAROC
+                  FRANCE &middot; SÉNÉGAL &middot; MAROC
                 </div>
-                <p className="text-[12px] text-mce-navy/70 mt-2 leading-relaxed">
-                  Une pr&eacute;sence internationale<br />au service de votre croissance.
+                <p className="text-[12px] text-white/80 mt-2 leading-relaxed">
+                  Une présence internationale<br />au service de votre croissance.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
-                  <div className="text-3xl font-black text-mce-gold leading-none">+1000</div>
-                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Talents accompagn&eacute;s</p>
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black leading-none" style={{ color: '#22d3ee' }}>+1000</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Talents accompagnés</p>
                 </div>
-                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
-                  <div className="text-3xl font-black text-mce-teal leading-none">+200</div>
-                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Projets men&eacute;s avec succ&egrave;s</p>
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black leading-none" style={{ color: '#22d3ee' }}>+200</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Projets menés avec succès</p>
                 </div>
-                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
-                  <div className="text-3xl font-black text-mce-navy leading-none">20+</div>
-                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Ann&eacute;es d&rsquo;expertise</p>
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
+                  <div className="text-3xl font-black text-white leading-none">20+</div>
+                  <p className="text-[11.5px] text-white/80 mt-2">Années d&rsquo;expertise</p>
                 </div>
-                <div className="bg-white/95 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg">
+                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
                   <div className="text-3xl font-black text-mce-gold leading-none">98%</div>
-                  <p className="text-[11.5px] text-mce-navy/70 mt-2">Clients satisfaits</p>
+                  <p className="text-[11.5px] text-white/80 mt-2">Clients satisfaits</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* gold wave divider */}
+        {/* gold wave */}
         <div className="relative">
           <svg viewBox="0 0 1440 40" className="w-full h-8" preserveAspectRatio="none">
             <path d="M0,20 Q360,0 720,20 T1440,20 L1440,40 L0,40 Z" fill="#d4a017" />
@@ -114,141 +122,195 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pain points strip */}
+      {/* ===================== PAIN POINTS ===================== */}
       <section className="bg-white border-b border-gray-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-6 grid grid-cols-1 md:grid-cols-6 gap-5 items-center">
-          <div className="flex items-center gap-3 md:col-span-1">
+          <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
               <AlertTriangle className="w-5 h-5 text-amber-600" />
             </div>
-            <p className="text-[13px] font-bold text-mce-navy leading-tight">Vos d&eacute;fis d&rsquo;aujourd&rsquo;hui<br /><span className="text-mce-navy/70 font-normal">sont nos missions quotidiennes</span></p>
+            <p className="text-[13px] font-bold text-mce-navy leading-tight">
+              Vos défis d&rsquo;aujourd&rsquo;hui<br />
+              <span className="text-mce-navy/70 font-normal">sont nos missions quotidiennes</span>
+            </p>
           </div>
           {[
             'Vous manquez\nde temps ?',
-            'Vos \u00e9quipes ont besoin\nde comp\u00e9tences ?',
+            'Vos équipes ont besoin\nde compétences ?',
             'Vous cherchez\ndes talents fiables ?',
             'Vous voulez digitaliser\nou automatiser ?',
-            'Vous souhaitez organiser\nun \u00e9v\u00e9nement impactant ?',
+            'Vous souhaitez organiser\nun événement impactant ?',
           ].map((q, i) => (
-            <p key={i} className="text-[12.5px] text-mce-navy/80 whitespace-pre-line font-medium border-l border-gray-200 pl-4">
+            <p
+              key={i}
+              className="text-[12.5px] text-mce-navy/80 whitespace-pre-line font-medium border-l border-gray-200 pl-4"
+            >
               {q}
             </p>
           ))}
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="bg-white -mt-10 relative z-10">
-        <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
-          <div className="bg-white rounded-2xl shadow-xl px-6 py-6 grid grid-cols-2 md:grid-cols-5 gap-4">
-            {HOME_STATS.map((s, i) => {
-              const c = COLOR_MAP[s.color];
-              return (
-                <div key={i} className="flex items-center gap-3">
-                  <div className={`w-14 h-14 rounded-full ${c.bg} flex items-center justify-center`}>
-                    <Users className={`w-6 h-6 ${c.text}`} />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-black text-mce-navy leading-none">{s.value}</div>
-                    <div className="text-[12px] text-mce-navy/70 leading-tight mt-1">{s.label}<br />{s.sub}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* SOLUTIONS */}
-      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d9488 0%, #14b8a6 50%, #0d9488 100%)' }}>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h2 className="section-title mb-2 text-white">NOS SOLUTIONS POUR VOTRE <span className="text-mce-gold underline decoration-4 underline-offset-4">RÉUSSITE</span></h2>
-          <div className="h-1 w-16 bg-mce-gold mx-auto rounded-full mt-2 mb-12" />
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
-            {HOME_SOLUTIONS.map((s, i) => {
-              const c = COLOR_MAP[s.color];
-              return (
-                <Link key={i} to={s.to} className="card-hover rounded-xl overflow-hidden bg-white border border-white/20 shadow-lg group">
-                  <div className="relative h-40 overflow-hidden">
-                    <img src={IMG[s.img]} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className={`absolute -bottom-5 left-4 w-11 h-11 rounded-full ${c.accent} flex items-center justify-center shadow-lg`}>
-                      {i===0 && <Globe className="w-5 h-5 text-white" />}
-                      {i===1 && <Users className="w-5 h-5 text-white" />}
-                      {i===2 && <GraduationCap className="w-5 h-5 text-white" />}
-                      {i===3 && <Handshake className="w-5 h-5 text-white" />}
-                      {i===4 && <Megaphone className="w-5 h-5 text-white" />}
-                    </div>
-                  </div>
-                  <div className="p-5 pt-7">
-                    <h3 className={`text-[13px] font-black tracking-wide ${c.text}`}>{s.title}</h3>
-                    <p className="text-[12.5px] text-mce-navy/70 mt-2 leading-relaxed">{s.desc}</p>
-                    <span className={`text-[12px] font-semibold mt-3 inline-flex items-center gap-1 ${c.text}`}>En savoir plus <ArrowRight className="w-3.5 h-3.5" /></span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* THREE ROW BANNERS */}
-      <section className="pb-16">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {[
-            { title: 'SOUTENIR LES FEMMES ENTREPRENEURES', color: 'red', img: IMG.women1, items: ['Coaching & Mentoring personnalisé','Accès à un réseau de partenaires','Visibilité & opportunités d’affaires','Accès à des financements & ressources','Formations adaptées à leurs défis'], cta: 'DÉCOUVRIR LE PROGRAMME' },
-            { title: 'NETWORKING & OPPORTUNITÉS', color: 'teal', img: IMG.event1, items: ['Afterworks professionnels','Conférences & Panels','Rencontres entreprises - jeunes talents','Salons de l’entrepreneuriat féminin','Partenariats locaux & internationaux'], cta: 'VOIR NOS PROCHAINS ÉVÉNEMENTS' },
-            { title: 'EMPLOI & JEUNES TALENTS', color: 'orange', img: IMG.team3, items: ['Recrutement & placement','Ateliers CV & entretiens','Rencontres emploi en direct','Suivi & accompagnement'], cta: 'DÉCOUVRIR LES PROGRAMMES' },
-          ].map((b, i) => {
-            const c = COLOR_MAP[b.color];
-            return (
-              <div key={i} className="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm">
-                <div className="grid grid-cols-2 gap-0">
-                  <div className="p-5">
-                    <h3 className={`text-[13px] font-black tracking-wide leading-tight ${c.text}`}>{b.title}</h3>
-                    <ul className="mt-3 space-y-1.5">
-                      {b.items.map((it, j) => (
-                        <li key={j} className="flex gap-1.5 text-[11.5px] text-mce-navy/80">
-                          <CheckCircle2 className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${c.text}`} />{it}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="relative min-h-full">
-                    <img src={b.img} alt={b.title} className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                </div>
-                <button className={`w-full ${c.accent} text-white text-[12px] font-bold py-3 tracking-wide hover:opacity-90 transition-opacity`}>{b.cta}</button>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* PARTNERS CARDS */}
-      <section className="py-16 bg-gray-50">
+      {/* ===================== 3 UNIVERS ===================== */}
+      <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h3 className="section-title mb-10">NOS <span className="text-mce-gold">PARTENAIRES</span> CLÉS</h3>
+          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-teal">NOS 3 UNIVERS</p>
+          <h2 className="section-title mt-3">Trois expertises, un seul objectif : votre réussite.</h2>
+          <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-3 mb-12" />
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'KEBA CONSULTING', accent: 'text-blue-700', border: 'border-blue-500', btn: 'bg-blue-600 hover:bg-blue-700', desc: 'Conseil en management, leadership et transformation organisationnelle.', img: IMG.team2, badge: 'KEBA' },
-              { name: 'WOMEN BUILD AFRICA', accent: 'text-rose-600', border: 'border-rose-500', btn: 'bg-rose-500 hover:bg-rose-600', desc: "Promouvoir l'entrepreneuriat féminin, l'inclusion et l'impact social à travers des actions concrètes.", img: IMG.women1, badge: 'WBA' },
-              { name: 'SPARCK PROJECT', accent: 'text-mce-navy', border: 'border-mce-navy', btn: 'bg-mce-navy hover:bg-mce-navy-3', desc: 'Innovation, digital et développement de projets à fort impact pour un avenir durable.', img: IMG.coding, badge: 'SPARCK' },
-            ].map((p, i) => (
-              <div key={i} className={`rounded-2xl bg-white border-t-4 ${p.border} shadow-md overflow-hidden card-hover`}>
-                <div className="grid grid-cols-5 gap-0">
-                  <div className="col-span-2 p-5 flex flex-col justify-center">
-                    <div className={`text-[15px] font-black tracking-wide leading-tight ${p.accent}`}>{p.name}</div>
+              {
+                title: 'SOLUTIONS\nDIGITALES',
+                sub: 'Des technologies puissantes pour des entreprises plus productives.',
+                img: IMG.coding,
+                titleColor: 'text-mce-teal',
+                btn: 'bg-mce-teal hover:bg-mce-teal/90',
+                cta: 'DÉCOUVRIR NOS SOLUTIONS',
+                items: [
+                  'SaaS & logiciels métiers (CRM, applications…)',
+                  'Sites web, plateformes & landing pages',
+                  'Hébergement, maintenance & sécurité',
+                  'Solutions sur mesure & automatisation',
+                ],
+                to: '/solutions-digitales',
+              },
+              {
+                title: 'TALENTS & RH',
+                sub: 'Développer les talents. Renforcer les équipes. Booster la performance.',
+                img: IMG.team1,
+                titleColor: 'text-purple-600',
+                btn: 'bg-purple-500 hover:bg-purple-600',
+                cta: 'DÉVELOPPER VOS TALENTS',
+                items: [
+                  'Formations pratiques & certifiantes',
+                  'Recrutement, sourcing & intégration',
+                  'Accompagnement RH & management',
+                  'Coaching individuel & développement personnel',
+                ],
+                to: '/talents-rh',
+              },
+              {
+                title: 'ACCOMPAGNEMENT\n& ÉVÉNEMENTS',
+                sub: 'Vous accompagner à chaque étape. Créer des connexions qui changent tout.',
+                img: IMG.event1,
+                titleColor: 'text-mce-gold',
+                btn: 'bg-mce-gold hover:bg-amber-500 text-mce-navy',
+                cta: 'CRÉER DES IMPACTS',
+                items: [
+                  'Accompagnement stratégique & business',
+                  'Événements, séminaires & conférences',
+                  'Networking jeunes talents & entreprises',
+                  'Événementiel international & conciergerie',
+                ],
+                to: '/accompagnement-evenements',
+              },
+            ].map((u, i) => (
+              <div
+                key={i}
+                className="rounded-2xl bg-white border border-gray-100 shadow-md overflow-hidden card-hover flex flex-col"
+              >
+                <div className="grid grid-cols-2 gap-0 items-start">
+                  <div className="p-5">
+                    <h3 className={`font-black text-[18px] leading-tight ${u.titleColor} whitespace-pre-line`}>
+                      {u.title}
+                    </h3>
+                    <p className="text-[12.5px] text-mce-navy/75 mt-3 leading-relaxed">{u.sub}</p>
                   </div>
-                  <div className="col-span-3 relative min-h-[110px]">
-                    <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="relative h-[140px]">
+                    <img src={u.img} alt={u.title} className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="px-5 pt-4 pb-5">
-                  <p className="text-[13px] text-mce-navy/75 leading-relaxed">{p.desc}</p>
-                  <button className={`mt-5 text-white text-[12px] font-bold px-4 py-2.5 rounded-md ${p.btn} transition-colors inline-flex items-center gap-2`}>
-                    DÉCOUVRIR LE PARTENARIAT <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                <div className="px-5 pb-5 flex-1 flex flex-col">
+                  <ul className="mt-4 space-y-2.5 flex-1">
+                    {u.items.map((it) => (
+                      <li key={it} className="flex items-start gap-2 text-[12.5px] text-mce-navy/85">
+                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${u.titleColor}`} />
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={u.to}
+                    className={`mt-5 text-white text-[12px] font-bold py-3 rounded-md ${u.btn} transition-colors inline-flex items-center justify-center gap-2 tracking-wide`}
+                  >
+                    {u.cta} <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* LE FUTUR EST DIGITAL */}
+          <div className="mt-10 rounded-2xl bg-mce-navy text-white p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center overflow-hidden relative">
+            <div className="lg:col-span-3 flex items-center justify-center">
+              <div className="relative">
+                <Cloud className="w-28 h-28 text-mce-teal" strokeWidth={1.4} />
+                <div className="absolute -bottom-2 -right-2 grid grid-cols-2 gap-1">
+                  {[0, 1, 2, 3].map((k) => (
+                    <div key={k} className="w-6 h-6 rounded bg-mce-teal/30 border border-mce-teal/50" />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-5">
+              <h3 className="text-2xl md:text-[26px] font-black leading-tight">
+                LE FUTUR EST DIGITAL.<br />
+                <span className="text-mce-gold">PRENEZ UNE LONGUEUR D&rsquo;AVANCE.</span>
+              </h3>
+              <p className="text-white/80 text-[13px] mt-4 leading-relaxed">
+                CRM, plateformes, applications métiers, tableaux de bord… Nos solutions SaaS et personnalisées
+                simplifient vos processus, améliorent votre productivité et accélèrent votre croissance.
+              </p>
+            </div>
+            <div className="lg:col-span-4">
+              <ul className="space-y-2.5">
+                {[
+                  'Automatisation des tâches',
+                  'Meilleure gestion de la relation client',
+                  'Décisions basées sur la donnée',
+                  'Sécurité & hébergement de confiance',
+                ].map((it) => (
+                  <li key={it} className="flex items-start gap-2 text-[13px]">
+                    <CheckCircle2 className="w-4 h-4 mt-0.5 text-mce-teal shrink-0" /> {it}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/solutions-digitales"
+                className="mt-5 inline-flex items-center gap-2 bg-mce-teal hover:bg-mce-teal/90 text-white text-[12px] font-bold py-3 px-5 rounded-md transition-colors"
+              >
+                DÉCOUVRIR NOS SOLUTIONS SAAS <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== MCE EN CHIFFRES ===================== */}
+      <section className="pb-16 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-teal">MCE EN CHIFFRES</p>
+          <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-3 mb-8" />
+          <div className="rounded-2xl bg-white shadow-md border border-gray-100 px-8 py-8 grid grid-cols-2 md:grid-cols-5 gap-8">
+            {[
+              { icon: Users, color: 'text-mce-teal', bg: 'bg-mce-teal/10', value: '+200', label: 'Entreprises &', sub: 'organisations\naccompagnées' },
+              { icon: GraduationCap, color: 'text-purple-600', bg: 'bg-purple-500/10', value: '+50', label: 'Formations réalisées', sub: 'chaque année' },
+              { icon: Briefcase, color: 'text-mce-gold', bg: 'bg-amber-400/15', value: '+1 000', label: 'Talents recrutés', sub: 'et accompagnés' },
+              { icon: Globe, color: 'text-blue-600', bg: 'bg-blue-500/10', value: '3', label: "Pays d'implantation", sub: 'France · Sénégal · Maroc' },
+              { icon: Star, color: 'text-mce-gold', bg: 'bg-amber-400/15', value: '98%', label: 'De clients satisfaits', sub: 'et recommandant MCE' },
+            ].map((s, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className={`w-12 h-12 rounded-lg ${s.bg} flex items-center justify-center shrink-0`}>
+                  <s.icon className={`w-6 h-6 ${s.color}`} />
+                </div>
+                <div>
+                  <div className="text-3xl font-black text-mce-navy leading-none">{s.value}</div>
+                  <div className="text-[12px] text-mce-navy/70 leading-tight mt-2 whitespace-pre-line">
+                    {s.label}
+                    <br />
+                    {s.sub}
+                  </div>
                 </div>
               </div>
             ))}
@@ -256,36 +318,113 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EVENTS */}
-      <section className="py-16">
+      {/* ===================== PARTENAIRES ===================== */}
+      <section className="pb-16 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h2 className="section-title mb-10">NOS ÉVÉNEMENTS & ACTIONS <span className="text-mce-teal">À IMPACT</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-            {EVENTS.map((e, i) => {
-              const c = COLOR_MAP[e.tagColor];
-              return (
-                <div key={i} className="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm card-hover">
-                  <img src={IMG[e.img]} alt={e.title} className="w-full h-40 object-cover" />
-                  <div className="p-4">
-                    <h4 className="font-black text-[15px] text-mce-navy leading-tight">{e.title}</h4>
-                    <span className={`chip mt-2 ${c.chip}`}>{e.tag}</span>
-                    <p className="text-[12px] text-mce-navy/70 mt-3 leading-relaxed">{e.desc}</p>
+          <p className="text-center text-[13px] tracking-[0.3em] font-bold text-mce-navy">
+            UN ÉCOSYSTÈME DE <span className="text-mce-teal">PARTENAIRES ENGAGÉS</span>
+          </p>
+          <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-3 mb-8" />
+          <div className="rounded-2xl bg-gray-50 border border-gray-100 px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                logo: (
+                  <div className="text-center">
+                    <div className="text-3xl font-black text-blue-700 leading-none">KEBA</div>
+                    <div className="text-[10px] tracking-[0.35em] font-bold text-blue-700 mt-1">CONSULTING</div>
                   </div>
+                ),
+                desc: 'Conseil, formation et accompagnement des leaders et organisations.',
+              },
+              {
+                logo: (
+                  <div className="text-center">
+                    <div className="text-2xl font-black text-rose-600 leading-tight">WOMEN</div>
+                    <div className="text-[11px] tracking-[0.3em] font-bold text-mce-navy">BUILD AFRICA</div>
+                  </div>
+                ),
+                desc: "Promouvoir l'entrepreneuriat féminin et l'impact social.",
+              },
+              {
+                logo: (
+                  <div className="text-center">
+                    <div className="text-2xl font-black text-mce-navy leading-tight">SPARCK</div>
+                    <div className="text-[11px] tracking-[0.3em] font-bold text-mce-navy/70">PROJECT</div>
+                  </div>
+                ),
+                desc: 'Projets innovants, formation et transformation digitale.',
+              },
+            ].map((p, i) => (
+              <div key={i} className="flex items-center gap-5">
+                <div className="w-32 shrink-0">{p.logo}</div>
+                <div>
+                  <p className="text-[13px] text-mce-navy/85 leading-relaxed">{p.desc}</p>
+                  <a href="#" className="text-mce-teal font-semibold text-[12.5px] inline-flex items-center gap-1 mt-2 hover:gap-2 transition-all">
+                    En savoir plus <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
-              );
-            })}
-            <div className="rounded-xl overflow-hidden bg-mce-navy text-white p-5 flex flex-col justify-between">
-              <div>
-                <h4 className="font-black text-[15px] leading-tight">UNE PRÉSENCE INTERNATIONALE,<br />UN ENGAGEMENT LOCAL.</h4>
-                <p className="text-[12.5px] text-white/80 mt-3 leading-relaxed">France · Sénégal · Maroc<br />Afrique de l’Ouest · Diaspora</p>
               </div>
-              <Globe className="w-24 h-24 text-white/10 self-end" />
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <CTASection />
+      {/* ===================== FINAL CTA BAND ===================== */}
+      <section className="bg-mce-navy text-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-12 grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-black leading-tight">
+              Prêt à <span className="text-mce-teal">passer à l&rsquo;action ?</span>
+              <br />
+              Parlons de votre projet.
+            </h3>
+            <p className="text-white/70 text-sm mt-3">Un échange suffit pour faire la différence.</p>
+          </div>
+          {[
+            {
+              icon: Calendar,
+              bg: 'bg-purple-500',
+              title: 'PRENDRE RENDEZ-VOUS',
+              sub: '(Calendly)\nÉchange découverte offert',
+            },
+            {
+              icon: FileText,
+              bg: 'bg-mce-teal',
+              title: 'DEMANDER UN DEVIS',
+              sub: 'Personnalisé\nRéponse sous 24h',
+            },
+            {
+              icon: MessageCircle,
+              bg: 'bg-green-500',
+              title: 'ÉCRIRE SUR WHATSAPP',
+              sub: 'Réponse immédiate',
+            },
+          ].map((c, i) => (
+            <Link to="/contact" key={i} className="flex items-start gap-3 group">
+              <div className={`${c.bg} w-11 h-11 rounded-lg flex items-center justify-center shrink-0`}>
+                <c.icon className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <div className="text-[13px] font-bold flex items-center gap-1 group-hover:text-mce-gold transition-colors">
+                  {c.title} <ArrowRight className="w-3.5 h-3.5 opacity-70" />
+                </div>
+                <div className="text-[11.5px] text-white/70 leading-snug whitespace-pre-line mt-0.5">{c.sub}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Floating WhatsApp */}
+      <a
+        href="https://wa.me/221771234567"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-2xl flex items-center justify-center transition-colors"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle className="w-6 h-6 text-white" />
+      </a>
     </div>
   );
 }

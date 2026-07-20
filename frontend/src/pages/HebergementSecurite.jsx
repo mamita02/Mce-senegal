@@ -126,115 +126,86 @@ export default function HebergementSecurite() {
         </div>
       </section>
 
-      {/* JOURNEY / TIMELINE */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-[1100px] mx-auto px-6 lg:px-10">
-          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-gold">APRÈS LA MISE EN LIGNE</p>
-          <h2 className="section-title mt-3">
-            Un partenaire dans la <span className="text-mce-gold">durée</span>
-          </h2>
-          <p className="text-center text-mce-navy/60 mt-3 text-[13.5px]">
-            Voici concrètement ce que nous prenons en charge, jour après jour.
-          </p>
-          <div className="h-1 w-16 bg-mce-gold mx-auto rounded-full mt-4 mb-14" />
+      {/* JOURNEY / TIMELINE - horizontal, compact */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="text-center mb-12">
+            <p className="text-[12px] tracking-[0.3em] font-bold text-mce-gold">APRÈS LA MISE EN LIGNE</p>
+            <h2 className="section-title mt-3">
+              Un partenaire dans la <span className="text-mce-gold">durée</span>
+            </h2>
+            <p className="text-mce-navy/60 mt-3 text-[13.5px] max-w-2xl mx-auto">
+              Voici concrètement ce que nous prenons en charge, jour après jour.
+            </p>
+          </div>
 
           <div className="relative">
-            {/* vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-2 bottom-2 w-0.5 bg-mce-gold/30 md:-translate-x-1/2" />
+            {/* horizontal dashed line */}
+            <div className="hidden md:block absolute left-[10%] right-[10%] top-[52px] h-0 border-t-2 border-dashed border-mce-gold/50" />
 
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 relative">
               {[
                 {
                   m: 'JOUR 1',
                   title: 'Mise en ligne sécurisée',
-                  desc: "Déploiement, configuration DNS, certificats SSL, activation du monitoring. Nous surveillons en direct pour intervenir immédiatement au moindre signal.",
+                  desc: "DNS, SSL, monitoring activé — nous surveillons en direct.",
                   icon: Zap,
-                  bullets: ['Vérifications techniques complètes', 'Certificats SSL A+', 'Monitoring 24/7 activé'],
                 },
                 {
                   m: 'SEMAINE 1',
                   title: 'Sauvegardes validées',
-                  desc: "Nous testons la première restauration pour garantir que vos données sont réellement récupérables. Pas de sauvegarde théorique — une preuve concrète.",
+                  desc: "Restauration testée : la preuve que vos données sont récupérables.",
                   icon: RefreshCcw,
-                  bullets: ['Sauvegardes quotidiennes automatiques', 'Restauration testée en conditions réelles', 'Redondance hors site'],
                 },
                 {
                   m: 'MOIS 1',
                   title: 'Rapport de performance',
-                  desc: "Bilan détaillé : trafic, vitesse, disponibilité, sécurité. Nous ajustons la configuration pour optimiser l'expérience utilisateur.",
+                  desc: "Bilan trafic, vitesse, sécurité — et optimisations ciblées.",
                   icon: Activity,
-                  bullets: ['Analyse de charge & vitesse', 'Optimisation base de données', 'Recommandations personnalisées'],
                 },
                 {
                   m: 'MOIS 3',
-                  title: 'Audit sécurité approfondi',
-                  desc: "Scan complet de vulnérabilités, mise à jour des composants critiques, application des correctifs. Rapport clair remis à votre équipe.",
+                  title: 'Audit sécurité',
+                  desc: "Scan de vulnérabilités, correctifs, rapport de conformité.",
                   icon: ShieldCheck,
-                  bullets: ['Scan de vulnérabilités', 'Mise à jour des dépendances', 'Rapport de conformité'],
                 },
                 {
                   m: 'EN CONTINU',
-                  title: 'Support réactif & évolutions',
-                  desc: "Une question, un souci ? Réponse sous 30 minutes en heures ouvrées. Un point trimestriel pour anticiper vos prochaines évolutions.",
+                  title: 'Support réactif',
+                  desc: "Réponse < 30 min en heures ouvrées + point trimestriel.",
                   icon: HeartPulse,
-                  bullets: ['Support < 30 min en heures ouvrées', 'Point stratégique trimestriel', 'Évolutions planifiées'],
                 },
-              ].map((step, i) => (
-                <div key={i} className="relative pl-16 md:pl-0 md:grid md:grid-cols-9 md:gap-6 items-start">
-                  {/* Icon on the line */}
-                  <div className="absolute left-0 top-0 md:static md:col-start-5 md:col-span-1 md:flex md:justify-center md:pt-2">
-                    <div className="w-12 h-12 rounded-full bg-mce-gold text-white flex items-center justify-center shadow-lg ring-4 ring-gray-50 relative z-10">
-                      <step.icon className="w-5 h-5" />
+              ].map((s, i) => (
+                <div key={i} className="relative text-center">
+                  {/* small badge on top */}
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-mce-gold/15 text-mce-gold text-[10.5px] font-bold tracking-[0.2em] mb-3">
+                    {s.m}
+                  </span>
+                  {/* Icon node */}
+                  <div className="relative flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-white ring-4 ring-gray-50 border-2 border-mce-gold flex items-center justify-center shadow-md z-10">
+                      <s.icon className="w-6 h-6 text-mce-gold" />
                     </div>
                   </div>
-
-                  {/* Card */}
-                  <div
-                    className={`rounded-xl bg-white border border-gray-100 shadow-sm p-5 card-hover ${
-                      i % 2 === 0
-                        ? 'md:col-start-1 md:col-span-4 md:text-right'
-                        : 'md:col-start-6 md:col-span-4'
-                    }`}
-                  >
-                    <div className={`flex items-center gap-2 ${i % 2 === 0 ? 'md:justify-end' : ''}`}>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-mce-gold/15 text-mce-gold text-[10.5px] font-bold tracking-[0.2em]">
-                        {step.m}
-                      </span>
-                    </div>
-                    <h4 className="text-lg font-black text-mce-navy mt-2">{step.title}</h4>
-                    <p className="text-[13px] text-mce-navy/70 mt-2 leading-relaxed">{step.desc}</p>
-                    <ul className={`mt-3 space-y-1.5 ${i % 2 === 0 ? 'md:text-right' : ''}`}>
-                      {step.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className={`flex items-center gap-2 text-[12.5px] text-mce-navy/85 ${
-                            i % 2 === 0 ? 'md:flex-row-reverse' : ''
-                          }`}
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-mce-gold shrink-0" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <h4 className="mt-4 font-black text-[14.5px] text-mce-navy">{s.title}</h4>
+                  <p className="text-[12.5px] text-mce-navy/70 mt-1.5 leading-snug px-2">{s.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Summary card */}
-          <div className="mt-14 rounded-2xl bg-mce-navy text-white p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-5 relative overflow-hidden">
-            <div className="absolute -right-10 -top-10 w-48 h-48 bg-mce-gold/15 rounded-full blur-3xl" />
-            <div className="w-14 h-14 rounded-xl bg-mce-gold flex items-center justify-center shrink-0 shadow-lg">
-              <ShieldCheck className="w-7 h-7 text-mce-navy" />
-            </div>
-            <div className="flex-1">
-              <p className="text-[15px] font-bold text-white leading-snug">
-                Vous ne payez pas juste un hébergeur. Vous vous offrez une équipe technique dédiée.
-              </p>
-              <p className="text-[13px] text-white/70 mt-1">
-                Un interlocuteur unique, des rapports clairs, des interventions rapides.
-              </p>
+          {/* Compact summary strip */}
+          <div className="mt-14 flex flex-col md:flex-row items-center justify-between gap-5 border-t border-mce-gold/30 pt-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-mce-gold flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-6 h-6 text-mce-navy" />
+              </div>
+              <div>
+                <p className="text-[14.5px] font-bold text-mce-navy">
+                  Vous ne payez pas juste un hébergeur. <span className="text-mce-gold">Vous vous offrez une équipe technique.</span>
+                </p>
+                <p className="text-[12.5px] text-mce-navy/60 mt-0.5">Un interlocuteur unique · Des rapports clairs · Des interventions rapides</p>
+              </div>
             </div>
             <Link to="/contact" className="btn-gold text-[12.5px] shrink-0">
               <Calendar className="w-4 h-4" /> RÉSERVER UN ÉCHANGE

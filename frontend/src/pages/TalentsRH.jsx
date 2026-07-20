@@ -22,20 +22,36 @@ const PGM_COLORS = {
 export default function TalentsRH() {
   return (
     <div className="pt-[72px]">
-      <section className="relative overflow-hidden hero-navy-gradient text-white">
-        <div className="absolute inset-0 opacity-25" style={{ backgroundImage: `url('${IMG.heroTalents}')`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-mce-navy via-mce-navy/85 to-transparent" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
-          <p className="text-[12px] tracking-[0.3em] font-bold text-purple-300">TALENTS & RH</p>
-          <h1 className="mt-4 text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.05] max-w-4xl">
-            Révélez le potentiel<br />de vos <span className="text-purple-400">équipes</span> et accélérez<br />leur développement.
-          </h1>
-          <p className="mt-6 text-white/80 text-[14px] max-w-2xl leading-relaxed">
-            Recrutement, placement, formations, coaching et accompagnement RH : MCE développe et connecte les talents dont votre entreprise a besoin.
-          </p>
-          <div className="flex flex-wrap gap-3 mt-8">
-            <button className="btn-primary bg-purple-500 hover:bg-purple-600">DÉVELOPPER VOS TALENTS <ArrowRight className="w-4 h-4" /></button>
-            <Link to="/contact" className="btn-outline-light"><Calendar className="w-4 h-4" />PRENDRE RENDEZ-VOUS</Link>
+      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#0d3a7a' }}>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/wrekj0za_image.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'right center',
+          }}
+        />
+        {/* Left-side gradient to keep text readable */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(13,58,122,0.92) 0%, rgba(13,58,122,0.80) 30%, rgba(13,58,122,0.30) 55%, rgba(13,58,122,0.05) 75%, rgba(13,58,122,0) 100%)',
+          }}
+        />
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24">
+          <div className="max-w-xl">
+            <p className="text-[12px] tracking-[0.3em] font-bold text-mce-teal">TALENTS & RH</p>
+            <h1 className="mt-4 text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.05]">
+              Révélez le potentiel<br />de vos <span className="text-mce-gold">équipes</span> et accélérez<br />leur développement.
+            </h1>
+            <p className="mt-6 text-white/85 text-[14.5px] leading-relaxed">
+              Recrutement, placement, formations, coaching et accompagnement RH : MCE développe et connecte les talents dont votre entreprise a besoin.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-8">
+              <button className="btn-primary">DÉVELOPPER VOS TALENTS <ArrowRight className="w-4 h-4" /></button>
+              <Link to="/contact" className="btn-outline-light"><Calendar className="w-4 h-4" />PRENDRE RENDEZ-VOUS</Link>
+            </div>
           </div>
         </div>
       </section>

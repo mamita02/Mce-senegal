@@ -140,7 +140,10 @@ export default function SaaSLogiciels() {
       {/* DOCMANYA feature */}
       <section id="docmanya" className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-mce-navy via-mce-navy-2 to-mce-navy-3 text-white relative">
+          <div
+            className="rounded-3xl overflow-hidden shadow-xl text-white relative"
+            style={{ background: 'linear-gradient(135deg, #050f22 0%, #0a1e3a 50%, #142b4f 100%)' }}
+          >
             <div className="absolute -top-16 -right-16 w-72 h-72 bg-mce-teal/15 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -left-16 w-96 h-96 bg-mce-gold/10 rounded-full blur-3xl" />
             <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-12 items-center">
@@ -148,40 +151,58 @@ export default function SaaSLogiciels() {
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mce-teal/15 border border-mce-teal/40 text-mce-teal text-[11px] font-bold tracking-widest">
                   <Sparkles className="w-3.5 h-3.5" /> PLATEFORME PHARE MCE
                 </div>
-                <h3 className="mt-5 text-4xl md:text-[42px] font-black leading-[1.05]">DocManya</h3>
-                <p className="text-mce-teal font-semibold text-[15px] mt-2">La solution qui digitalise la gestion documentaire de vos équipes.</p>
-                <p className="mt-5 text-white/80 text-[14px] leading-relaxed max-w-2xl">
-                  Centralisation, workflows d’approbation, signatures, traçabilité, archivage légal… DocManya est la première plateforme SaaS de la gamme MCE. Conçue au Sénégal, pensée pour l’Afrique.
+                <h3 className="mt-5 text-4xl md:text-[46px] font-black leading-[1.05] text-white">DocManya</h3>
+                <p className="text-mce-teal font-semibold text-[15px] mt-2">
+                  La solution qui digitalise la gestion documentaire de vos équipes.
                 </p>
-                <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {['Gestion documentaire centralisée','Workflows d’approbation','Signature électronique','Recherche full-text','Journal d’audit complet','Multi-utilisateurs & rôles'].map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-[13px]">
-                      <CheckCircle2 className="w-4 h-4 text-mce-teal" /> {f}
+                <p className="mt-5 text-white/85 text-[14px] leading-relaxed max-w-2xl">
+                  Centralisation, workflows d&rsquo;approbation, signatures, traçabilité, archivage légal… DocManya est la première plateforme SaaS de la gamme MCE. Conçue au Sénégal, pensée pour l&rsquo;Afrique.
+                </p>
+                <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                  {[
+                    'Gestion documentaire centralisée',
+                    "Workflows d\u2019approbation",
+                    'Signature électronique',
+                    'Recherche full-text',
+                    "Journal d\u2019audit complet",
+                    'Multi-utilisateurs & rôles',
+                  ].map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-[13.5px] text-white">
+                      <CheckCircle2 className="w-4 h-4 text-mce-teal shrink-0" />
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-3 mt-8">
-                  <Link to="/contact" className="btn-gold text-[12.5px]">DEMANDER UNE DÉMO <ArrowRight className="w-3.5 h-3.5" /></Link>
-                  <Link to="/contact" className="btn-outline-light text-[12.5px]">EN SAVOIR PLUS</Link>
+                  <Link to="/contact" className="btn-gold text-[12.5px]">
+                    DEMANDER UNE DÉMO <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link to="/contact" className="btn-outline-light text-[12.5px]">
+                    EN SAVOIR PLUS
+                  </Link>
                 </div>
               </div>
+
               <div className="lg:col-span-5">
-                <div className="rounded-2xl bg-white/10 border border-white/10 backdrop-blur p-5">
+                <div className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur p-5 shadow-2xl">
                   <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 rounded-md bg-mce-teal flex items-center justify-center font-black text-mce-navy">D</div>
+                    <div className="w-9 h-9 rounded-md bg-mce-teal flex items-center justify-center font-black text-white text-lg">D</div>
                     <div>
-                      <p className="text-[13px] font-bold">DocManya</p>
-                      <p className="text-[10px] text-white/60">v2.4 · Enterprise</p>
+                      <p className="text-[13.5px] font-bold text-white">DocManya</p>
+                      <p className="text-[10.5px] text-white/60">v2.4 · Enterprise</p>
                     </div>
                   </div>
+                  <p className="text-[11px] tracking-widest text-white/50 font-bold mb-1">DOCUMENTS RÉCENTS</p>
                   {[
-                    { label: 'Contrat commercial – KEBA', status: 'Signé', color: 'text-mce-teal' },
-                    { label: 'Bon de commande #4821', status: 'En attente', color: 'text-amber-400' },
-                    { label: 'Facture janv. 2026', status: 'Approuvé', color: 'text-mce-teal' },
-                    { label: 'NDA Fournisseur A', status: 'Brouillon', color: 'text-white/60' },
+                    { label: 'Contrat commercial – KEBA', status: 'Signé',     color: 'text-mce-teal' },
+                    { label: 'Bon de commande #4821',    status: 'En attente', color: 'text-amber-400' },
+                    { label: 'Facture janv. 2026',       status: 'Approuvé',   color: 'text-mce-teal' },
+                    { label: 'NDA Fournisseur A',        status: 'Brouillon',  color: 'text-white/60' },
                   ].map((d) => (
                     <div key={d.label} className="flex items-center justify-between border-t border-white/10 py-2.5 text-[12.5px]">
-                      <span className="flex items-center gap-2"><FileText className="w-4 h-4 text-white/60" /> {d.label}</span>
+                      <span className="flex items-center gap-2 text-white/90">
+                        <FileText className="w-4 h-4 text-white/50" /> {d.label}
+                      </span>
                       <span className={`font-semibold ${d.color}`}>{d.status}</span>
                     </div>
                   ))}
@@ -190,15 +211,15 @@ export default function SaaSLogiciels() {
             </div>
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-10 text-center">
             <p className="text-[12px] tracking-[0.3em] font-bold text-mce-navy/60">AUTRES PLATEFORMES MCE EN COURS DE DÉVELOPPEMENT</p>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
               {[
                 { name: 'MCE Talents', desc: 'ATS & pipeline recrutement' },
-                { name: 'MCE Sales', desc: 'CRM commercial africain' },
-                { name: 'MCE Learn', desc: 'LMS formations certifiantes' },
+                { name: 'MCE Sales',   desc: 'CRM commercial africain' },
+                { name: 'MCE Learn',   desc: 'LMS formations certifiantes' },
               ].map((p) => (
-                <div key={p.name} className="px-4 py-3 rounded-lg border border-dashed border-mce-teal/50 bg-mce-teal/5">
+                <div key={p.name} className="px-5 py-3 rounded-lg border border-dashed border-mce-teal/50 bg-mce-teal/5">
                   <p className="text-[13px] font-bold text-mce-navy">{p.name}</p>
                   <p className="text-[11.5px] text-mce-navy/60">{p.desc}</p>
                 </div>

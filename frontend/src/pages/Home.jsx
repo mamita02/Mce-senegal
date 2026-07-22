@@ -175,7 +175,7 @@ export default function Home() {
                 cta: 'DÉCOUVRIR NOS SOLUTIONS',
                 items: [
                   'SaaS & logiciels métiers (CRM, applications…)',
-                  'Sites web, plateformes & landing pages',
+                  'Sites web, plateformes & Landing Pages',
                   'Hébergement, maintenance & sécurité',
                   'Solutions sur mesure & automatisation',
                 ],

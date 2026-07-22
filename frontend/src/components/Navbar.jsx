@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Calendar, Menu, X, ChevronDown, Monitor, LayoutTemplate, ShieldCheck } from 'lucide-react';
+import {
+  Calendar, Menu, X, ChevronDown, Monitor, LayoutTemplate,
+  ShieldCheck, Compass, Network, GraduationCap, UserSearch, UsersRound,
+} from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'Accueil', to: '/' },
@@ -8,13 +11,28 @@ const NAV_LINKS = [
     label: 'Solutions digitales',
     to: '/solutions-digitales',
     submenu: [
-      { label: 'SaaS & logiciels métiers', to: '/solutions-digitales/saas-logiciels', desc: 'CRM, ERP, automatisation, dashboards', icon: Monitor },
-      { label: 'Sites & plateformes',      to: '/solutions-digitales/sites-plateformes', desc: 'Vitrines, e-commerce, plateformes web', icon: LayoutTemplate },
-      { label: 'Hébergement & sécurité',   to: '/solutions-digitales/hebergement-securite', desc: 'Hosting, sauvegardes, maintenance', icon: ShieldCheck },
+      { label: 'SaaS & logiciels métiers', to: '/solutions-digitales/saas-logiciels', desc: 'CRM, applications, automatisation et outils internes', icon: Monitor },
+      { label: 'Sites & plateformes', to: '/solutions-digitales/sites-plateformes', desc: 'Sites vitrines, e-commerce, Landing Pages et plateformes', icon: LayoutTemplate },
+      { label: 'Hébergement & sécurité', to: '/solutions-digitales/hebergement-securite', desc: 'Maintenance, sauvegardes, sécurité et suivi technique', icon: ShieldCheck },
     ],
   },
-  { label: 'Talents & RH', to: '/talents-rh' },
-  { label: 'Accompagnement & Événements', to: '/accompagnement-evenements' },
+  {
+    label: 'Talents & RH',
+    to: '/talents-rh',
+    submenu: [
+      { label: 'MCE Academy', to: '/talents-rh/academy', desc: 'Formations pratiques, mises en situation et certificat', icon: GraduationCap },
+      { label: 'Recrutement & sourcing', to: '/talents-rh/recrutement', desc: 'Définition du besoin, sourcing, évaluation et intégration', icon: UserSearch },
+      { label: 'Accompagnement RH', to: '/talents-rh/accompagnement-rh', desc: 'Organisation, management, performance et coaching', icon: UsersRound },
+    ],
+  },
+  {
+    label: 'Événements & Impact',
+    to: '/accompagnement-evenements',
+    submenu: [
+      { label: 'Accompagnement stratégique', to: '/accompagnement-evenements/accompagnement', desc: 'Structuration, développement, vente et partenariats', icon: Compass },
+      { label: 'Événements professionnels & networking', to: '/accompagnement-evenements/networking', desc: 'Rencontres, emploi, conférences, ateliers et impact', icon: Network },
+    ],
+  },
   { label: 'MCE & Partenaires', to: '/mce-partenaires' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -40,28 +58,30 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
-          {NAV_LINKS.map((l) => (
+          {NAV_LINKS.map((l) => {
+            const eventsContext = l.to === '/accompagnement-evenements' && location.pathname.startsWith('/accompagnement-evenements');
+            return (
             <div key={l.to} className="relative group">
               <NavLink
                 to={l.to}
-                end={l.to === '/'}
-                className={({ isActive }) => `relative px-3 py-2 text-[14px] font-semibold flex items-center gap-1 transition-colors ${isActive ? 'text-mce-teal' : 'text-mce-navy/85 hover:text-mce-teal'}`}
+                end={l.to === '/' || l.to === '/solutions-digitales' || l.to === '/accompagnement-evenements'}
+                className={({ isActive }) => `relative px-3 py-2 text-[14px] font-semibold flex items-center gap-1 transition-colors ${eventsContext ? 'text-blue-600' : isActive ? 'text-mce-teal' : 'text-mce-navy/85 hover:text-mce-teal'}`}
               >
                 {({ isActive }) => (
                   <>
                     <span>{l.label}</span>
                     {l.submenu && <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />}
-                    {isActive && <span className="absolute -bottom-0.5 left-3 right-3 h-[3px] bg-mce-teal rounded-full" />}
+                    {(isActive || eventsContext) && <span className={`absolute -bottom-0.5 left-3 right-3 h-[3px] rounded-full ${eventsContext ? 'bg-blue-600 animate-pulse' : 'bg-mce-teal'}`} />}
                   </>
                 )}
               </NavLink>
 
               {l.submenu && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40 w-[380px]">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40 w-[440px]">
                   <div className="rounded-xl bg-white shadow-2xl border border-gray-100 p-3">
-                    <p className="text-[10.5px] tracking-[0.25em] font-bold text-mce-navy/50 px-3 pt-1 pb-2">SOLUTIONS DIGITALES</p>
+                    <p className="text-[10.5px] tracking-[0.25em] font-bold text-mce-navy/50 px-3 pt-1 pb-2">{l.label.toUpperCase()}</p>
                     {l.submenu.map((s) => (
-                      <Link key={s.to} to={s.to} className="flex items-start gap-3 px-3 py-3 rounded-lg hover:bg-mce-teal/5 transition-colors group/item">
+                      <NavLink key={s.to} to={s.to} end className={({ isActive }) => `flex items-start gap-3 px-3 py-3 rounded-lg transition-all group/item ${isActive ? 'bg-mce-teal/10 ring-1 ring-mce-teal/20 translate-x-1' : 'hover:bg-mce-teal/5'}`}>
                         <div className="w-9 h-9 rounded-lg bg-mce-teal/10 flex items-center justify-center shrink-0">
                           <s.icon className="w-4 h-4 text-mce-teal" />
                         </div>
@@ -69,18 +89,18 @@ export default function Navbar() {
                           <p className="text-[13.5px] font-bold text-mce-navy group-hover/item:text-mce-teal transition-colors">{s.label}</p>
                           <p className="text-[11.5px] text-mce-navy/60 mt-0.5">{s.desc}</p>
                         </div>
-                      </Link>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
               )}
             </div>
-          ))}
+          );})}
         </nav>
 
-        <Link to="/contact" className="hidden md:inline-flex btn-gold text-[13px]">
+        <Link to="/contact#formulaire-devis" className="hidden md:inline-flex btn-gold text-[13px]">
           <Calendar className="w-4 h-4" />
-          PARLER DE VOTRE PROJET
+          DEMANDER UN DEVIS
         </Link>
 
         <button className="lg:hidden text-mce-navy" onClick={() => setOpen(!open)}>
@@ -91,9 +111,11 @@ export default function Navbar() {
       {open && (
         <div className="lg:hidden border-t border-gray-100 bg-white">
           <div className="px-6 py-4 flex flex-col gap-1">
-            {NAV_LINKS.map((l) => (
+            {NAV_LINKS.map((l) => {
+              const eventsContext = l.to === '/accompagnement-evenements' && location.pathname.startsWith('/accompagnement-evenements');
+              return (
               <div key={l.to}>
-                <NavLink to={l.to} end={l.to === '/'} className={({ isActive }) => `py-2 text-sm font-semibold block ${isActive ? 'text-mce-teal' : 'text-mce-navy'}`}>{l.label}</NavLink>
+                <NavLink to={l.to} end={l.to === '/' || l.to === '/solutions-digitales' || l.to === '/accompagnement-evenements'} className={({ isActive }) => `py-2 text-sm font-semibold block ${eventsContext ? 'text-blue-600' : isActive ? 'text-mce-teal' : 'text-mce-navy'}`}>{l.label}</NavLink>
                 {l.submenu && (
                   <div className="pl-4 border-l border-gray-200 ml-1 mb-2">
                     {l.submenu.map((s) => (
@@ -102,8 +124,8 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            ))}
-            <Link to="/contact" className="btn-gold text-xs mt-3 w-fit"><Calendar className="w-4 h-4" />PARLER DE VOTRE PROJET</Link>
+            );})}
+            <Link to="/contact#formulaire-devis" className="btn-gold text-xs mt-3 w-fit"><Calendar className="w-4 h-4" />DEMANDER UN DEVIS</Link>
           </div>
         </div>
       )}

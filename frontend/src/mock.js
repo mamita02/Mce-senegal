@@ -22,7 +22,7 @@ export const NAV_LINKS = [
   { label: 'Accueil', to: '/' },
   { label: 'Solutions digitales', to: '/solutions-digitales' },
   { label: 'Talents & RH', to: '/talents-rh' },
-  { label: 'Accompagnement & Événements', to: '/accompagnement-evenements' },
+  { label: 'Événements & Impact', to: '/accompagnement-evenements' },
   { label: 'MCE & Partenaires', to: '/mce-partenaires' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -39,8 +39,8 @@ export const HOME_SOLUTIONS = [
   { title: 'SOLUTIONS DIGITALES', desc: 'Sites web, applications, logiciels métiers, SaaS, plateformes sur mesure.', color: 'teal', to: '/solutions-digitales', img: 'coding' },
   { title: 'TALENTS & RH', desc: 'Recrutement, placement, accompagnement RH, gestion des talents.', color: 'purple', to: '/talents-rh', img: 'team1' },
   { title: 'FORMATIONS & ACADEMY', desc: 'Formations certifiantes, développement personnel, leadership, vente, finance…', color: 'gold', to: '/talents-rh', img: 'meeting' },
-  { title: 'ACCOMPAGNEMENT STRATÉGIQUE', desc: 'Conseil, structuration, transformation, croissance et performance.', color: 'red', to: '/accompagnement-evenements', img: 'team2' },
-  { title: 'ÉVÉNEMENTS & IMPACT', desc: 'Événements à fort impact, networking, emplois jeunes, entrepreneuriat féminin.', color: 'blue', to: '/accompagnement-evenements', img: 'event1' },
+  { title: 'ACCOMPAGNEMENT STRATÉGIQUE', desc: 'Conseil, structuration, transformation, croissance et performance.', color: 'red', to: '/accompagnement-evenements/accompagnement', img: 'team2' },
+  { title: 'ÉVÉNEMENTS & IMPACT', desc: 'Événements à fort impact, networking, emplois jeunes, entrepreneuriat féminin.', color: 'blue', to: '/accompagnement-evenements/networking', img: 'event1' },
 ];
 
 export const PARTNERS = [
@@ -65,7 +65,7 @@ export const DIGITAL_EXPERTISES = [
   { title: 'SaaS & Plateformes sur mesure', desc: 'Des plateformes web robustes et évolutives adaptées à vos processus et à vos utilisateurs.', icon: 'Monitor' },
   { title: 'Logiciels métiers & CRM', desc: 'Gestion commerciale, CRM, ERP, outils métiers : centralisez et automatisez vos opérations.', icon: 'FileSpreadsheet' },
   { title: 'Applications web & mobiles', desc: 'Applications intuitives et performantes pour web, iOS et Android.', icon: 'Smartphone' },
-  { title: 'Sites web & e-commerce', desc: 'Sites vitrines, e-commerce, landing pages : design moderne et expérience utilisateur optimale.', icon: 'ShoppingCart' },
+  { title: 'Sites web & e-commerce', desc: 'Sites vitrines, e-commerce, Landing Pages : design moderne et expérience utilisateur optimale.', icon: 'ShoppingCart' },
   { title: 'Hébergement & infrastructure', desc: 'Hébergement performant, sauvegardes, emails professionnels et haute disponibilité.', icon: 'Cloud' },
   { title: 'Sécurité & maintenance', desc: 'Sécurité avancée, mises à jour, surveillance et maintenance continue de vos solutions.', icon: 'ShieldCheck' },
 ];

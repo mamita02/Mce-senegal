@@ -1,241 +1,202 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
-  Globe, ShoppingCart, LayoutTemplate, Layers, ArrowRight, CheckCircle2,
-  Sparkles, Compass, PenTool, Code2, Rocket, LineChart, Calendar, FileText,
-  Palette, Smartphone, Zap, Search, Instagram, Megaphone,
+  ArrowRight, BadgeCheck, Check, ClipboardList, Code2, Eye, FileText, Gauge,
+  LayoutTemplate, MessageCircle, Palette, Rocket, Search, ShieldCheck,
+  ShoppingBag, Smartphone, Sparkles, Target,
 } from 'lucide-react';
 
-const TYPES = [
-  { key: 'vitrine',    icon: Globe,          label: 'Site vitrine',            desc: 'Une présence élégante qui inspire confiance et convertit.' },
-  { key: 'ecommerce',  icon: ShoppingCart,   label: 'E-commerce',              desc: 'Vendre en ligne avec fluidité, paiement local et international.' },
-  { key: 'landing',    icon: LayoutTemplate, label: 'Landing page',            desc: 'Une page pensée pour une campagne, un lancement, une conversion.' },
-  { key: 'plateforme', icon: Layers,         label: 'Plateforme web',          desc: 'Un espace client, un portail, un back-office – interface pro sur mesure.' },
+const WHATSAPP_URL = 'https://wa.me/221771234567';
+
+const serviceChips = [
+  'Landing Page', 'Site vitrine', 'E-commerce', 'Refonte de site', 'Responsive mobile',
 ];
 
-export default function SitesPlateformes() {
-  const [active, setActive] = useState('vitrine');
-  const activeType = TYPES.find((t) => t.key === active);
+const approachCards = [
+  { icon: LayoutTemplate, title: 'Structure claire', text: 'Une page pensée pour guider le visiteur vers les informations importantes et l’action attendue.' },
+  { icon: BadgeCheck, title: 'Crédibilité', text: 'Une présentation professionnelle pour rassurer vos prospects, partenaires et futurs clients.' },
+  { icon: Target, title: 'Conversion', text: 'Des appels à l’action visibles pour encourager une prise de contact ou une demande de devis.' },
+];
 
+const projectCards = [
+  {
+    title: 'Site vitrine',
+    text: 'Pour les entreprises, cabinets, ONG, institutions ou professionnels qui veulent présenter leur activité de manière complète et crédible.',
+    items: ['Nombre de pages à définir', 'Présentation services, équipe, références', 'Formulaire, WhatsApp, contact', 'Optimisation mobile'],
+    button: 'Commander un site vitrine',
+  },
+  {
+    title: 'Site e-commerce',
+    text: 'Pour les structures qui souhaitent vendre des produits ou services en ligne, avec catalogue, fiches produits, commandes ou paiement selon le besoin.',
+    items: ['Catalogue produits', 'Pages produits et catégories', 'Parcours commande', 'Options de paiement ou demande'],
+    button: 'Commander un site e-commerce',
+  },
+  {
+    title: 'Refonte de site',
+    text: "Pour moderniser un site existant, améliorer son image, corriger l'expérience mobile ou repositionner la communication.",
+    items: ["Audit rapide de l'existant", 'Nouvelle structure de pages', 'Amélioration design et contenu', "Optimisation de l'expérience utilisateur"],
+    button: 'Commander une refonte',
+  },
+];
+
+const features = [
+  { icon: FileText, title: 'Formulaire de contact', text: 'Collecte de demandes, devis, inscriptions ou messages clients.' },
+  { icon: MessageCircle, title: 'WhatsApp direct', text: 'Boutons visibles pour faciliter la prise de contact rapide.' },
+  { icon: ShoppingBag, title: 'Catalogue', text: 'Présentation de produits, services, offres ou réalisations.' },
+  { icon: Search, title: 'SEO de base', text: 'Structure claire, titres, textes et organisation adaptée au référencement.' },
+  { icon: Smartphone, title: 'Responsive mobile', text: 'Affichage adapté aux smartphones, tablettes et ordinateurs.' },
+  { icon: LayoutTemplate, title: 'Pages services', text: 'Création de pages détaillées pour chaque service ou activité.' },
+  { icon: ShieldCheck, title: 'Maintenance', text: 'Suivi, corrections, mises à jour et accompagnement technique.' },
+  { icon: Gauge, title: 'Hébergement', text: 'Accompagnement sur nom de domaine, hébergement et mise en ligne.' },
+];
+
+const processSteps = [
+  { icon: ClipboardList, title: 'Brief', text: "Nous clarifions l'objectif, la cible, l'offre, les contenus disponibles et le niveau de besoin." },
+  { icon: LayoutTemplate, title: 'Structure', text: "Nous organisons les sections, les messages clés, les appels à l'action et le parcours utilisateur." },
+  { icon: Palette, title: 'Design', text: 'Nous créons une interface claire, professionnelle, responsive et cohérente avec votre image.' },
+  { icon: Code2, title: 'Intégration', text: 'Nous intégrons les textes, images, boutons, formulaires, liens et éléments nécessaires.' },
+  { icon: Eye, title: 'Tests', text: "Nous vérifions l'affichage mobile, les liens, les boutons, les formulaires et les performances visibles." },
+  { icon: Rocket, title: 'Mise en ligne', text: 'Nous accompagnons la publication, les derniers ajustements et la prise en main si nécessaire.' },
+];
+
+function SectionHeading({ eyebrow, title, description }) {
   return (
-    <div className="pt-[72px]">
-      {/* HERO */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #fef3e6 0%, #fdf6f0 40%, #eefaff 100%)' }}>
-        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full" style={{ background: 'radial-gradient(circle, rgba(212,160,23,0.25) 0%, transparent 60%)' }} />
-        <div className="absolute -bottom-24 -right-24 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(8,145,178,0.20) 0%, transparent 60%)' }} />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm border border-mce-teal/20 text-mce-teal text-[11px] font-bold tracking-[0.25em]">
-              SOLUTIONS DIGITALES / SITES & PLATEFORMES
-            </div>
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] text-mce-navy">
-              Un site qui vous ressemble.<br />
-              Une plateforme qui vous <span className="text-mce-teal">fait avancer.</span>
+    <div className="mx-auto max-w-3xl text-center">
+      <span className="web-eyebrow">{eyebrow}</span>
+      <h2 className="mt-4 text-2xl font-black tracking-tight text-mce-navy md:text-[32px]">{title}</h2>
+      {description && <p className="mt-3 text-[13px] leading-6 text-mce-navy/60">{description}</p>}
+    </div>
+  );
+}
+
+function QuoteButton({ children, className = '' }) {
+  return <Link to="/contact?service=site-vitrine#formulaire-devis" className={`btn-primary rounded-full ${className}`}>{children}</Link>;
+}
+
+export default function SitesPlateformes() {
+  const [activeProject, setActiveProject] = useState(0);
+  const selectedProject = projectCards[activeProject];
+  return (
+    <main className="overflow-hidden bg-white pt-[72px]">
+      <section className="web-landing-hero relative min-h-[700px]">
+        <div className="web-grid absolute inset-0" />
+        <div className="web-orb web-orb-one" />
+        <div className="web-orb web-orb-two" />
+
+        <div className="relative mx-auto grid max-w-[1400px] items-center gap-14 px-6 py-20 lg:min-h-[700px] lg:grid-cols-2 lg:px-10">
+          <div className="web-enter">
+            <span className="web-eyebrow"><Sparkles className="h-3.5 w-3.5" /> SITES WEB & LANDING PAGES</span>
+            <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.05] tracking-[-.04em] text-mce-navy md:text-5xl xl:text-[62px]">
+              Une présence digitale <span className="text-mce-teal">claire</span>, crédible et conçue pour convertir.
             </h1>
-            <p className="mt-6 text-mce-navy/70 text-[15px] leading-relaxed max-w-2xl">
-              Sites vitrines, e-commerce, landing pages, plateformes web et interfaces professionnelles. Nous concevons des expériences digitales qui reflètent votre identité et servent vos objectifs.
+            <p className="mt-6 max-w-2xl text-[15px] leading-7 text-mce-navy/70 md:text-base">
+              MCE conçoit des Landing Pages, sites vitrines, boutiques e-commerce et pages professionnelles qui présentent votre activité, rassurent vos visiteurs et transforment leur attention en contacts et opportunités commerciales.
             </p>
-            <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/contact" className="btn-primary"><FileText className="w-4 h-4" /> DEMANDER UNE ÉTUDE DE PROJET</Link>
-              <a href="#types" className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-mce-navy/25 text-mce-navy font-semibold hover:bg-white transition-colors">
-                <Compass className="w-4 h-4" /> Découvrir nos formats
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <QuoteButton><FileText className="h-4 w-4" /> Demander une étude de projet</QuoteButton>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="web-secondary-button">
+                <MessageCircle className="h-4 w-4" /> WhatsApp MCE
               </a>
             </div>
-            <p className="mt-6 text-[12.5px] text-mce-navy/60 italic">Aucun tarif fixe. Chaque projet est étudié selon vos objectifs, vos fonctionnalités et vos besoins techniques.</p>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {serviceChips.map((service) => <a key={service} href="#offres" className="web-service-chip">{service}</a>)}
+            </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="relative">
-              {/* Browser mockup */}
-              <div className="rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden rotate-[-2deg]">
-                <div className="flex items-center gap-2 px-4 py-2.5 border-b border-gray-100 bg-gray-50">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                  <div className="ml-3 flex-1 rounded bg-white border border-gray-200 px-2 py-0.5 text-[10.5px] text-gray-400">votremarque.com</div>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-white to-gray-50">
-                  <div className="h-6 w-32 bg-mce-navy rounded mb-4" />
-                  <div className="h-4 w-3/4 bg-mce-navy/80 rounded mb-2" />
-                  <div className="h-4 w-1/2 bg-mce-teal rounded mb-6" />
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="h-16 rounded bg-mce-teal/10" />
-                    <div className="h-16 rounded bg-purple-500/10" />
-                    <div className="h-16 rounded bg-amber-400/20" />
-                  </div>
-                  <div className="h-9 w-32 bg-mce-teal rounded flex items-center justify-center text-white text-[11px] font-bold">DÉCOUVRIR</div>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white shadow-xl border border-gray-100 p-3 rotate-[6deg] w-40">
-                <Smartphone className="w-6 h-6 text-mce-teal mb-2" />
-                <div className="h-2 bg-mce-navy/80 rounded mb-1" />
-                <div className="h-2 bg-mce-navy/60 rounded w-2/3 mb-3" />
-                <div className="h-6 bg-mce-teal rounded" />
-              </div>
-            </div>
+          <div className="web-scene web-photo-scene relative hidden h-[480px] md:block" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=88" alt="" />
+            <div className="web-photo-caption"><LayoutTemplate/><span><b>Sites & plateformes</b><small>Design professionnel · Expérience fluide</small></span></div>
           </div>
         </div>
       </section>
 
-      {/* TYPES DE PROJETS - interactive tabs */}
-      <section id="types" className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-teal">CE QUE NOUS RÉALISONS</p>
-          <h2 className="section-title mt-3">Un format pour chaque objectif.</h2>
-          <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-3 mb-12" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-4 space-y-3">
-              {TYPES.map((t) => (
-                <button
-                  key={t.key}
-                  onClick={() => setActive(t.key)}
-                  className={`w-full text-left rounded-xl p-4 border transition-all flex items-center gap-3 ${active === t.key ? 'border-mce-teal bg-mce-teal/5 shadow-md' : 'border-gray-100 bg-white hover:border-mce-teal/40'}`}
-                >
-                  <div className={`w-11 h-11 rounded-lg flex items-center justify-center ${active === t.key ? 'bg-mce-teal text-white' : 'bg-gray-100 text-mce-navy'}`}>
-                    <t.icon className="w-5 h-5" />
-                  </div>
-                  <div className="flex-1">
-                    <p className={`font-bold text-[14px] ${active === t.key ? 'text-mce-teal' : 'text-mce-navy'}`}>{t.label}</p>
-                    <p className="text-[12px] text-mce-navy/60 mt-0.5">{t.desc}</p>
-                  </div>
-                  {active === t.key && <ArrowRight className="w-4 h-4 text-mce-teal" />}
-                </button>
-              ))}
-            </div>
-
-            <div className="lg:col-span-8">
-              <div className="rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 shadow-sm p-8 h-full">
-                <activeType.icon className="w-10 h-10 text-mce-teal" />
-                <h3 className="text-2xl font-black text-mce-navy mt-3">{activeType.label}</h3>
-                <p className="text-[14px] text-mce-navy/75 mt-2 leading-relaxed">{activeType.desc}</p>
-
-                {active === 'vitrine' && (
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mt-6">
-                    {['Design sur mesure & identité forte','SEO on-page & performance mobile','Formulaires & prise de contact','Blog & espace actualités','Multi-langue si besoin','Référencement local (Google)'].map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-[13px] text-mce-navy/85"><CheckCircle2 className="w-4 h-4 text-mce-teal" /> {f}</li>
-                    ))}
-                  </ul>
-                )}
-                {active === 'ecommerce' && (
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mt-6">
-                    {['Catalogue & fiches produits','Paiement Wave, Orange Money, CB','Livraison & suivi de commande','Gestion des stocks & promos','Espace client & fidélité','Emails transactionnels automatiques'].map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-[13px] text-mce-navy/85"><CheckCircle2 className="w-4 h-4 text-mce-teal" /> {f}</li>
-                    ))}
-                  </ul>
-                )}
-                {active === 'landing' && (
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mt-6">
-                    {['Focus sur une seule action','Copywriting orienté conversion','Preuves sociales & témoignages','A/B testing possible','Tracking & analytics','Déploiement rapide (2–4 semaines)'].map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-[13px] text-mce-navy/85"><CheckCircle2 className="w-4 h-4 text-mce-teal" /> {f}</li>
-                    ))}
-                  </ul>
-                )}
-                {active === 'plateforme' && (
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mt-6">
-                    {['Espaces utilisateurs & rôles','Back-office administrateur','API & intégrations tierces','Sécurité & authentification','Design system réutilisable','Scalabilité pensée dès le départ'].map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-[13px] text-mce-navy/85"><CheckCircle2 className="w-4 h-4 text-mce-teal" /> {f}</li>
-                    ))}
-                  </ul>
-                )}
-
-                <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between flex-wrap gap-3">
-                  <p className="text-[13px] text-mce-navy/70">Un projet en tête ? Parlons-en pour définir le périmètre idéal.</p>
-                  <Link to="/contact" className="btn-primary text-[12.5px]">DEMANDER UNE ÉTUDE <ArrowRight className="w-3.5 h-3.5" /></Link>
-                </div>
-              </div>
-            </div>
+      <section className="approach-section py-20">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <SectionHeading eyebrow="NOTRE APPROCHE" title="Un site ne doit pas seulement être beau. Il doit être utile." description="Un bon support web explique rapidement qui vous êtes, ce que vous proposez, pourquoi vous êtes crédible et comment vous contacter." />
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {approachCards.map(({ icon: Icon, title, text }) => <article key={title} className="web-card p-6"><span className="web-icon"><Icon className="h-5 w-5" /></span><h3 className="mt-5 font-extrabold text-mce-navy">{title}</h3><p className="mt-2 text-[13px] leading-6 text-mce-navy/60">{text}</p></article>)}
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h2 className="section-title mb-2">DE L’IDÉE AU <span className="text-mce-teal">LANCEMENT</span></h2>
-          <p className="text-center text-mce-navy/60 mb-12 text-[13.5px]">Une méthode simple, transparente, sans mauvaise surprise.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {[
-              { n: '01', title: 'Cadrage', desc: 'Objectifs, cibles, contenu, fonctionnalités.', icon: Compass, color: 'bg-mce-teal' },
-              { n: '02', title: 'Design', desc: 'Maquettes UI et parcours utilisateur.', icon: Palette, color: 'bg-purple-500' },
-              { n: '03', title: 'Développement', desc: 'Code propre, moderne, performant.', icon: Code2, color: 'bg-blue-500' },
-              { n: '04', title: 'Recette & mise en ligne', desc: 'Tests, corrections, publication.', icon: Rocket, color: 'bg-orange-500' },
-              { n: '05', title: 'Suivi', desc: 'Maintenance, évolutions, mesure.', icon: LineChart, color: 'bg-mce-gold' },
-            ].map((s) => (
-              <div key={s.n} className="rounded-xl bg-white border border-gray-100 shadow-sm p-5 text-center">
-                <div className={`w-12 h-12 rounded-xl ${s.color} text-white flex items-center justify-center mx-auto shadow-md`}>
-                  <s.icon className="w-5 h-5" />
-                </div>
-                <p className="text-[11px] font-bold text-mce-navy/50 mt-3">ÉTAPE {s.n}</p>
-                <h4 className="font-bold text-[14px] text-mce-navy mt-1">{s.title}</h4>
-                <p className="text-[12px] text-mce-navy/70 mt-2 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-[12px] tracking-[0.3em] font-bold text-mce-teal">POURQUOI MCE</p>
-            <h2 className="text-3xl md:text-[36px] font-black text-mce-navy leading-tight mt-3">Une agence qui pense produit, pas juste « site ».</h2>
-            <p className="text-mce-navy/70 text-[14px] mt-4 leading-relaxed">Nous ne livrons pas un template. Nous livrons un outil digital qui sert votre business, se maintient dans le temps, et évolue avec vous.</p>
-            <ul className="mt-6 space-y-3">
-              {[
-                { icon: Sparkles, t: 'Design distinctif', d: 'Chaque site est un projet unique, pas un modèle recyclé.' },
-                { icon: Zap, t: 'Performance mesurée', d: 'Vitesse, SEO, accessibilité – mesurés et optimisés.' },
-                { icon: Search, t: 'Pensé pour être trouvé', d: 'Bases SEO intégrées dès la conception.' },
-              ].map((f, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-mce-teal/10 flex items-center justify-center shrink-0"><f.icon className="w-5 h-5 text-mce-teal" /></div>
-                  <div><p className="font-bold text-[14px] text-mce-navy">{f.t}</p><p className="text-[12.5px] text-mce-navy/70 mt-1">{f.d}</p></div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative">
-            <div className="rounded-2xl bg-gradient-to-br from-mce-teal/10 via-white to-purple-500/10 p-8 border border-gray-100 shadow-sm">
-              <blockquote className="text-lg md:text-xl font-semibold text-mce-navy leading-snug">
-                « Un site web n’est pas une brochure. C’est un membre de votre équipe qui travaille 24/7. »
-              </blockquote>
-              <p className="mt-4 font-script text-2xl text-mce-teal">– L’équipe MCE</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Complementary services - discreet */}
-      <section className="pb-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="rounded-xl bg-gray-50 border border-gray-100 p-6 flex flex-col md:flex-row items-start md:items-center gap-4">
-            <div className="flex items-center gap-3">
-              <Instagram className="w-5 h-5 text-mce-navy/60" />
-              <Megaphone className="w-5 h-5 text-mce-navy/60" />
-            </div>
-            <p className="text-[13px] text-mce-navy/75 flex-1">
-              <span className="font-semibold text-mce-navy">Besoin de compléments ?</span> Nous proposons aussi, en prestations complémentaires, un accompagnement léger sur les réseaux sociaux et campagnes publicitaires – uniquement sur devis, en soutien de votre présence digitale.
+      <motion.section
+        id="offres"
+        className="landing-offer-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.25 }}
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
+      >
+        <div className="landing-offer-shell">
+          <motion.div
+            className="landing-offer-copy"
+            variants={{ hidden: { opacity: 0, x: -36, rotateY: 8 }, visible: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.7, ease: 'easeOut' } } }}
+          >
+            <h2>Landing Page<br />professionnelle</h2>
+            <p>
+              Une page unique, claire et efficace pour présenter rapidement votre activité, vos services,
+              vos informations essentielles et permettre aux visiteurs de vous contacter. C'est l'offre idéale
+              pour les TPE, artisans, commerçants, indépendants et porteurs de projets qui veulent une présence
+              digitale rapide et professionnelle.
             </p>
-            <Link to="/contact" className="text-mce-teal font-semibold text-[12.5px] inline-flex items-center gap-1">En parler <ArrowRight className="w-3.5 h-3.5" /></Link>
+            <motion.ul variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.09, delayChildren: 0.25 } } }}>
+              {[
+                'Présentation claire de votre activité, service ou offre.',
+                'Design responsive adapté ordinateur, tablette et mobile.',
+                'Boutons de contact, WhatsApp, email ou formulaire selon le besoin.',
+                'Structure professionnelle orientée visibilité et conversion.',
+                "Possibilité d'intégration à l'écosystème AMANYA selon le projet.",
+              ].map((item) => (
+                <motion.li
+                  key={item}
+                  variants={{ hidden: { opacity: 0, x: -18, z: -30 }, visible: { opacity: 1, x: 0, z: 0, transition: { duration: 0.42 } } }}
+                >
+                  <motion.span whileHover={{ rotateY: 180, scale: 1.08 }} transition={{ duration: 0.45 }}><Check /></motion.span>
+                  <strong>{item}</strong>
+                </motion.li>
+              ))}
+            </motion.ul>
+            <Link to="/contact?service=landing-page#formulaire-devis" className="landing-order-button">Commander une Landing Page</Link>
+          </motion.div>
+
+          <motion.aside
+            className="landing-price-card"
+            variants={{ hidden: { opacity: 0, x: 42, rotateY: -18, scale: 0.92 }, visible: { opacity: 1, x: 0, rotateY: 0, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}
+            whileHover={{ rotateY: -4, rotateX: 2, y: -7, scale: 1.015 }}
+            transition={{ type: 'spring', stiffness: 180, damping: 18 }}
+          >
+            <span className="landing-price-label">PRIX FIXE</span>
+            <motion.div className="landing-price" initial={{ scale: 0.92 }} whileInView={{ scale: 1 }} viewport={{ once: false }} transition={{ delay: 0.45, type: 'spring', stiffness: 220 }}><strong>65 000 <small>FCFA</small></strong></motion.div>
+            <p>Pack Landing Page pour une présence digitale simple, rapide et professionnelle.</p>
+            <Link to="/contact?service=landing-page#formulaire-devis">Demander un devis</Link>
+          </motion.aside>
+        </div>
+      </motion.section>
+
+      <section className="projects-section py-20">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <SectionHeading
+            eyebrow="PROJETS SUR DEVIS"
+            title="Sites vitrines, e-commerce et refontes : chaque projet est étudié selon le besoin"
+            description="MCE ne propose plus de prix fixes pour les sites vitrines, sites e-commerce et refontes. Chaque demande est analysée selon le volume de contenu, les fonctionnalités, le niveau de design, les intégrations et l'accompagnement attendu."
+          />
+          <div className="web-project-selector">
+            <div className="web-project-tabs" role="tablist" aria-label="Choisir un type de projet">{projectCards.map((project,index)=><button key={project.title} type="button" role="tab" aria-selected={activeProject===index} className={activeProject===index?'active':''} onClick={()=>setActiveProject(index)}><span>{[<LayoutTemplate/>,<ShoppingBag/>,<Palette/>][index]}</span><span><b>{project.title}</b><small>{index===0?'Une présence claire et crédible.':index===1?'Vendre en ligne avec fluidité.':'Moderniser votre présence digitale.'}</small></span><i>→</i></button>)}</div>
+            <article className="web-project-detail" role="tabpanel"><span className="project-quote-badge">SUR DEVIS</span><h3>{selectedProject.title}</h3><p>{selectedProject.text}</p><ul>{selectedProject.items.map(item=><li key={item}><Check/>{item}</li>)}</ul><div><p>Un projet en tête ? Définissons ensemble le périmètre idéal.</p><Link to={`/contact?service=${['site-vitrine','e-commerce','refonte-site'][activeProject]}#formulaire-devis`}>Demander une étude <ArrowRight/></Link></div></article>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-mce-navy text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-black leading-tight">Racontez-nous votre projet.</h3>
-            <p className="text-white/70 text-[14px] mt-2">Une étude offerte pour évaluer périmètre, durée et budget indicatif.</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-gold text-[12.5px]"><FileText className="w-4 h-4" /> DEMANDER UNE ÉTUDE DE PROJET</Link>
-            <Link to="/contact" className="btn-outline-light text-[12.5px]"><Calendar className="w-4 h-4" /> RENDEZ-VOUS</Link>
-          </div>
-        </div>
-      </section>
-    </div>
+      <section className="features-section bg-[#f4fbfc] py-20"><div className="mx-auto max-w-[1200px] px-6"><SectionHeading eyebrow="OPTIONS POSSIBLES" title="Des fonctionnalités adaptées selon le niveau du projet" description="Les projets sur devis peuvent intégrer différentes options selon les objectifs : visibilité, vente, collecte de prospects, présentation institutionnelle ou intégration à un outil existant." /><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{features.map(({ title, text }) => <article key={title} className="web-card p-6"><h3 className="text-lg font-extrabold leading-tight text-mce-navy">{title}</h3><p className="mt-4 text-[13px] leading-6 text-mce-navy/60">{text}</p></article>)}</div></div></section>
+
+      <section className="method-section py-20"><div className="mx-auto max-w-[1200px] px-6"><SectionHeading eyebrow="MÉTHODE MCE" title="Une création structurée, étape par étape" description="Que ce soit pour une Landing Page ou un projet plus complet sur devis, MCE suit une méthode claire pour cadrer, concevoir et livrer un support exploitable." /><div className="method-flow mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{processSteps.map(({ icon: Icon, title, text }) => <article key={title} className="web-card method-card flex gap-4 p-5"><span className="web-step"><Icon className="h-4 w-4" /></span><div><h3 className="text-sm font-extrabold text-mce-navy">{title}</h3><p className="mt-2 text-xs leading-5 text-mce-navy/55">{text}</p></div></article>)}</div></div></section>
+
+      <aside className="web-complementary"><span>En complément, MCE peut accompagner certains projets sur les réseaux sociaux ou la publicité digitale, uniquement sur devis.</span></aside>
+
+      <section className="web-footer-transition" aria-hidden="true"><div className="transition-orbit transition-orbit-one" /><div className="transition-orbit transition-orbit-two" /><div className="transition-line"><span /></div></section>
+    </main>
   );
 }

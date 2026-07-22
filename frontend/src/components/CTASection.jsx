@@ -13,7 +13,7 @@ export default function CTASection({ title, subtitle }) {
           </div>
           <CTAItem icon={<Calendar className="w-5 h-5" />} title="PRENDRE RENDEZ-VOUS" sub="(Calendly) Échange découverte offert" color="bg-purple-500" to="/contact" />
           <CTAItem icon={<FileText className="w-5 h-5" />} title="DEMANDER UN DEVIS" sub="Réponse rapide – Étude personnalisée" color="bg-mce-teal" to="/contact" />
-          <CTAItem icon={<MessageCircle className="w-5 h-5" />} title="ÉCRIRE SUR WHATSAPP" sub="Réponse immédiate. Nous sommes disponibles" color="bg-green-500" to="/contact" />
+          <CTAItem icon={<MessageCircle className="w-5 h-5" />} title="ÉCRIRE SUR WHATSAPP" sub="Réponse immédiate. Nous sommes disponibles" color="bg-green-500" to="https://wa.me/221771234567" />
         </div>
       </div>
     </section>
@@ -21,13 +21,14 @@ export default function CTASection({ title, subtitle }) {
 }
 
 function CTAItem({ icon, title, sub, color, to }) {
-  return (
-    <Link to={to} className="flex items-start gap-3 group">
+  const content = <>
       <div className={`${color} w-10 h-10 rounded-lg flex items-center justify-center shrink-0`}>{icon}</div>
       <div className="min-w-0">
         <div className="text-[13px] font-bold flex items-center gap-1 group-hover:text-mce-gold transition-colors">{title} <ArrowRight className="w-3.5 h-3.5 opacity-70" /></div>
         <div className="text-[11.5px] text-white/70 leading-snug">{sub}</div>
       </div>
-    </Link>
-  );
+    </>;
+  return to.startsWith('http')
+    ? <a href={to} target="_blank" rel="noreferrer" className="flex items-start gap-3 group">{content}</a>
+    : <Link to={to} className="flex items-start gap-3 group">{content}</Link>;
 }

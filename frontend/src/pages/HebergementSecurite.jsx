@@ -5,6 +5,7 @@ import {
   ArrowRight, CheckCircle2, Calendar, MessageCircle, TrendingUp, HeartPulse,
   Clock, Eye, Zap, Users,
 } from 'lucide-react';
+import MobileCarouselControls from '../components/MobileCarouselControls';
 
 export default function HebergementSecurite() {
   return (
@@ -26,7 +27,7 @@ export default function HebergementSecurite() {
         <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full" style={{ background: 'radial-gradient(circle, rgba(8,145,178,0.35) 0%, transparent 60%)', filter: 'blur(60px)' }} />
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7">
+          <div className="hosting-hero-copy lg:col-span-7 lg:order-2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mce-teal/15 border border-mce-teal/40 text-mce-teal text-[11px] font-bold tracking-[0.25em]">
               SOLUTIONS DIGITALES / HÉBERGEMENT & SÉCURITÉ
             </div>
@@ -38,8 +39,8 @@ export default function HebergementSecurite() {
               Hébergement performant, sauvegardes automatiques, sécurité avancée, mises à jour, monitoring et support technique. MCE reste à vos côtés bien au-delà de la mise en ligne.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/contact" className="btn-primary"><Calendar className="w-4 h-4" /> ÉVALUER MON INFRASTRUCTURE</Link>
-              <a href="#offres" className="btn-outline-light">VOIR LES SERVICES <ArrowRight className="w-4 h-4" /></a>
+              <Link to="/contact?service=maintenance-securite#formulaire-devis" className="btn-primary"><Calendar className="w-4 h-4" /> ÉVALUER MON INFRASTRUCTURE</Link>
+              <a href="#tarifs-hebergement" className="btn-outline-light">VOIR NOS SERVICES <ArrowRight className="w-4 h-4" /></a>
             </div>
 
             {/* Live status strip */}
@@ -56,33 +57,15 @@ export default function HebergementSecurite() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            {/* Shield illustration */}
-            <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-64 h-64 rounded-full bg-mce-teal/10 blur-2xl" />
-              </div>
-              <div className="relative w-72 h-72 rounded-3xl bg-gradient-to-br from-mce-teal/20 to-white/5 border border-mce-teal/30 flex items-center justify-center">
-                <ShieldCheck className="w-32 h-32 text-mce-teal" strokeWidth={1.4} />
-                {[
-                  { icon: Cloud,       pos: '-top-4 left-8' },
-                  { icon: LockKeyhole, pos: 'top-8 -right-4' },
-                  { icon: RefreshCcw,  pos: '-bottom-4 right-10' },
-                  { icon: Bell,        pos: 'bottom-10 -left-4' },
-                ].map((n, i) => (
-                  <div key={i} className={`absolute ${n.pos} w-12 h-12 rounded-xl bg-white shadow-xl flex items-center justify-center`}>
-                    <n.icon className="w-5 h-5 text-mce-navy" />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="hosting-hero-image lg:col-span-5 lg:order-1">
+            <img src="/assets/hosting-security-hero.jpg" alt="Architecture de sécurité, chiffrement, cloud et supervision" />
           </div>
         </div>
       </section>
 
       {/* PROMISE STRIP */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className="hosting-promise-strip">
+        <div className="hosting-promise-panel grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { icon: Activity,   value: '99,95%',   label: 'Uptime garanti' },
             { icon: RefreshCcw, value: '24/7',     label: 'Sauvegardes' },
@@ -207,7 +190,7 @@ export default function HebergementSecurite() {
                 <p className="text-[12.5px] text-mce-navy/60 mt-0.5">Un interlocuteur unique · Des rapports clairs · Des interventions rapides</p>
               </div>
             </div>
-            <Link to="/contact" className="btn-gold text-[12.5px] shrink-0">
+            <Link to="/contact?service=maintenance-securite#formulaire-devis" className="btn-gold text-[12.5px] shrink-0">
               <Calendar className="w-4 h-4" /> RÉSERVER UN ÉCHANGE
             </Link>
           </div>
@@ -258,6 +241,28 @@ export default function HebergementSecurite() {
         </div>
       </section>
 
+      <PlanSection
+        id="tarifs-hebergement"
+        title="Packs d'hébergement"
+        description="Nos packs d'hébergement sont conçus pour offrir à votre site web une base fiable, rapide et sécurisée. Ils garantissent une disponibilité optimale, de bonnes performances et une protection adaptée."
+        plans={[
+          ['STANDARD','Pack Hébergement','Pour démarrer avec une base fiable et simple.',['Nom de domaine gratuit','30 000 visites mensuelles','10 Go de stockage SSD','SSL gratuit illimité'],'49 000 FCFA / an','hebergement-standard'],
+          ['PREMIUM','Pack Hébergement','Pour les sites en croissance qui reçoivent plus de trafic.',['Nom de domaine gratuit','100 000 visites mensuelles','50 Go de stockage SSD','SSL gratuit & illimité'],'59 000 FCFA / an','hebergement-premium'],
+          ['PLATINIUM','Pack Hébergement','Idéal pour les PME en croissance et entrepreneurs ambitieux nécessitant une solution complète.',['Nom de domaine gratuit','500 000 visites mensuelles','100 Go de stockage SSD','SSL gratuit & illimité'],'Sur devis','hebergement-platinium'],
+        ]}
+      />
+      <PlanSection
+        id="tarifs-maintenance"
+        title="Pack Maintenance et Sécurité"
+        description="Nos packs maintenance et sécurité sont pensés pour assurer la protection, la stabilité et le bon fonctionnement de votre site web sur le long terme : surveillance, mises à jour et prévention des pannes."
+        tinted
+        plans={[
+          ['ESSENTIEL','Sécurité de base','Jusqu’à 10 services. La protection indispensable pour tout site.',['Wordfence Premium installé et configuré','Scan antivirus automatique','Pare-feu actif 24/7','Protection brute force','Blocage bots malveillants','Alertes sécurité critiques']],
+          ['PRO','Maintenance + Sécurité avancée','Tout le pack Essentiel inclus, avec un niveau de sécurité supérieur.',['Scan antivirus quotidien','2FA pour administrateurs','Analyse manuelle par MCE en cas d’alerte','Nettoyage préliminaire si suspicion d’infection','Rapport sécurité annuel personnalisé','Priorité support sécurité']],
+          ['SÉRÉNITÉ','Maintenance totale + Sécurité premium',"La tranquillité complète pour les sites qui ne peuvent pas se permettre d'interruption.",['Wordfence Premium & firewall optimisé max','Scan antivirus quotidien + surveillance active','Nettoyage malware (1 intervention/an incluse)','Audit annuel complet (sécurité + performance)','Détection des changements critiques','Protection renforcée e-commerce']],
+        ]}
+      />
+
       {/* CTA */}
       <section className="py-16" style={{ background: 'linear-gradient(90deg, #0a1e3a 0%, #0f2340 100%)' }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6 text-white">
@@ -266,11 +271,16 @@ export default function HebergementSecurite() {
             <p className="text-white/70 text-[14px] mt-2">On évalue gratuitement votre infrastructure et on propose la meilleure formule.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary"><Calendar className="w-4 h-4" /> ÉVALUATION GRATUITE</Link>
-            <Link to="/contact" className="btn-outline-light"><MessageCircle className="w-4 h-4" /> WHATSAPP</Link>
+            <Link to="/contact?service=maintenance-securite#formulaire-devis" className="btn-primary"><Calendar className="w-4 h-4" /> ÉVALUATION GRATUITE</Link>
+            <a href="https://wa.me/221771234567" target="_blank" rel="noreferrer" className="btn-outline-light"><MessageCircle className="w-4 h-4" /> WHATSAPP</a>
           </div>
         </div>
       </section>
     </div>
   );
+}
+
+function PlanSection({ id, title, description, plans, tinted = false }) {
+  const targetId = tinted ? 'maintenance-plans-carousel' : 'hosting-plans-carousel';
+  return <section id={id} className={`hosting-plans py-20 ${tinted ? 'hosting-plans-tinted' : 'bg-white'}`}><div className="max-w-[1200px] mx-auto px-6"><header><span>NOS TARIFS</span><h2>{title}</h2><p>{description}</p></header><div id={targetId} className="hosting-plan-grid">{plans.map(([tier,name,desc,items,price='Sur devis',service='maintenance-securite'],index)=><article key={tier} className={index===1?'featured':''}><div><span>{tier}</span>{index===1&&<b>RECOMMANDÉ</b>}</div><h3>{name}</h3><strong>{price}</strong><p>{desc}</p><ul>{items.map(x=><li key={x}><CheckCircle2/>{x}</li>)}</ul><Link to={`/contact?service=${service}#formulaire-devis`}>Demander un devis</Link></article>)}</div><MobileCarouselControls targetId={targetId}/></div></section>;
 }

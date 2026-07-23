@@ -1,11 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import {
-  Monitor, GraduationCap, Briefcase, PartyPopper, Calendar, FileText, CheckCircle2,
-  Globe, AlertTriangle, ArrowRight, Users, Star, Award,
-  Cloud, MessageCircle, Building2, MapPin,
+  AlertTriangle, ArrowRight,
+  Briefcase,
+  Calendar,
+  CheckCircle2,
+  Cloud,
+  FileText,
+  Globe,
+  GraduationCap,
+  MessageCircle,
+  Monitor,
+  PartyPopper,
+  Star,
+  Users
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { IMG } from '../mock';
+
+// Injection de la police Playfair Display (élégante et raffinée)
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+  
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+`;
+if (typeof document !== 'undefined') {
+  document.head.appendChild(styleSheet);
+}
 
 export default function Home() {
   return (
@@ -25,29 +51,41 @@ export default function Home() {
           className="absolute inset-0"
           style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0) 60%, rgba(5,15,34,0.35) 100%)' }}
         />
-        {/* WHITE overlay: opaque left -> transparent right */}
+        {/* WHITE overlay: responsive - léger sur mobile, dégradé sur desktop */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background: 'rgba(255, 255, 255, 0.7)', // Overlay visible sur toute l'écran mobile pour lisibilité
+          }}
+        />
+        <div
+          className="absolute inset-0 hidden lg:block"
           style={{
             background:
-              'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 40%, rgba(255,255,255,0.55) 62%, rgba(255,255,255,0) 82%)',
+              'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0.96) 40%, rgba(110, 98, 98, 0.55) 62%, rgba(81, 160, 235, 0) 82%)',
           }}
         />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-14 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 fade-up">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]" style={{ borderColor: 'rgba(8,145,178,0.6)', color: '#22d3ee' }}>
+            {/* Badge - Bleu foncé élégant du catalogue MCE */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border text-[11.5px] font-bold tracking-[0.2em]" style={{ borderColor: 'rgba(0,26,61,0.6)', color: '#001a3d' }}>
               CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; ÉVÉNEMENTIEL
             </span>
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight text-white">
+            
+            {/* Titre - Bleu foncé élégant */}
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight" style={{ color: '#001a3d' }}>
               Des solutions concrètes<br />
               pour transformer<br />
               <span className="text-mce-gold">vos ambitions en résultats.</span>
             </h1>
-            <p className="mt-6 text-white/85 text-[15px] leading-relaxed max-w-2xl">
+            
+            {/* Description - Bleu foncé avec opacité */}
+            <p className="mt-6 text-[15px] leading-relaxed max-w-2xl" style={{ color: '#001a3d', opacity: 0.85 }}>
               MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure,
               humaines et performantes.
             </p>
 
+            {/* Tags - Bleu foncé élégant */}
             <div className="flex flex-wrap gap-2.5 mt-7">
               {[
                 { icon: Monitor, label: 'Digital & SaaS' },
@@ -57,22 +95,24 @@ export default function Home() {
               ].map((c, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white/10 border border-white/20 text-white text-[12.5px] font-semibold hover:bg-white/15 transition-colors"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md text-[12.5px] font-semibold transition-colors"
+                  style={{ backgroundColor: 'rgba(0, 26, 61, 0.08)', border: '1px solid rgba(0, 26, 61, 0.25)', color: '#001a3d' }}
                 >
-                  <c.icon className="w-4 h-4" style={{ color: '#22d3ee' }} /> {c.label}
+                  <c.icon className="w-4 h-4" style={{ color: '#001a3d' }} /> {c.label}
                 </span>
               ))}
             </div>
 
+            {/* Boutons - Bleu foncé élégant */}
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/contact" className="btn-primary">
+              <Link to="/contact" className="btn-primary inline-flex items-center gap-3 px-5 py-3 rounded-md transition-all" style={{ backgroundColor: '#001a3d', color: '#ffffff' }}>
                 <Calendar className="w-4 h-4" />
                 <span className="flex flex-col items-start leading-tight text-left">
                   <span>PRENDRE RENDEZ-VOUS</span>
                   <span className="text-[10.5px] font-normal opacity-80">(Calendly)</span>
                 </span>
               </Link>
-              <Link to="/contact" className="btn-outline-light">
+              <Link to="/contact" className="btn-outline-light inline-flex items-center gap-3 px-5 py-3 rounded-md transition-all border" style={{ borderColor: '#001a3d', color: '#001a3d', backgroundColor: 'transparent' }}>
                 <FileText className="w-4 h-4" />
                 <span className="flex flex-col items-start leading-tight text-left">
                   <span>DEMANDER UN DEVIS</span>
@@ -81,7 +121,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-[13px] text-white/85">
+            <div className="mt-6 flex items-center gap-2 text-[13px]" style={{ color: 'rgba(0, 26, 61, 0.9)' }}>
               <CheckCircle2 className="w-4 h-4 text-mce-gold" />
               Un interlocuteur unique. Des solutions multiples.
             </div>

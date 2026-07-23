@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Check, CheckCircle2, Cloud, Code2, Database, FileText,
-  Gauge, LayoutTemplate, Monitor, Rocket, Server, ShieldCheck, Sparkles,
+  Gauge, LayoutTemplate, Monitor, Rocket, Server, ShieldCheck,
   Workflow,
 } from 'lucide-react';
 import { IMG } from '../mock';
@@ -44,9 +44,7 @@ export default function SolutionsDigitales() {
       <img src="/assets/solutions-digitales-hero.jpg" alt="Écosystème technologique professionnel sur ordinateur, tablette et mobile" />
       <div className="digital-hub-overlay" />
       <div className="digital-hero-centered relative mx-auto max-w-[1200px] px-6 py-24 lg:py-32">
-        <span className="digital-hub-badge"><Sparkles /> SOLUTIONS DIGITALES</span>
         <h1>Des solutions tech<br />pour des entreprises <em>performantes.</em></h1>
-        <p>MCE conçoit des solutions concrètes, évolutives et sécurisées pour digitaliser vos opérations, mieux servir vos clients et accélérer votre performance.</p>
         <div className="digital-hero-actions"><a href="#expertises" className="btn-primary rounded-full">Découvrir nos solutions <ArrowRight /></a><Link to="/contact#formulaire-devis" className="btn-outline-light rounded-full"><FileText /> Demander un devis</Link></div>
       </div>
     </section>

@@ -1,53 +1,68 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import {
-  Monitor, GraduationCap, Briefcase, PartyPopper, Calendar, FileText, CheckCircle2,
-  Globe, AlertTriangle, ArrowRight, Users, Star, Award,
-  Cloud, MessageCircle, Building2, MapPin,
+  AlertTriangle, ArrowRight,
+  Briefcase,
+  Calendar,
+  CheckCircle2,
+  Cloud,
+  FileText,
+  Globe,
+  GraduationCap,
+  MessageCircle,
+  Monitor,
+  PartyPopper,
+  Star,
+  Users
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { IMG } from '../mock';
+import heroImage from '../assets/hero.jpeg';
 
 export default function Home() {
   return (
     <div className="pt-[72px]">
       {/* ===================== HERO ===================== */}
-      <section className="relative overflow-hidden text-mce-navy" style={{ backgroundColor: '#ffffff' }}>
+      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#ffffff' }}>
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/hwoxv3xw_hero.png')",
+            backgroundImage: `url(${heroImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        {/* subtle right-side darkening for image clarity */}
+        {/* Overlay sombre pour garantir la lisibilité du texte blanc */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0) 60%, rgba(5,15,34,0.35) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(0,26,61,0.75) 0%, rgba(0,26,61,0.55) 55%, rgba(0,26,61,0.25) 100%)' }}
         />
-        {/* WHITE overlay: opaque left -> transparent right */}
+        {/* Overlay mobile : plus dense pour la lisibilité */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 lg:hidden"
           style={{
-            background:
-              'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 40%, rgba(255,255,255,0.55) 62%, rgba(255,255,255,0) 82%)',
+            background: 'rgba(0, 26, 61, 0.65)',
           }}
         />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-14 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 fade-up">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-mce-teal/60 text-mce-teal text-[11.5px] font-bold tracking-[0.2em]" style={{ borderColor: 'rgba(8,145,178,0.6)', color: '#22d3ee' }}>
+            {/* Badge - Blanc */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border text-[11.5px] font-bold tracking-[0.2em]" style={{ borderColor: 'rgba(255,255,255,0.6)', color: '#ffffff' }}>
               CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; ÉVÉNEMENTIEL
             </span>
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight text-white">
+
+            {/* Titre - Blanc */}
+            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight" style={{ color: '#ffffff' }}>
               Des solutions concrètes<br />
               pour transformer<br />
               <span className="text-mce-gold">vos ambitions en résultats.</span>
             </h1>
-            <p className="mt-6 text-white/85 text-[15px] leading-relaxed max-w-2xl">
+
+            {/* Description - Blanc */}
+            <p className="mt-6 text-[15px] leading-relaxed max-w-2xl" style={{ color: '#ffffff', opacity: 0.9 }}>
               MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure,
               humaines et performantes.
             </p>
 
+            {/* Tags - Blanc */}
             <div className="flex flex-wrap gap-2.5 mt-7">
               {[
                 { icon: Monitor, label: 'Digital & SaaS' },
@@ -57,22 +72,24 @@ export default function Home() {
               ].map((c, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-white/10 border border-white/20 text-white text-[12.5px] font-semibold hover:bg-white/15 transition-colors"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md text-[12.5px] font-semibold transition-colors"
+                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.35)', color: '#ffffff' }}
                 >
-                  <c.icon className="w-4 h-4" style={{ color: '#22d3ee' }} /> {c.label}
+                  <c.icon className="w-4 h-4" style={{ color: '#ffffff' }} /> {c.label}
                 </span>
               ))}
             </div>
 
+            {/* Boutons */}
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/contact" className="btn-primary">
+              <Link to="/contact" className="btn-primary inline-flex items-center gap-3 px-5 py-3 rounded-md transition-all" style={{ backgroundColor: '#ffffff', color: '#001a3d' }}>
                 <Calendar className="w-4 h-4" />
                 <span className="flex flex-col items-start leading-tight text-left">
                   <span>PRENDRE RENDEZ-VOUS</span>
                   <span className="text-[10.5px] font-normal opacity-80">(Calendly)</span>
                 </span>
               </Link>
-              <Link to="/contact" className="btn-outline-light">
+              <Link to="/contact" className="btn-outline-light inline-flex items-center gap-3 px-5 py-3 rounded-md transition-all border" style={{ borderColor: '#ffffff', color: '#ffffff', backgroundColor: 'transparent' }}>
                 <FileText className="w-4 h-4" />
                 <span className="flex flex-col items-start leading-tight text-left">
                   <span>DEMANDER UN DEVIS</span>
@@ -81,7 +98,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-[13px] text-white/85">
+            <div className="mt-6 flex items-center gap-2 text-[13px]" style={{ color: 'rgba(255, 255, 255, 0.95)' }}>
               <CheckCircle2 className="w-4 h-4 text-mce-gold" />
               Un interlocuteur unique. Des solutions multiples.
             </div>

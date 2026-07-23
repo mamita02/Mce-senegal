@@ -7,139 +7,146 @@ import {
   FileText,
   Globe,
   GraduationCap,
+  MapPin,
   MessageCircle,
-  Monitor,
-  PartyPopper,
+  Sparkles,
   Star,
   Users
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { IMG } from '../mock';
-import heroImage from '../assets/hero.jpeg';
+import heroImage from '../assets/hero.png';
 
 export default function Home() {
   return (
     <div className="pt-[72px]">
       {/* ===================== HERO ===================== */}
-      <section className="relative overflow-hidden text-white" style={{ backgroundColor: '#ffffff' }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundColor: '#ffffff', minHeight: '620px' }}
+      >
+        {/* Image de fond en COVER, décalée légèrement à gauche */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: '75% center',
+            backgroundRepeat: 'no-repeat',
           }}
         />
-        {/* Overlay sombre pour garantir la lisibilité du texte blanc */}
+
+        {/* Voile blanc dégradé sur la gauche pour la lisibilité du texte */}
         <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(90deg, rgba(0,26,61,0.75) 0%, rgba(0,26,61,0.55) 55%, rgba(0,26,61,0.25) 100%)' }}
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 40%, rgba(255,255,255,0.4) 62%, rgba(255,255,255,0) 82%)',
+          }}
         />
-        {/* Overlay mobile : plus dense pour la lisibilité */}
+
+        {/* Sur mobile : voile blanc semi-opaque global (texte lisible partout) */}
         <div
           className="absolute inset-0 lg:hidden"
-          style={{
-            background: 'rgba(0, 26, 61, 0.65)',
-          }}
+          style={{ background: 'rgba(255,255,255,0.78)' }}
         />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-14 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-14 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* ============ COLONNE GAUCHE ============ */}
           <div className="lg:col-span-7 fade-up">
-            {/* Badge - Blanc */}
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full border text-[11.5px] font-bold tracking-[0.2em]" style={{ borderColor: 'rgba(255,255,255,0.6)', color: '#ffffff' }}>
+            {/* Badge pill */}
+            <span
+              className="inline-flex items-center px-5 py-2 rounded-full border text-[11px] font-bold tracking-[0.2em]"
+              style={{
+                borderColor: 'rgba(0,26,61,0.5)',
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                color: '#001a3d',
+              }}
+            >
               CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; ÉVÉNEMENTIEL
             </span>
 
-            {/* Titre - Blanc */}
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05] tracking-tight" style={{ color: '#ffffff' }}>
-              Des solutions concrètes<br />
-              pour transformer<br />
-              <span className="text-mce-gold">vos ambitions en résultats.</span>
+            {/* Titre */}
+            <h1
+              className="mt-6 text-3xl md:text-4xl lg:text-[42px] font-black leading-[1.1] tracking-tight"
+              style={{ color: '#001a3d' }}
+            >
+              Des solutions concrètes pour transformer{' '}
+              <span className="text-mce-teal">vos ambitions en résultats.</span>
             </h1>
 
-            {/* Description - Blanc */}
-            <p className="mt-6 text-[15px] leading-relaxed max-w-2xl" style={{ color: '#ffffff', opacity: 0.9 }}>
+            {/* Description */}
+            <p
+              className="mt-5 text-[15px] leading-relaxed max-w-2xl"
+              style={{ color: '#001a3d', opacity: 0.8 }}
+            >
               MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure,
-              humaines et performantes.
+              humaines et performantes pour un impact durable.
             </p>
-
-            {/* Tags - Blanc */}
-            <div className="flex flex-wrap gap-2.5 mt-7">
-              {[
-                { icon: Monitor, label: 'Digital & SaaS' },
-                { icon: GraduationCap, label: 'Formation & RH' },
-                { icon: Briefcase, label: 'Accompagnement' },
-                { icon: PartyPopper, label: 'Événements & Networking' },
-              ].map((c, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md text-[12.5px] font-semibold transition-colors"
-                  style={{ backgroundColor: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.35)', color: '#ffffff' }}
-                >
-                  <c.icon className="w-4 h-4" style={{ color: '#ffffff' }} /> {c.label}
-                </span>
-              ))}
-            </div>
 
             {/* Boutons */}
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link to="/contact" className="btn-primary inline-flex items-center gap-3 px-5 py-3 rounded-md transition-all" style={{ backgroundColor: '#ffffff', color: '#001a3d' }}>
-                <Calendar className="w-4 h-4" />
-                <span className="flex flex-col items-start leading-tight text-left">
-                  <span>PRENDRE RENDEZ-VOUS</span>
-                  <span className="text-[10.5px] font-normal opacity-80">(Calendly)</span>
-                </span>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
+              >
+                <FileText className="w-4 h-4 text-mce-teal" />
+                Demander un devis
               </Link>
-              <Link to="/contact" className="btn-outline-light inline-flex items-center gap-3 px-5 py-3 rounded-md transition-all border" style={{ borderColor: '#ffffff', color: '#ffffff', backgroundColor: 'transparent' }}>
-                <FileText className="w-4 h-4" />
-                <span className="flex flex-col items-start leading-tight text-left">
-                  <span>DEMANDER UN DEVIS</span>
-                  <span className="text-[10.5px] font-normal opacity-80">Réponse rapide</span>
-                </span>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide border-2 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.95)',
+                  borderColor: '#001a3d',
+                  color: '#001a3d',
+                }}
+              >
+                <Calendar className="w-4 h-4 text-mce-teal" />
+                Prendre rendez-vous
               </Link>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-[13px]" style={{ color: 'rgba(255, 255, 255, 0.95)' }}>
-              <CheckCircle2 className="w-4 h-4 text-mce-gold" />
-              Un interlocuteur unique. Des solutions multiples.
+            {/* 3 points de réassurance */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+              {[
+                {
+                  icon: CheckCircle2,
+                  title: 'Un interlocuteur unique',
+                  sub: 'Des solutions multiples',
+                },
+                {
+                  icon: Sparkles,
+                  title: 'Accompagnement',
+                  sub: 'sur mesure',
+                },
+                {
+                  icon: MapPin,
+                  title: 'Présent en France,',
+                  sub: 'Sénégal et Maroc',
+                },
+              ].map((r, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <r.icon className="w-5 h-5 text-mce-teal shrink-0 mt-0.5" />
+                  <div className="text-[12.5px] leading-tight" style={{ color: '#001a3d' }}>
+                    <div className="font-semibold">{r.title}</div>
+                    <div className="opacity-70">{r.sub}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative fade-up hidden lg:block">
-            <div className="space-y-4">
-              <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-5 py-4 shadow-xl">
-                <div className="flex items-center gap-2 text-[12px] font-bold tracking-[0.2em] text-white">
-                  <Globe className="w-4 h-4 text-mce-gold" />
-                  FRANCE &middot; SÉNÉGAL &middot; MAROC
-                </div>
-                <p className="text-[12px] text-white/80 mt-2 leading-relaxed">
-                  Une présence internationale<br />au service de votre croissance.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
-                  <div className="text-3xl font-black leading-none" style={{ color: '#22d3ee' }}>+1000</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Talents accompagnés</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
-                  <div className="text-3xl font-black leading-none" style={{ color: '#22d3ee' }}>+200</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Projets menés avec succès</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
-                  <div className="text-3xl font-black text-white leading-none">20+</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Années d&rsquo;expertise</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-xl p-4">
-                  <div className="text-3xl font-black text-mce-gold leading-none">98%</div>
-                  <p className="text-[11.5px] text-white/80 mt-2">Clients satisfaits</p>
-                </div>
-              </div>
-            </div>
+          {/* ============ COLONNE DROITE (espace laissé à l'image de fond) ============ */}
+          <div className="lg:col-span-5 relative hidden lg:block min-h-[500px]">
+            {/* volontairement vide : le background image occupe cet espace */}
           </div>
         </div>
 
-        {/* gold wave */}
+        {/* Vague dorée en pied de hero */}
         <div className="relative">
-          <svg viewBox="0 0 1440 40" className="w-full h-8" preserveAspectRatio="none">
+          <svg viewBox="0 0 1440 40" className="w-full h-10" preserveAspectRatio="none">
             <path d="M0,20 Q360,0 720,20 T1440,20 L1440,40 L0,40 Z" fill="#d4a017" />
           </svg>
         </div>

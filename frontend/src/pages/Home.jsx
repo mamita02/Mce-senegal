@@ -329,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* ===================== PARTENAIRES ===================== */}
-      <section className="pb-16 bg-white">
+      <section className="pb-0 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           
           <h2 className="section-title mt-3 text-center">

@@ -67,7 +67,6 @@ export default function Contact() {
         <div className="contact-hero-image absolute inset-0" style={{ backgroundImage: `url('${IMG.meeting}')` }} />
         <div className="absolute inset-0 bg-gradient-to-r from-mce-navy via-mce-navy/85 to-transparent" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-20">
-          <p className="text-[12px] tracking-[0.3em] font-bold text-mce-teal">CONTACT</p>
           <h1 className="mt-4 text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.05] max-w-3xl">
             Parlons de votre projet.<br />
             <span className="text-mce-gold">Ensemble, créons de l’impact.</span>

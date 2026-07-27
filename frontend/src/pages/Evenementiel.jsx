@@ -162,9 +162,6 @@ export default function Evenementiel() {
       {/* ========================================================= */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-teal">
-            NOTRE PRÉSENCE
-          </p>
           <h2 className="section-title mt-3 text-center">
             Trois pays, <span className="text-mce-teal">une expertise locale</span>.
           </h2>
@@ -228,9 +225,6 @@ export default function Evenementiel() {
       {/* ========================================================= */}
       <section className="pb-16 lg:pb-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-teal">
-            NOTRE OFFRE
-          </p>
           <h2 className="section-title mt-3 text-center">Nos prestations.</h2>
           <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-3 mb-12" />
 

@@ -13,6 +13,7 @@ import MCEPartenaires from './pages/MCEPartenaires';
 import Contact from './pages/Contact';
 import AccompagnementStrategique from './pages/AccompagnementStrategique';
 import NetworkingEvenements from './pages/NetworkingEvenements';
+import Evenementiel from './pages/Evenementiel';
 import EventsImpactOverview from './pages/EventsImpactOverview';
 import Academy from './pages/Academy';
 import RecrutementRH from './pages/RecrutementRH';
@@ -75,6 +76,7 @@ function App() {
           <Route path="/accompagnement-evenements" element={<EventsImpactOverview />} />
           <Route path="/accompagnement-evenements/accompagnement" element={<AccompagnementStrategique />} />
           <Route path="/accompagnement-evenements/networking" element={<NetworkingEvenements />} />
+          <Route path="/accompagnement-evenements/evenementiel" element={<Evenementiel />} />
           <Route path="/mce-partenaires" element={<MCEPartenaires />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

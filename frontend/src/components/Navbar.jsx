@@ -31,6 +31,7 @@ const NAV_LINKS = [
     submenu: [
       { label: 'Accompagnement stratégique', to: '/accompagnement-evenements/accompagnement', desc: 'Structuration, développement, vente et partenariats', icon: Compass },
       { label: 'Événements professionnels & networking', to: '/accompagnement-evenements/networking', desc: 'Rencontres, emploi, conférences, ateliers et impact', icon: Network },
+      { label: 'Événementiel', to: '/accompagnement-evenements/evenementiel', desc: 'Organisation, planification et exécution d\'événements', icon: Calendar },
     ],
   },
   { label: 'MCE & Partenaires', to: '/mce-partenaires' },

@@ -72,7 +72,7 @@ export default function SolutionsDigitales() {
     </section>
 
     <section className="py-14 bg-white digital-tech-slider">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-6"><div className="flex items-center justify-between flex-wrap gap-3"><p className="text-[11px] tracking-[0.35em] font-bold text-mce-navy">TECHNOLOGIES MAÎTRISÉES</p><p className="text-[11px] tracking-[0.35em] font-bold text-mce-navy/70">PARTENAIRES TECHNOLOGIQUES</p></div></div>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-6"><div className="flex items-center justify-between flex-wrap gap-3"><p className="text-[11px] tracking-[0.35em] font-bold text-mce-navy">NOS TECHNOLOGIES</p><p className="text-[11px] tracking-[0.35em] font-bold text-mce-navy/70">PARTENAIRES TECHNOLOGIQUES</p></div></div>
       <div className="marquee-mask overflow-hidden"><div className="marquee-track">{[...technologies,...technologies].map(([name,color],i)=><div key={`${name}-${i}`} className="flex items-center gap-3 shrink-0 px-2"><div className="w-11 h-11 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center shadow-sm"><Code2 className="w-5 h-5" style={{color}}/></div><span className="text-[16px] font-bold" style={{color}}>{name}</span></div>)}</div></div>
     </section>
 

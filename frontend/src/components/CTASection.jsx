@@ -29,6 +29,6 @@ function CTAItem({ icon, title, sub, color, to }) {
       </div>
     </>;
   return to.startsWith('http')
-    ? <a href={to} target="_blank" rel="noreferrer" className="flex items-start gap-3 group">{content}</a>
+    ? <a href={to} target="_blank" rel="noreferrer" className={`flex items-start gap-3 group ${to.includes('wa.me') ? 'footer-whatsapp-cta' : ''}`}>{content}</a>
     : <Link to={to} className="flex items-start gap-3 group">{content}</Link>;
 }

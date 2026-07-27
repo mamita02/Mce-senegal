@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <img
-              src="https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/g2pp2993_image.png"
+              src="/assets/mce-logo-transparent.png"
               alt="MCE Sénégal"
               className="h-12 w-auto brightness-125 mb-4"
             />

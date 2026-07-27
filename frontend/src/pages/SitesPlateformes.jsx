@@ -86,7 +86,6 @@ export default function SitesPlateformes() {
 
         <div className="relative mx-auto grid max-w-[1400px] items-center gap-14 px-6 py-20 lg:min-h-[700px] lg:grid-cols-2 lg:px-10">
           <div className="web-enter">
-            <span className="web-eyebrow"><Sparkles className="h-3.5 w-3.5" /> SITES WEB & LANDING PAGES</span>
             <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.05] tracking-[-.04em] text-mce-navy md:text-5xl xl:text-[62px]">
               Une présence digitale <span className="text-mce-teal">claire</span>, crédible et conçue pour convertir.
             </h1>
@@ -171,7 +170,11 @@ export default function SitesPlateformes() {
             <span className="landing-price-label">PRIX FIXE</span>
             <motion.div className="landing-price" initial={{ scale: 0.92 }} whileInView={{ scale: 1 }} viewport={{ once: false }} transition={{ delay: 0.45, type: 'spring', stiffness: 220 }}><strong>65 000 <small>FCFA</small></strong></motion.div>
             <p>Pack Landing Page pour une présence digitale simple, rapide et professionnelle.</p>
-            <Link to="/contact?service=landing-page#formulaire-devis">Demander un devis</Link>
+            <div className="landing-price-highlight" aria-label="Tarif exceptionnel">
+              <span>OFFRE EXCEPTIONNELLE</span>
+              <i aria-hidden="true" />
+              <b>Un tarif clair, sans surprise</b>
+            </div>
           </motion.aside>
         </div>
       </motion.section>

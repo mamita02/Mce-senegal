@@ -1,126 +1,184 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Target, Eye, Gem, Users, ShieldCheck, Heart, Puzzle, BarChart3, Globe, ArrowRight, Star, Calendar, FileText, MessageCircle } from 'lucide-react';
-import { IMG, VALUES, REASONS, PARTNERS } from '../mock';
+import {
+  ArrowRight, BarChart3, BriefcaseBusiness, Check, Eye, Gem, Globe, GraduationCap, Heart,
+  Landmark, Mic2, Monitor, Network, Puzzle, Rocket, ShieldCheck, Target,
+  Users,
+} from 'lucide-react';
+import { IMG, REASONS } from '../mock';
 import CTASection from '../components/CTASection';
 
 const ICONS = { Target, Eye, Gem, Users, ShieldCheck, Heart, Puzzle, BarChart3, Globe };
 
+const FOUNDER_POINTS = [
+  'Après plus de 20 ans entre management, développement commercial, recrutement et leadership stratégique en France et au Maroc, Mounia Amane a créé MCE avec une conviction claire : les organisations grandissent mieux lorsqu’elles investissent dans l’humain, dans la structuration et dans l’innovation.',
+  'MCE développe des passerelles entre la France, le Sénégal, le Maroc et l’Afrique de l’Ouest pour structurer les compétences, professionnaliser les organisations, accompagner l’emploi, l’entrepreneuriat et la transformation digitale.',
+  'MCE ne propose pas des solutions génériques : elle crée des parcours concrets et sur mesure : formation, accompagnement RH, recrutement, coaching, outils digitaux, mise en réseau, entrepreneuriat féminin, employabilité des jeunes et initiatives diasporas.',
+];
+
+const FOUNDATIONS = [
+  ['NOTRE VISION', 'Devenir le connecteur de référence entre l’Europe, le Maroc et l’Afrique de l’Ouest pour les talents et la transformation des organisations.', Eye],
+  ['NOTRE MISSION', 'Apporter des solutions concrètes aux entreprises, institutions, ONG, écoles, universités et entrepreneurs pour structurer, former, recruter, digitaliser et accélérer leur croissance.', Target],
+  ['NOS VALEURS', 'Excellence, transmission, proximité, innovation, inclusion et impact mesurable.', Gem],
+];
+
+const SOLUTIONS = [
+  ['FORMATION & MCE ACADEMY', 'Des parcours de formation certifiants et sur mesure pour monter en compétences, structurer et faire évoluer les organisations.', GraduationCap],
+  ['TALENTS & RH', 'Recrutement, évaluation, formation continue et développement des compétences pour libérer le potentiel humain.', Users],
+  ['ACCOMPAGNEMENT STRATÉGIQUE', 'Conseil et appui stratégique pour structurer, piloter et transformer durablement les organisations.', Target],
+  ['SOLUTIONS DIGITALES', 'Outils et solutions digitales pour optimiser les processus, améliorer la performance et accélérer la transformation.', Monitor],
+  ['ÉVÉNEMENTS & IMPACT', 'Conférences, forums, ateliers et campagnes à fort impact pour inspirer, connecter et mobiliser les écosystèmes.', Mic2],
+];
+
+const COUNTRIES = [
+  {
+    name: 'FRANCE',
+    role: 'Siège & Direction\nStratégie, partenariats internationaux',
+    flag: '/assets/mce-about/flag-france-v2.jpg',
+    accent: '#146B99',
+    items: ['Conseil stratégique & accompagnement des entreprises', 'Solutions digitales & communication', 'Formations & développement des talents', 'Mise en réseau & partenariats'],
+  },
+  {
+    name: 'SÉNÉGAL',
+    role: 'Hub Afrique de l’Ouest\nOpérations & Impact',
+    flag: '/assets/mce-about/flag-senegal-v2.jpg',
+    accent: '#0F8B83',
+    items: ['Accompagnement des PME & start-up', 'Développement des compétences et formations', 'Événements, networking & impact social', 'Recrutement & placement de talents'],
+  },
+  {
+    name: 'MAROC',
+    role: 'Partenariats &\nDéveloppement Régional',
+    flag: '/assets/mce-about/flag-maroc-v2.jpg',
+    accent: '#E45B2E',
+    items: ['Conseil & accompagnement stratégique', 'Transformation digitale & communication', 'Partenariats institutionnels & privés', 'Programmes de formation & RH'],
+  },
+];
+
 export default function MCEPartenaires() {
   return (
-    <div className="pt-[72px]">
-      {/* HERO */}
-      <section className="relative overflow-hidden hero-navy-gradient text-white">
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url('${IMG.heroPartners}')`, backgroundSize: 'cover', backgroundPosition: 'right center' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-mce-navy via-mce-navy/85 to-transparent" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-8">
-            <h1 className="text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05]">
-              QUI SOMMES-NOUS ?<br />
-              UNE VISION. UNE ÉQUIPE.<br />
-              <span className="text-mce-gold">UN IMPACT.</span>
-            </h1>
-            <p className="mt-6 text-white/85 text-[14.5px] max-w-2xl leading-relaxed">
-              MCE accompagne depuis plus de 20 ans les entreprises, organisations et talents dans leur transformation et leur croissance. Notre force : l’alliance de l’expertise, de l’humain et de l’innovation.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 max-w-3xl">
-              {VALUES.map((v, i) => {
-                const Ico = ICONS[v.icon];
-                return (
-                  <div key={i}>
-                    <Ico className="w-8 h-8 text-mce-gold" />
-                    <p className="text-[12.5px] font-bold mt-2">{v.title}</p>
-                    <p className="text-[11.5px] text-white/70 mt-1 leading-tight">{v.desc}</p>
-                  </div>
-                );
-              })}
+    <main className="pt-[72px] mce-about-page">
+      <section className="founder-section">
+        <div className="founder-shell">
+          <figure>
+            <img src="/assets/mce-about/mounia-amane-v2.jpg" alt="Mounia Amane, Fondatrice et Directrice Générale de MCE Group" />
+            <figcaption><strong>Mounia Amane</strong><span>Fondatrice & Directrice Générale – MCE Group</span></figcaption>
+          </figure>
+          <div className="founder-copy">
+            <span>LE MOT DE LA FONDATRICE</span>
+            <h2>Le capital humain <em>au cœur d’une</em> croissance durable.</h2>
+            <div className="founder-points">
+              {FOUNDER_POINTS.map((text, index) => <article key={text}><i>{index + 1}</i><p>{text}</p></article>)}
             </div>
           </div>
-
-          <div className="lg:col-span-4 space-y-4">
-            <div className="bg-mce-navy-3/60 backdrop-blur rounded-xl p-5 border border-white/10">
-              <div className="flex items-center gap-3"><Globe className="w-6 h-6 text-mce-gold" /><div><p className="text-2xl font-black">3 PAYS</p><p className="text-[12px] text-white/70">France · Sénégal · Maroc</p></div></div>
-            </div>
-            <div className="bg-mce-navy-3/60 backdrop-blur rounded-xl p-5 border border-white/10">
-              <div className="flex items-center gap-3"><Users className="w-6 h-6 text-mce-gold" /><div><p className="text-2xl font-black">+1000</p><p className="text-[12px] text-white/70">Talents formés, recrutés et accompagnés</p></div></div>
-            </div>
-            <div className="bg-mce-navy-3/60 backdrop-blur rounded-xl p-5 border border-white/10">
-              <div className="flex items-center gap-3"><Star className="w-6 h-6 text-mce-gold" /><div><p className="text-2xl font-black">+200</p><p className="text-[12px] text-white/70">Projets menés avec succès</p></div></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Founder quote card centered */}
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pb-16 -mt-6">
-          <div className="bg-white text-mce-navy rounded-2xl p-6 shadow-2xl max-w-lg">
-            <p className="text-5xl text-mce-gold leading-none">“</p>
-            <p className="text-[14px] leading-relaxed -mt-2">Donner aux organisations les moyens d’agir aujourd’hui pour construire leur succès de demain.</p>
-            <p className="font-script text-3xl text-mce-navy mt-4">Mounia Amane</p>
-            <p className="text-[12px] text-mce-navy/60">Fondatrice & Directrice Générale<br />MCE GROUP</p>
+          <blockquote>« Notre rôle est de révéler les potentiels, de créer des passerelles et de transformer les ambitions en leviers de performance et d’impact. »</blockquote>
+          <div className="founder-foundations">
+            {FOUNDATIONS.map(([title, text, Icon]) => <article key={title}><Icon /><h3>{title}</h3><p>{text}</p></article>)}
           </div>
         </div>
       </section>
 
-      {/* PARTNERS */}
-      <section className="py-20">
+      <section className="mce-presentation">
+        <div className="mce-about-container">
+          <header>
+            <h2>MCE, un partenaire de structuration, de <em>transformation</em> et d’<em>impact.</em></h2>
+            <p>Depuis plus de 20 ans, MCE accompagne entreprises, PME, institutions, ONG, écoles, universités, entrepreneurs, jeunes et femmes porteuses de projet avec des solutions concrètes pour développer les talents, renforcer les organisations et accélérer une croissance durable et inclusive.</p>
+          </header>
+          <div className="mce-solutions-title"><span>UN ÉCOSYSTÈME DE SOLUTIONS</span><b>AU SERVICE DE LA CROISSANCE</b></div>
+          <div className="mce-solutions-grid">
+            {SOLUTIONS.map(([title, text, Icon], index) => <article key={title} style={{ '--solution-index': index }}><Icon /><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="presence-section">
+        <div className="mce-about-container">
+          <div className="presence-header-grid">
+            <header>
+              <h2>NOTRE PRÉSENCE<br /><span>INTERNATIONALE</span></h2>
+              <b>Trois régions clés. Une vision globale.<br />Un impact local.</b>
+              <i />
+              <p>MCE intervient en France, au Sénégal et au Maroc pour accompagner les entreprises, institutions et talents dans leurs projets de développement.</p>
+            </header>
+            <figure className="presence-flags">
+              <img src="/assets/mce-about/international-flags-v2.png" alt="Drapeaux de la France, du Sénégal et du Maroc" />
+            </figure>
+          </div>
+
+          <div className="presence-map-row">
+            <figure className="presence-map">
+              <img src="/assets/mce-about/international-map-v2.png" alt="Carte de la présence internationale de MCE" />
+            </figure>
+            <aside className="presence-expertise">
+              <Globe />
+              <p>Une expertise locale,<br />une vision globale,<br />des solutions adaptées<br />à chaque marché.</p>
+            </aside>
+          </div>
+
+          <div className="presence-country-grid">
+            {COUNTRIES.map(country => (
+              <article key={country.name} style={{ '--country-accent': country.accent }}>
+                <div className="presence-country-title">
+                  <span><Landmark /></span>
+                  <img src={country.flag} alt={`Drapeau ${country.name}`} />
+                  <div><h3>{country.name}</h3><p>{country.role}</p></div>
+                </div>
+                <ul>{country.items.map(item => <li key={item}><Check />{item}</li>)}</ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="presence-principles">
+            <article><Landmark /><b>UNE APPROCHE MULTICULTURELLE</b><p>Comprendre chaque contexte pour agir efficacement.</p></article>
+            <article><Target /><b>DES SOLUTIONS SUR-MESURE</b><p>Adaptées aux réalités locales et aux ambitions internationales.</p></article>
+            <article><Network /><b>UN RÉSEAU SOLIDE</b><p>Entreprises, institutions, experts et talents partout où nous sommes.</p></article>
+            <article><BarChart3 /><b>UN IMPACT DURABLE</b><p>Créer de la valeur, générer des opportunités et bâtir des relations de confiance.</p></article>
+          </div>
+
+          <div className="presence-stats">
+            <div className="presence-stats-intro">MCE, votre partenaire<br />de proximité pour des<br />projets à portée mondiale.<i /></div>
+            <article><Globe /><b>3</b><span>PAYS<br />D’IMPLANTATION</span></article>
+            <article><Users /><b>+200</b><span>CLIENTS<br />ACCOMPAGNÉS</span></article>
+            <article><BriefcaseBusiness /><b>+50</b><span>PARTENAIRES<br />STRATÉGIQUES</span></article>
+            <article><BarChart3 /><b>100%</b><span>ENGAGEMENT POUR<br />VOS SUCCÈS</span></article>
+            <div className="presence-mobile-landmarks" aria-label="Présence de MCE en France, au Sénégal et au Maroc">
+              <figure><img src="/assets/mce-about/mobile-france.jpg" alt="Tour Eiffel, France" /><figcaption>FRANCE</figcaption></figure>
+              <figure><img src="/assets/mce-about/mobile-senegal.jpg" alt="Monument de la Renaissance africaine, Sénégal" /><figcaption>SÉNÉGAL</figcaption></figure>
+              <figure><img src="/assets/mce-about/mobile-maroc.jpg" alt="Mosquée Hassan II, Maroc" /><figcaption>MAROC</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <h2 className="section-title mb-12">NOS <span className="text-mce-gold">PARTENAIRES</span> CLÉS</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'KEBA CONSULTING', desc: 'Conseil en management, leadership et transformation organisationnelle.', img: IMG.team2, color: 'blue' },
-              { name: 'WOMEN BUILD AFRICA', desc: "Promouvoir l’entrepreneuriat féminin, l’inclusion et l’impact social à travers des actions concrètes.", img: IMG.women1, color: 'red' },
-              { name: 'SPARCK PROJECT', desc: 'Innovation, digital et développement de projets à fort impact pour un avenir durable.', img: IMG.coding, color: 'teal' },
-            ].map((p, i) => (
-              <div key={i} className="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden card-hover">
-                <div className="h-40 overflow-hidden"><img src={p.img} alt={p.name} className="w-full h-full object-cover" /></div>
-                <div className="p-5">
-                  <h3 className="font-black text-[16px] text-mce-navy">{p.name}</h3>
-                  <p className="text-[13px] text-mce-navy/70 mt-2 leading-relaxed">{p.desc}</p>
-                  <button className="mt-4 text-mce-teal font-bold text-[12.5px] inline-flex items-center gap-2 hover:gap-3 transition-all">DÉCOUVRIR LE PARTENARIAT <ArrowRight className="w-3.5 h-3.5" /></button>
-                </div>
-              </div>
+              { name: 'KEBA CONSULTING', desc: 'Conseil en management, leadership et transformation organisationnelle.', img: IMG.team2 },
+              { name: 'WOMEN BUILD AFRICA', desc: 'Promouvoir l’entrepreneuriat féminin, l’inclusion et l’impact social à travers des actions concrètes.', img: IMG.women1 },
+              { name: 'SPARCK PROJECT', desc: 'Innovation, digital et développement de projets à fort impact pour un avenir durable.', img: IMG.coding },
+            ].map((partner) => (
+              <article key={partner.name} className="mce-partner-card">
+                <img src={partner.img} alt={partner.name} />
+                <div><h3>{partner.name}</h3><p>{partner.desc}</p><button>DÉCOUVRIR LE PARTENARIAT <ArrowRight /></button></div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Ecosystem strip */}
-      <section className="pb-16">
+      <section className="mce-reasons">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <h3 className="text-center section-title text-lg mb-8">UN <span className="text-mce-teal">ÉCOSYSTÈME</span> DE PARTENAIRES ENGAGÉS</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-            {PARTNERS.map((p) => (
-              <div key={p.name} className="text-center opacity-80 hover:opacity-100 transition-opacity p-4 rounded-lg">
-                <div className="text-[13px] font-black tracking-widest text-mce-navy">{p.name}</div>
-                <p className="text-[11px] text-mce-navy/60 mt-2 whitespace-pre-line">{p.tagline}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Reasons */}
-      <section className="py-16 bg-amber-50/50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-6 items-center">
-            <div className="md:col-span-2">
-              <p className="font-black text-[15px] text-mce-navy leading-tight">POURQUOI CHOISIR MCE ?<br /><span className="text-mce-gold">PLUS QU’UN PRESTATAIRE, UN VRAI PARTENAIRE.</span></p>
-            </div>
-            {REASONS.map((r, i) => {
-              const Ico = ICONS[r.icon];
-              return (
-                <div key={i} className="text-center md:text-left">
-                  <Ico className="w-7 h-7 text-mce-gold mb-2" />
-                  <p className="font-bold text-[13px] text-mce-navy leading-tight">{r.title}</p>
-                  <p className="text-[11.5px] text-mce-navy/60 mt-1 leading-tight">{r.desc}</p>
-                </div>
-              );
+          <header className="mce-reasons-heading"><b>POURQUOI CHOISIR MCE ?</b><span>PLUS QU’UN PRESTATAIRE, UN VRAI PARTENAIRE.</span></header>
+          <div className="mce-reasons-grid">
+            {REASONS.map((reason) => {
+              const Icon = ICONS[reason.icon];
+              return <article key={reason.title}><Icon /><b>{reason.title}</b><p>{reason.desc}</p></article>;
             })}
           </div>
         </div>
       </section>
 
       <CTASection title="ENSEMBLE, CRÉONS L’AVENIR" subtitle="DE VOTRE ORGANISATION." />
-    </div>
+    </main>
   );
 }

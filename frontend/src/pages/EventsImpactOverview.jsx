@@ -7,7 +7,7 @@ export default function EventsImpactOverview(){return <main className="pt-[72px]
   <section className="impact-hero">
     <div className="impact-aurora"/><div className="impact-grid-bg"/>
     <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-6 lg:grid-cols-2">
-      <div className="impact-hero-copy"><span><Sparkles/> ÉVÉNEMENTS & IMPACT</span><h1>Faire avancer les projets.<br/><em>Faire se rencontrer les personnes.</em></h1><p>Deux façons de créer de l’impact : structurer une activité avec méthode, ou réunir les bonnes personnes autour d’une expérience professionnelle utile.</p><div><a href="#deux-parcours" className="impact-primary">Découvrir les deux parcours <ArrowRight/></a><Link to="/contact">Parler de votre projet</Link></div></div>
+      <div className="impact-hero-copy"><h1>Faire avancer les projets.<br/><em>Faire se rencontrer les personnes.</em></h1><p>Deux façons de créer de l’impact : structurer une activité avec méthode, ou réunir les bonnes personnes autour d’une expérience professionnelle utile.</p><div><a href="#deux-parcours" className="impact-primary">Découvrir les deux parcours <ArrowRight/></a><Link to="/contact">Parler de votre projet</Link></div></div>
       <div className="impact-motion" aria-hidden="true"><div className="impact-node impact-idea"><Target/><b>IDÉE</b></div><div className="impact-node impact-method"><Compass/><b>MÉTHODE</b></div><div className="impact-node impact-people"><Users/><b>CONNEXIONS</b></div><div className="impact-core"><Sparkles/><b>IMPACT</b></div><svg viewBox="0 0 500 430"><path d="M95 95 C190 45 245 180 260 210"/><path d="M410 95 C310 40 290 165 260 210"/><path d="M90 345 C180 400 235 280 260 210"/></svg><i/><i/><i/></div>
     </div>
   </section>

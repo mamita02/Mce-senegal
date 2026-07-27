@@ -55,7 +55,7 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur shadow-sm' : 'bg-white/85 backdrop-blur'}`}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
         <Link to="/" className="flex items-center gap-2 group">
-          <img src="https://customer-assets-gfyr7b9c.emergentagent.net/job_web-design-complete-1/artifacts/g2pp2993_image.png" alt="MCE Sénégal" className="h-11 w-auto" />
+          <img src="/assets/mce-logo-transparent.png" alt="MCE Sénégal" className="h-11 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

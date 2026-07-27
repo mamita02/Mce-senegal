@@ -28,9 +28,6 @@ export default function HebergementSecurite() {
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="hosting-hero-copy lg:col-span-7 lg:order-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mce-teal/15 border border-mce-teal/40 text-mce-teal text-[11px] font-bold tracking-[0.25em]">
-              SOLUTIONS DIGITALES / HÉBERGEMENT & SÉCURITÉ
-            </div>
             <h1 className="mt-6 text-4xl md:text-5xl lg:text-[54px] font-black leading-[1.05]">
               Livrer, c’est bien.<br />
               <span className="text-mce-teal">Accompagner dans la durée</span>, c’est mieux.

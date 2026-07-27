@@ -16,7 +16,7 @@ const FOUNDER_POINTS = [
 ];
 
 const FOUNDATIONS = [
-  ['NOTRE VISION', 'Devenir le connecteur de référence entre l’Europe, le Maroc et l’Afrique de l’Ouest pour les talents et la transformation des organisations.', Eye],
+  ['votre VISION', 'Devenir le connecteur de référence entre l’Europe, le Maroc et l’Afrique de l’Ouest pour les talents et la transformation des organisations.', Eye],
   ['NOTRE MISSION', 'Apporter des solutions concrètes aux entreprises, institutions, ONG, écoles, universités et entrepreneurs pour structurer, former, recruter, digitaliser et accélérer leur croissance.', Target],
   ['NOS VALEURS', 'Excellence, transmission, proximité, innovation, inclusion et impact mesurable.', Gem],
 ];

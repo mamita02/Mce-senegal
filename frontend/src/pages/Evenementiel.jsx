@@ -43,7 +43,7 @@ import inspi1 from '../assets/networking/inspi1.jpeg';
 import inspi2 from '../assets/networking/inspi2.jpeg';
 import inspi3 from '../assets/networking/inspi3.jpeg';
 import inspi4 from '../assets/networking/inspi4.jpeg';
-import inspi5 from '../assets/networking/inspi5.jpeg';
+import inspi5 from '../assets/networking/women2.jpg';
 import inspi6 from '../assets/networking/inspi6.jpeg';
 import inspi7 from '../assets/networking/inspi7.jpeg';
 import inspi8 from '../assets/networking/inspi8.jpeg';

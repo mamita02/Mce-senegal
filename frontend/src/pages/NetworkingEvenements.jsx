@@ -19,7 +19,7 @@ import MobileCarouselControls from '../components/MobileCarouselControls';
 // 🖼️ Images de la pile photo — section "NOTRE INTENTION"
 import photoStack1 from '../assets/networking/event1.jpeg'; // Forum Bâtisseurs — audience
 import photoStack2 from '../assets/networking/event2.jpeg'; // Soirée networking — groupe
-import photoStack3 from '../assets/networking/event3.jpg';  // Femmes leaders — portrait
+import photoStack3 from '../assets/networking/women2.jpg';  // Femmes leaders — portrait
 
 const formats = [
   ['Networking entrepreneurial', 'Créer des connexions utiles entre entrepreneurs, dirigeants, experts, investisseurs et partenaires.', Network],

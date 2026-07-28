@@ -68,26 +68,21 @@ export default function Galerie() {
         <div className="mce-gallery-orb mce-gallery-orb-two" aria-hidden="true" />
         <div className="mce-about-container">
           <header className="gallery-library-head">
-            <div><span>EXPLOREZ LIBREMENT</span><h2>Choisissez une ambiance.</h2></div>
-            <p><b>{visible.length}</b> image{visible.length > 1 ? 's' : ''} à découvrir</p>
+            <div><h2>Explorez les moments forts de MCE.</h2><p>Choisissez une catégorie et découvrez les projets, les rencontres et les énergies qui font vivre notre écosystème.</p></div>
           </header>
-          <nav className="mce-gallery-filters gallery-sticky-filters" aria-label="Filtrer la galerie">
-            {FILTERS.map(([item,Icon]) => <button key={item} type="button" className={filter===item?'active':''} onClick={()=>{setFilter(item);if(item!=='Partenaires')setPartnerFilter('Tous les partenaires')}} aria-pressed={filter===item}><Icon />{item}</button>)}
-            <AnimatePresence>
-              {(filter !== 'Tous' || partnerFilter !== 'Tous les partenaires') && (
-                <motion.button
-                  type="button"
-                  className="gallery-reset-filter"
-                  initial={{opacity:0,scale:.75,width:0}}
-                  animate={{opacity:1,scale:1,width:'auto'}}
-                  exit={{opacity:0,scale:.75,width:0}}
-                  onClick={()=>{setFilter('Tous');setPartnerFilter('Tous les partenaires')}}
-                >
-                  <X /> Réinitialiser
-                </motion.button>
-              )}
-            </AnimatePresence>
-          </nav>
+          <div className="gallery-filter-row">
+            <nav className="mce-gallery-filters gallery-sticky-filters" aria-label="Filtrer la galerie">
+              {FILTERS.map(([item,Icon]) => <button key={item} type="button" className={filter===item?'active':''} onClick={()=>{setFilter(item);if(item!=='Partenaires')setPartnerFilter('Tous les partenaires')}} aria-pressed={filter===item}><Icon />{item}</button>)}
+              <AnimatePresence>
+                {(filter !== 'Tous' || partnerFilter !== 'Tous les partenaires') && (
+                  <motion.button type="button" className="gallery-reset-filter" initial={{opacity:0,scale:.75,width:0}} animate={{opacity:1,scale:1,width:'auto'}} exit={{opacity:0,scale:.75,width:0}} onClick={()=>{setFilter('Tous');setPartnerFilter('Tous les partenaires')}}>
+                    <X /> Réinitialiser
+                  </motion.button>
+                )}
+              </AnimatePresence>
+            </nav>
+            <p className="gallery-image-count"><b>{visible.length}</b> image{visible.length > 1 ? 's' : ''} à découvrir</p>
+          </div>
           <AnimatePresence>
             {filter === 'Partenaires' && (
               <motion.nav className="gallery-partner-filters" aria-label="Filtrer par partenaire" initial={{opacity:0,y:-12,height:0}} animate={{opacity:1,y:0,height:'auto'}} exit={{opacity:0,y:-8,height:0}}>

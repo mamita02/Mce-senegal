@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ArrowRight, BarChart3, BriefcaseBusiness, Check, Eye, Gem, Globe, GraduationCap, Heart,
+  ArrowRight, BarChart3, BriefcaseBusiness, Check, Eye, FileText, Gem, Globe, GraduationCap, Heart,
   Landmark, Mic2, Monitor, Network, Puzzle, Rocket, ShieldCheck, Target,
   Users,
 } from 'lucide-react';
@@ -63,7 +63,7 @@ export default function MCEPartenaires() {
             <figcaption><strong>Mounia Amane</strong><span>Fondatrice & Directrice Générale – MCE Group</span></figcaption>
           </figure>
           <div className="founder-copy">
-            <span>LE MOT DE LA FONDATRICE</span>
+            <span className="mce-section-pill">LE MOT DE LA FONDATRICE</span>
             <h2>Le capital humain <em>au cœur d’une</em> croissance durable.</h2>
             <div className="founder-points">
               {FOUNDER_POINTS.map((text, index) => <article key={text}><i>{index + 1}</i><p>{text}</p></article>)}
@@ -85,6 +85,34 @@ export default function MCEPartenaires() {
           <div className="mce-solutions-title"><span>UN ÉCOSYSTÈME DE SOLUTIONS</span><b>AU SERVICE DE LA CROISSANCE</b></div>
           <div className="mce-solutions-grid">
             {SOLUTIONS.map(([title, text, Icon], index) => <article key={title} style={{ '--solution-index': index }}><Icon /><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="mce-upcoming-project">
+        <div className="mce-about-container">
+          <div className="mce-upcoming-copy">
+            <span className="mce-section-pill mce-pill-upcoming">UN PROJET MCE EN PRÉPARATION</span>
+            <h2>DocManya, une plateforme documentaire bientôt disponible.</h2>
+            <p>
+              Pensée et développée par MCE, DocManya permettra aux équipes de centraliser leurs
+              documents, d’organiser les accès, de suivre les validations et de retrouver
+              rapidement les informations utiles. Ce futur outil illustre la volonté de MCE de
+              transformer des besoins métiers concrets en solutions numériques simples et
+              exploitables.
+            </p>
+            <div className="mce-upcoming-tags">
+              <span>Gestion documentaire</span>
+              <span>Accès par rôles</span>
+              <span>Circuits de validation</span>
+              <span>Traçabilité</span>
+            </div>
+          </div>
+          <div className="mce-upcoming-ui" aria-label="Aperçu conceptuel de DocManya">
+            <header><b>D</b><span>DocManya</span><i>Bientôt disponible</i></header>
+            {['Contrats & dossiers', 'Validations à suivre', 'Documents partagés', 'Journal d’activité'].map((item, index) => (
+              <article key={item}><FileText /><span>{item}</span><b>{['24', '07', '18', '42'][index]}</b></article>
+            ))}
           </div>
         </div>
       </section>

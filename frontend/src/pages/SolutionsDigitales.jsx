@@ -76,6 +76,5 @@ export default function SolutionsDigitales() {
       <div className="marquee-mask overflow-hidden"><div className="marquee-track">{[...technologies,...technologies].map(([name,color],i)=><div key={`${name}-${i}`} className="flex items-center gap-3 shrink-0 px-2"><div className="w-11 h-11 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center shadow-sm"><Code2 className="w-5 h-5" style={{color}}/></div><span className="text-[16px] font-bold" style={{color}}>{name}</span></div>)}</div></div>
     </section>
 
-    <section className="digital-final-cta"><div className="mx-auto max-w-[1200px] px-6"><div><span>UN PROJET DIGITAL ?</span><h2>Commençons par clarifier le besoin.</h2><p>Une étude permet de définir la bonne expertise, le périmètre fonctionnel et les prochaines étapes.</p></div><Link to="/contact#formulaire-devis">Demander un devis <ArrowRight/></Link></div></section>
   </main>;
 }

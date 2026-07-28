@@ -65,7 +65,7 @@ export default function NetworkingEvenements() {
       <section className="networking-intro">
         <div className="max-w-[1150px] mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span>NOTRE INTENTION</span>
+            <span className="mce-section-pill mce-pill-intention">NOTRE INTENTION</span>
             <h2>Des rencontres qui ne s’arrêtent pas à l’échange de cartes de visite.</h2>
             <p>
               Chaque format est pensé pour provoquer des connexions pertinentes, faire circuler
@@ -84,7 +84,7 @@ export default function NetworkingEvenements() {
       <section className="networking-formats">
         <div className="max-w-[1200px] mx-auto px-6">
           <header>
-            <span>FORMATS & IMPACT</span>
+            <span className="mce-section-pill mce-pill-formats">FORMATS & IMPACT</span>
             <h2>Des événements adaptés aux communautés et aux objectifs</h2>
           </header>
           <div id="networking-formats-carousel">
@@ -103,7 +103,7 @@ export default function NetworkingEvenements() {
       <section className="networking-showcase">
         <div className="max-w-[1120px] mx-auto px-6">
           <header>
-            <span>RENCONTRES À VALORISER</span>
+            <span className="mce-section-pill mce-pill-showcase">RENCONTRES À VALORISER</span>
             <h2>Des événements qui connectent et créent des opportunités</h2>
             <p>
               Networking, emploi, entrepreneuriat féminin et rencontres partenaires : chaque

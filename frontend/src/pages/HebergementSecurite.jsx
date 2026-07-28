@@ -83,7 +83,7 @@ export default function HebergementSecurite() {
       {/* SERVICES */}
       <section id="offres" className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <p className="text-center text-[12px] tracking-[0.3em] font-bold text-mce-teal">CE QUE COUVRE NOTRE ACCOMPAGNEMENT</p>
+          <p className="mce-section-pill mce-pill-signal mx-auto">CE QUE COUVRE NOTRE ACCOMPAGNEMENT</p>
           <h2 className="section-title mt-3">Un service continu, pas un livrable ponctuel.</h2>
           <div className="h-1 w-16 bg-mce-teal mx-auto rounded-full mt-3 mb-12" />
 
@@ -110,7 +110,7 @@ export default function HebergementSecurite() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
-            <p className="text-[12px] tracking-[0.3em] font-bold text-mce-gold">APRÈS LA MISE EN LIGNE</p>
+            <p className="mce-section-pill mce-pill-track mx-auto">APRÈS LA MISE EN LIGNE</p>
             <h2 className="section-title mt-3">
               Un partenaire dans la <span className="text-mce-gold">durée</span>
             </h2>
@@ -198,7 +198,7 @@ export default function HebergementSecurite() {
       <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-[12px] tracking-[0.3em] font-bold text-mce-teal">SÉCURITÉ & CONFORMITÉ</p>
+            <p className="mce-section-pill mce-pill-security">SÉCURITÉ & CONFORMITÉ</p>
             <h2 className="text-3xl md:text-[36px] font-black text-mce-navy leading-tight mt-3">Vos données sont un actif. Nous les traitons comme tel.</h2>
             <p className="text-mce-navy/70 text-[14px] mt-4 leading-relaxed">Sécurité en profondeur, sauvegardes multi-sites, confidentialité, conformité. Vous savez ce qui se passe, où c’est stocké et qui y a accès.</p>
             <ul className="mt-6 space-y-3">
@@ -254,9 +254,9 @@ export default function HebergementSecurite() {
         description="Nos packs maintenance et sécurité sont pensés pour assurer la protection, la stabilité et le bon fonctionnement de votre site web sur le long terme : surveillance, mises à jour et prévention des pannes."
         tinted
         plans={[
-          ['ESSENTIEL','Sécurité de base','Jusqu’à 10 services. La protection indispensable pour tout site.',['Wordfence Premium installé et configuré','Scan antivirus automatique','Pare-feu actif 24/7','Protection brute force','Blocage bots malveillants','Alertes sécurité critiques']],
+          ['ESSENTIEL','Sécurité de base','Jusqu’à 10 services. La protection indispensable pour tout site.',['Scan antivirus automatique','Pare-feu actif 24/7','Protection brute force','Blocage bots malveillants','Alertes sécurité critiques']],
           ['PRO','Maintenance + Sécurité avancée','Tout le pack Essentiel inclus, avec un niveau de sécurité supérieur.',['Scan antivirus quotidien','2FA pour administrateurs','Analyse manuelle par MCE en cas d’alerte','Nettoyage préliminaire si suspicion d’infection','Rapport sécurité annuel personnalisé','Priorité support sécurité']],
-          ['SÉRÉNITÉ','Maintenance totale + Sécurité premium',"La tranquillité complète pour les sites qui ne peuvent pas se permettre d'interruption.",['Wordfence Premium & firewall optimisé max','Scan antivirus quotidien + surveillance active','Nettoyage malware (1 intervention/an incluse)','Audit annuel complet (sécurité + performance)','Détection des changements critiques','Protection renforcée e-commerce']],
+          ['SÉRÉNITÉ','Maintenance totale + Sécurité premium',"La tranquillité complète pour les sites qui ne peuvent pas se permettre d'interruption.",['Scan antivirus quotidien + surveillance active','Nettoyage malware (1 intervention/an incluse)','Audit annuel complet (sécurité + performance)','Détection des changements critiques','Protection renforcée e-commerce']],
         ]}
       />
 
@@ -279,5 +279,5 @@ export default function HebergementSecurite() {
 
 function PlanSection({ id, title, description, plans, tinted = false }) {
   const targetId = tinted ? 'maintenance-plans-carousel' : 'hosting-plans-carousel';
-  return <section id={id} className={`hosting-plans py-20 ${tinted ? 'hosting-plans-tinted' : 'bg-white'}`}><div className="max-w-[1200px] mx-auto px-6"><header><span>NOS TARIFS</span><h2>{title}</h2><p>{description}</p></header><div id={targetId} className="hosting-plan-grid">{plans.map(([tier,name,desc,items,price='Sur devis',service='maintenance-securite'],index)=><article key={tier} className={index===1?'featured':''}><div><span>{tier}</span>{index===1&&<b>RECOMMANDÉ</b>}</div><h3>{name}</h3><strong>{price}</strong><p>{desc}</p><ul>{items.map(x=><li key={x}><CheckCircle2/>{x}</li>)}</ul><Link to={`/contact?service=${service}#formulaire-devis`}>Demander un devis</Link></article>)}</div><MobileCarouselControls targetId={targetId}/></div></section>;
+  return <section id={id} className={`hosting-plans py-20 ${tinted ? 'hosting-plans-tinted' : 'bg-white'}`}><div className="max-w-[1200px] mx-auto px-6"><header><span>NOS TARIFS</span><h2>{title}</h2><p>{description}</p></header><div id={targetId} className="hosting-plan-grid">{plans.map(([tier,name,desc,items,price='Sur devis',service='maintenance-securite'],index)=><article key={tier} className={index===1?'featured':''}><div><span>{tier}</span>{index===1&&<b>RECOMMANDÉ</b>}</div><h3>{name}</h3><strong>{price}</strong><p>{desc}</p><ul>{items.map(x=><li key={x}><CheckCircle2/>{x}</li>)}</ul><Link to={`/contact?service=${service}#formulaire-devis`}>{!tinted && index < 2 ? 'Choisir ce pack' : 'Demander un devis'}</Link></article>)}</div><MobileCarouselControls targetId={targetId}/></div></section>;
 }

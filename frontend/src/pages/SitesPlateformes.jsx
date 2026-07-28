@@ -188,7 +188,7 @@ export default function SitesPlateformes() {
           />
           <div className="web-project-selector">
             <div className="web-project-tabs" role="tablist" aria-label="Choisir un type de projet">{projectCards.map((project,index)=><button key={project.title} type="button" role="tab" aria-selected={activeProject===index} className={activeProject===index?'active':''} onClick={()=>setActiveProject(index)}><span>{[<LayoutTemplate/>,<ShoppingBag/>,<Palette/>][index]}</span><span><b>{project.title}</b><small>{index===0?'Une présence claire et crédible.':index===1?'Vendre en ligne avec fluidité.':'Moderniser votre présence digitale.'}</small></span><i>→</i></button>)}</div>
-            <article className="web-project-detail" role="tabpanel"><span className="project-quote-badge">SUR DEVIS</span><h3>{selectedProject.title}</h3><p>{selectedProject.text}</p><ul>{selectedProject.items.map(item=><li key={item}><Check/>{item}</li>)}</ul><div><p>Un projet en tête ? Définissons ensemble le périmètre idéal.</p><Link to={`/contact?service=${['site-vitrine','e-commerce','refonte-site'][activeProject]}#formulaire-devis`}>Demander une étude <ArrowRight/></Link></div></article>
+            <article className="web-project-detail" role="tabpanel"><h3>{selectedProject.title}</h3><p>{selectedProject.text}</p><ul>{selectedProject.items.map(item=><li key={item}><Check/>{item}</li>)}</ul><div><p>Un projet en tête ? Définissons ensemble le périmètre idéal.</p><Link to={`/contact?service=${['site-vitrine','e-commerce','refonte-site'][activeProject]}#formulaire-devis`}>Demander une étude <ArrowRight/></Link></div></article>
           </div>
         </div>
       </section>

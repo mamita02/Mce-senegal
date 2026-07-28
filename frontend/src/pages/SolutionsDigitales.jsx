@@ -58,7 +58,7 @@ export default function SolutionsDigitales() {
 
     <section className="digital-ecosystem">
       <div className="mx-auto grid max-w-[1200px] items-center gap-14 px-6 lg:grid-cols-2">
-        <div><span className="digital-hub-badge">UNE LOGIQUE D’ENSEMBLE</span><h2>Votre activité ne s’arrête pas à la mise en ligne.</h2><p>Un outil métier peut alimenter une plateforme web. Une plateforme doit être rapide, sécurisée et maintenue. L’hébergement et le suivi technique permettent ensuite de faire évoluer l’ensemble sans repartir de zéro.</p><ul>{['Une architecture adaptée au besoin réel','Des interfaces cohérentes pour les équipes et les clients','Une base technique suivie dans la durée'].map(x=><li key={x}><CheckCircle2 />{x}</li>)}</ul></div>
+        <div><h2>Votre activité ne s’arrête pas à la mise en ligne.</h2><p>Un outil métier peut alimenter une plateforme web. Une plateforme doit être rapide, sécurisée et maintenue. L’hébergement et le suivi technique permettent ensuite de faire évoluer l’ensemble sans repartir de zéro.</p><ul>{['Une architecture adaptée au besoin réel','Des interfaces cohérentes pour les équipes et les clients','Une base technique suivie dans la durée'].map(x=><li key={x}><CheckCircle2 />{x}</li>)}</ul></div>
         <div className="digital-orbit" aria-hidden="true"><div className="orbit-core"><Workflow /><b>ÉCOSYSTÈME MCE</b></div><span className="orbit-saas"><Monitor /> SaaS</span><span className="orbit-web"><LayoutTemplate /> Web</span><span className="orbit-cloud"><Cloud /> Cloud</span><i/><i/><i/></div>
       </div>
     </section>

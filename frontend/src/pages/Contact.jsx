@@ -4,6 +4,9 @@ import { Mail, Phone, MapPin, Clock, Send, Calendar, MessageCircle, CheckCircle2
 import { IMG } from '../mock';
 import { useToast } from '../hooks/use-toast';
 
+const WEB3FORMS_ACCESS_KEY = 'c98d7adb-6e49-4ef4-aef3-ab94bb396534';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
 const QUOTE_GROUPS = {
   web: [['landing-page','Landing Page','65 000 FCFA'],['site-vitrine','Site vitrine','Sur devis'],['e-commerce','E-commerce','Sur devis'],['refonte-site','Refonte de site','Sur devis']],
   saas: [['saas','SaaS / logiciel métier','Sur devis'],['application-web','Application web','Sur devis'],['crm','CRM / outil interne','Sur devis'],['automatisation','Automatisation','Sur devis']],
@@ -17,7 +20,9 @@ export default function Contact() {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: '', email: '', company: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
+  const [quoteSending, setQuoteSending] = useState(false);
   const [quoteStep, setQuoteStep] = useState(1);
   const [quote, setQuote] = useState({ name:'', email:'', phone:'', company:'', service:[], budget:'', deadline:'', details:'', consent:false });
 
@@ -28,11 +33,36 @@ export default function Contact() {
   }, [location.search, location.hash]);
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const onSubmit = (e) => {
+  const sendToWeb3Forms = async (payload) => {
+    const response = await fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ access_key: WEB3FORMS_ACCESS_KEY, from_name: 'Site MCE Sénégal', ...payload }),
+    });
+    const result = await response.json();
+    if (!response.ok || !result.success) throw new Error(result.message || 'Échec de l’envoi');
+  };
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast({ title: 'Message envoyé !', description: 'Merci, notre équipe vous répondra sous 24h.' });
-    setForm({ name: '', email: '', company: '', subject: '', message: '' });
+    setSending(true);
+    setSubmitted(false);
+    try {
+      await sendToWeb3Forms({
+        subject: form.subject ? `Nouveau message MCE — ${form.subject}` : 'Nouveau message depuis le site MCE',
+        type_de_demande: 'Message de contact',
+        nom: form.name,
+        email: form.email,
+        entreprise: form.company || 'Non renseignée',
+        message: form.message,
+      });
+      setSubmitted(true);
+      toast({ title: 'Message envoyé !', description: 'Merci, notre équipe vous répondra sous 24h.' });
+      setForm({ name: '', email: '', company: '', subject: '', message: '' });
+    } catch (error) {
+      toast({ title: 'Envoi impossible', description: 'Votre message n’a pas pu être transmis. Réessayez ou contactez-nous sur WhatsApp.', variant: 'destructive' });
+    } finally {
+      setSending(false);
+    }
   };
   const toggleService = (value) => setQuote((current) => ({ ...current, service: current.service.includes(value) ? current.service.filter(x => x !== value) : [...current.service,value] }));
   const chooseSingle = (value, group) => setQuote((current) => ({ ...current, service: [...current.service.filter(x => !group.includes(x)), ...(current.service.includes(value) ? [] : [value])] }));
@@ -58,7 +88,39 @@ export default function Contact() {
           ? 'Solution digitale sélectionnée : choisissez l’hébergement le plus adapté au niveau du projet.'
           : 'Vous pouvez choisir une formule d’hébergement seule ou l’associer à votre solution digitale.';
   const goToQuoteDetails = () => { if (!quote.service.length) { toast({ title:'Choisissez au moins un service', description:'Sélectionnez une prestation avant de passer à l’étape suivante.' }); return; } setQuoteStep(2); };
-  const submitQuote = (e) => { e.preventDefault(); if (!quote.service.length) { toast({ title:'Choisissez au moins un service', description:'Cette information permet de diriger votre demande vers la bonne expertise.' }); return; } setQuoteSubmitted(true); toast({ title:'Demande de devis enregistrée', description:'MCE étudiera votre besoin et vous recontactera pour préciser le périmètre.' }); };
+  const submitQuote = async (e) => {
+    e.preventDefault();
+    if (!quote.service.length) {
+      toast({ title:'Choisissez au moins un service', description:'Cette information permet de diriger votre demande vers la bonne expertise.' });
+      return;
+    }
+    setQuoteSending(true);
+    setQuoteSubmitted(false);
+    try {
+      const serviceLabels = Object.values(QUOTE_GROUPS).flat().filter(([value]) => quote.service.includes(value)).map(([,label,price]) => `${label} (${price})`);
+      await sendToWeb3Forms({
+        subject: `Nouvelle demande de devis MCE — ${quote.name}`,
+        type_de_demande: 'Demande de devis',
+        nom: quote.name,
+        email: quote.email,
+        telephone_whatsapp: quote.phone,
+        entreprise: quote.company || 'Non renseignée',
+        services_demandes: serviceLabels.join(', '),
+        budget: quote.budget || 'À définir ensemble',
+        delai_souhaite: quote.deadline || 'À définir',
+        details_du_projet: quote.details || 'Aucun détail complémentaire',
+        consentement: quote.consent ? 'Accepté' : 'Non accepté',
+      });
+      setQuoteSubmitted(true);
+      toast({ title:'Demande de devis envoyée', description:'MCE étudiera votre besoin et vous recontactera pour préciser le périmètre.' });
+      setQuote({ name:'', email:'', phone:'', company:'', service:[], budget:'', deadline:'', details:'', consent:false });
+      setQuoteStep(1);
+    } catch (error) {
+      toast({ title:'Envoi impossible', description:'La demande de devis n’a pas pu être transmise. Réessayez ou contactez-nous sur WhatsApp.', variant:'destructive' });
+    } finally {
+      setQuoteSending(false);
+    }
+  };
 
   return (
     <div className="pt-[72px]">
@@ -110,6 +172,7 @@ export default function Contact() {
                 <div className="mt-5 flex items-center gap-2 bg-mce-teal/10 text-mce-teal p-3 rounded-lg text-[13px] font-semibold"><CheckCircle2 className="w-4 h-4" />Votre demande a bien été enregistrée.</div>
               )}
               <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <input type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" className="hidden" />
                 <Field label="Nom complet *" name="name" value={form.name} onChange={onChange} required />
                 <Field label="Email *" name="email" type="email" value={form.email} onChange={onChange} required />
                 <Field label="Entreprise" name="company" value={form.company} onChange={onChange} />
@@ -119,7 +182,7 @@ export default function Contact() {
                   <textarea name="message" required value={form.message} onChange={onChange} rows={6} className="mt-1 w-full rounded-md border border-gray-200 px-3 py-2 text-[14px] focus:border-mce-teal focus:outline-none focus:ring-2 focus:ring-mce-teal/30 transition-colors" placeholder="Décrivez votre projet..." />
                 </div>
                 <div className="md:col-span-2 flex justify-end">
-                  <button type="submit" className="btn-gold"><Send className="w-4 h-4" />ENVOYER LE MESSAGE</button>
+                  <button type="submit" disabled={sending} className="btn-gold disabled:cursor-wait disabled:opacity-60"><Send className="w-4 h-4" />{sending ? 'ENVOI EN COURS…' : 'ENVOYER LE MESSAGE'}</button>
                 </div>
               </form>
             </div>
@@ -139,6 +202,7 @@ export default function Contact() {
             <div className="quote-stepper"><span className={quoteStep===1?'active':'done'}><b>01</b>Choix des services</span><i/><span className={quoteStep===2?'active':''}><b>02</b>Vos coordonnées</span></div>
             {quoteSubmitted && <div className="quote-success"><CheckCircle2/>Votre demande a bien été enregistrée.</div>}
             <form onSubmit={submitQuote}>
+              <input type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" className="hidden" />
               <div className={`quote-slide ${quoteStep===1?'active':'inactive-left'}`} aria-hidden={quoteStep!==1}>
                 <div className="quote-selection-toolbar"><span>Configurez librement votre demande.</span><button type="button" disabled={!quote.service.length} onClick={()=>setQuote((current)=>({...current,service:[]}))}>Tout désélectionner</button></div>
                 <QuoteCategory title="Sites web & Landing Pages" note="Plusieurs choix possibles" items={QUOTE_GROUPS.web} selected={quote.service} onToggle={toggleService}/>
@@ -153,7 +217,7 @@ export default function Contact() {
                 <div className="quote-contact-grid"><Field label="Nom complet *" name="name" value={quote.name} onChange={(e)=>setQuote({...quote,name:e.target.value})} required/><Field label="Email professionnel *" name="email" type="email" value={quote.email} onChange={(e)=>setQuote({...quote,email:e.target.value})} required/><Field label="Téléphone / WhatsApp *" name="phone" value={quote.phone} onChange={(e)=>setQuote({...quote,phone:e.target.value})} required/><Field label="Entreprise / organisation" name="company" value={quote.company} onChange={(e)=>setQuote({...quote,company:e.target.value})}/><div><label>Budget approximatif</label><select value={quote.budget} onChange={(e)=>setQuote({...quote,budget:e.target.value})}><option value="">À définir ensemble</option><option>Moins de 100 000 FCFA</option><option>100 000 à 300 000 FCFA</option><option>300 000 à 700 000 FCFA</option><option>Plus de 700 000 FCFA</option></select></div><div><label>Délai souhaité</label><select value={quote.deadline} onChange={(e)=>setQuote({...quote,deadline:e.target.value})}><option value="">À définir</option><option>Dès que possible</option><option>1 à 2 mois</option><option>3 à 6 mois</option><option>Plus de 6 mois</option></select></div></div>
                 <div className="quote-details"><label>Détails de votre projet <small>(optionnel)</small></label><textarea rows="5" value={quote.details} onChange={(e)=>setQuote({...quote,details:e.target.value})} placeholder="Objectifs, utilisateurs, fonctionnalités, contraintes, éléments déjà disponibles…"/></div>
                 <label className="quote-consent"><input type="checkbox" required checked={quote.consent} onChange={(e)=>setQuote({...quote,consent:e.target.checked})}/><span>J’accepte que MCE utilise ces informations pour étudier ma demande. J’ai pris connaissance de la politique de confidentialité et des conditions générales de vente. Le devis devient contractuel uniquement après validation écrite des parties.</span></label>
-                <div className="quote-submit-row quote-submit-final"><p>En envoyant ce formulaire, vos informations sont transmises à MCE uniquement dans le cadre de votre demande de devis.</p><button type="submit">Envoyer ma demande de devis <ArrowRight/></button></div>
+                <div className="quote-submit-row quote-submit-final"><p>En envoyant ce formulaire, vos informations sont transmises à MCE uniquement dans le cadre de votre demande de devis.</p><button type="submit" disabled={quoteSending}>{quoteSending ? 'Envoi en cours…' : 'Envoyer ma demande de devis'} {!quoteSending && <ArrowRight/>}</button></div>
               </div>
             </form>
           </div>

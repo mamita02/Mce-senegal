@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ArrowRight, BarChart3, BriefcaseBusiness, Check, Eye, FileText, Gem, Globe, GraduationCap, Heart,
-  Landmark, Mic2, Monitor, Network, Puzzle, Rocket, ShieldCheck, Target,
+  Mic2, Monitor, Network, Puzzle, Rocket, ShieldCheck, Target,
   Users,
 } from 'lucide-react';
 import { IMG, REASONS } from '../mock';
@@ -133,7 +133,10 @@ export default function MCEPartenaires() {
 
           <div className="presence-map-row">
             <figure className="presence-map">
-              <img src="/assets/mce-about/international-map-v2.png" alt="Carte de la présence internationale de MCE" />
+              <img src="/assets/mce-about/international-map-v2.jpg" alt="Carte de la présence internationale de MCE" />
+              <span className="presence-map-point point-france" aria-label="France" />
+              <span className="presence-map-point point-senegal" aria-label="Sénégal" />
+              <span className="presence-map-point point-maroc" aria-label="Maroc" />
             </figure>
             <aside className="presence-expertise">
               <Globe />
@@ -145,7 +148,6 @@ export default function MCEPartenaires() {
             {COUNTRIES.map(country => (
               <article key={country.name} style={{ '--country-accent': country.accent }}>
                 <div className="presence-country-title">
-                  <span><Landmark /></span>
                   <img src={country.flag} alt={`Drapeau ${country.name}`} />
                   <div><h3>{country.name}</h3><p>{country.role}</p></div>
                 </div>
@@ -155,7 +157,7 @@ export default function MCEPartenaires() {
           </div>
 
           <div className="presence-principles">
-            <article><Landmark /><b>UNE APPROCHE MULTICULTURELLE</b><p>Comprendre chaque contexte pour agir efficacement.</p></article>
+            <article><Globe /><b>UNE APPROCHE MULTICULTURELLE</b><p>Comprendre chaque contexte pour agir efficacement.</p></article>
             <article><Target /><b>DES SOLUTIONS SUR-MESURE</b><p>Adaptées aux réalités locales et aux ambitions internationales.</p></article>
             <article><Network /><b>UN RÉSEAU SOLIDE</b><p>Entreprises, institutions, experts et talents partout où nous sommes.</p></article>
             <article><BarChart3 /><b>UN IMPACT DURABLE</b><p>Créer de la valeur, générer des opportunités et bâtir des relations de confiance.</p></article>

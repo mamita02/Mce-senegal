@@ -103,11 +103,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
             {/* ---------- Brand column ---------- */}
             <div>
-              <div className="mb-4">
+              <div className="mb-4 -mt-5 -ml-5 overflow-hidden">
                 <img
                   src={logoMCE}
                   alt="MCE Sénégal"
-                  className="h-20 w-auto brightness-125"
+                  className="h-36 w-56 object-cover object-center brightness-125"
                 />
               </div>
               <p className="text-[13px] text-gray-300 leading-relaxed mb-5">

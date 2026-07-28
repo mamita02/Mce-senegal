@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import {
   Calendar, Menu, X, ChevronDown, Monitor, LayoutTemplate,
   ShieldCheck, Compass, Network, GraduationCap, UserSearch, UsersRound,
+  Handshake, Images,
 } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -34,7 +35,14 @@ const NAV_LINKS = [
       { label: 'Événementiel', to: '/accompagnement-evenements/evenementiel', desc: 'Organisation, planification et exécution d\'événements', icon: Calendar },
     ],
   },
-  { label: 'MCE & Partenaires', to: '/mce-partenaires' },
+  {
+    label: 'MCE & Partenaires',
+    to: '/mce-partenaires',
+    submenu: [
+      { label: 'Découvrir MCE', to: '/mce-partenaires', desc: 'Notre vision, notre présence et nos partenaires', icon: Handshake },
+      { label: 'Galerie', to: '/mce-partenaires/galerie', desc: 'Nos rencontres, projets et moments forts en images', icon: Images },
+    ],
+  },
   { label: 'Contact', to: '/contact' },
 ];
 

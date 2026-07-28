@@ -10,6 +10,7 @@ import SitesPlateformes from './pages/SitesPlateformes';
 import HebergementSecurite from './pages/HebergementSecurite';
 import TalentsRH from './pages/TalentsRH';
 import MCEPartenaires from './pages/MCEPartenaires';
+import Galerie from './pages/Galerie';
 import Contact from './pages/Contact';
 import AccompagnementStrategique from './pages/AccompagnementStrategique';
 import NetworkingEvenements from './pages/NetworkingEvenements';
@@ -78,6 +79,7 @@ function App() {
           <Route path="/accompagnement-evenements/networking" element={<NetworkingEvenements />} />
           <Route path="/accompagnement-evenements/evenementiel" element={<Evenementiel />} />
           <Route path="/mce-partenaires" element={<MCEPartenaires />} />
+          <Route path="/mce-partenaires/galerie" element={<Galerie />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

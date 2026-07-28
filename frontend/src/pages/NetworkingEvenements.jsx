@@ -42,7 +42,7 @@ export default function NetworkingEvenements() {
       <section
         className="networking-hero"
         style={{
-          backgroundImage: "linear-gradient(90deg,rgba(5,15,34,.94),rgba(10,30,58,.58)),url('/assets/mce-about/hero-conference.jpg')",
+          backgroundImage: "linear-gradient(90deg,rgba(5,15,34,.42),rgba(10,30,58,.06)),url('/assets/mce-about/hero-conference.jpg')",
         }}
       >
         <div className="max-w-[1200px] mx-auto px-6">

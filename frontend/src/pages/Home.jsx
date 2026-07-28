@@ -92,7 +92,7 @@ export default function Home() {
                 style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
               >
                 <FileText className="w-4 h-4" style={{ color: '#0099CC' }} />
-                Demander un devis
+                Nos evenements
               </Link>
               <Link
                 to="/contact"

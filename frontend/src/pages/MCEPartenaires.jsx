@@ -7,8 +7,8 @@ import {
 import { IMG, REASONS } from '../mock';
 import CTASection from '../components/CTASection';
 import kebaPng from '../assets/keba.jpeg';
-import womenPng from '../assets/femmes.jpeg';  
-import mcePng from '../assets/mce.jpeg'; // À adapter selon ton vrai nom
+import womenPng from '../assets/femmes.jpeg';
+import mcePng from '../assets/networking/inspi6.jpeg'; // À adapter selon ton vrai nom
 
 const ICONS = { Target, Eye, Gem, Users, ShieldCheck, Heart, Puzzle, BarChart3, Globe };
 
@@ -54,6 +54,31 @@ const COUNTRIES = [
     accent: '#E45B2E',
     items: ['Conseil & accompagnement stratégique', 'Transformation digitale & communication', 'Partenariats institutionnels & privés', 'Programmes de formation & RH'],
   },
+];
+
+// ⚠️ PARTENAIRES — objectPosition ajusté pour bien faire ressortir les visages
+// La valeur "center Y%" décale l'image verticalement dans le cadre.
+// Y% petit (ex: 15%) = image tirée vers le HAUT → on voit le haut de l'image (visages)
+// Y% grand (ex: 70%) = image tirée vers le BAS → on voit le bas de l'image
+const PARTNERS = [
+  {
+    name: 'KEBA CONSULTING',
+    desc: '...',
+    img: kebaPng,
+    objectPosition: 'center 25%', // remonte l'image pour révéler les visages en haut
+  },
+  {
+    name: 'WOMEN BUILD AFRICA',
+    desc: '...',
+    img: womenPng,
+    objectPosition: 'center 20%', // les deux femmes — visages en haut de l'image
+  },
+  {
+  name: 'SPARCK PROJECT',
+  desc: '...',
+  img: mcePng,
+  objectPosition: 'center 12%', // ✅ affiche le haut de l'image → visages visibles
+},
 ];
 
 export default function MCEPartenaires() {
@@ -181,20 +206,31 @@ export default function MCEPartenaires() {
         </div>
       </section>
 
+      {/* ========================================================= */}
+      {/* ===================== PARTENAIRES CLÉS ================== */}
+      {/* ✅ objectPosition ajusté par partenaire pour révéler les visages */}
+      {/* ========================================================= */}
       <section className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <h2 className="section-title mb-12">NOS <span className="text-mce-gold">PARTENAIRES</span> CLÉS</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-            { name: 'KEBA CONSULTING', desc: '...', img: kebaPng },
-            { name: 'WOMEN BUILD AFRICA', desc: '...', img: womenPng },
-            { name: 'SPARCK PROJECT', desc: '...', img: mcePng },
-          ].map((partner) => (
-            <article key={partner.name} className="mce-partner-card">
-              <img src={partner.img} alt={partner.name} />
-              <div><h3>{partner.name}</h3><p>{partner.desc}</p><button>DÉCOUVRIR LE PARTENARIAT <ArrowRight /></button></div>
-            </article>
-          ))}
+            {PARTNERS.map((partner) => (
+              <article key={partner.name} className="mce-partner-card">
+                <img
+                  src={partner.img}
+                  alt={partner.name}
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: partner.objectPosition,
+                  }}
+                />
+                <div>
+                  <h3>{partner.name}</h3>
+                  <p>{partner.desc}</p>
+                  <button>DÉCOUVRIR LE PARTENARIAT <ArrowRight /></button>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

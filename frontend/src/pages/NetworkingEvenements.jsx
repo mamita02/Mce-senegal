@@ -13,8 +13,13 @@ import {
   Network,
   Users,
 } from 'lucide-react';
-import { EVENTS, IMG } from '../mock';
+import { EVENTS } from '../mock';
 import MobileCarouselControls from '../components/MobileCarouselControls';
+
+// 🖼️ Images de la pile photo — section "NOTRE INTENTION"
+import photoStack1 from '../assets/networking/event1.jpeg'; // Forum Bâtisseurs — audience
+import photoStack2 from '../assets/networking/event2.jpeg'; // Soirée networking — groupe
+import photoStack3 from '../assets/networking/event3.jpg';  // Femmes leaders — portrait
 
 const formats = [
   ['Networking entrepreneurial', 'Créer des connexions utiles entre entrepreneurs, dirigeants, experts, investisseurs et partenaires.', Network],
@@ -74,9 +79,9 @@ export default function NetworkingEvenements() {
             </p>
           </div>
           <div className="networking-photo-stack">
-            <img src={IMG.event1} alt="Rencontre professionnelle" />
-            <img src={IMG.event2} alt="Événement de networking" />
-            <img src={IMG.women1} alt="Entrepreneuriat féminin" />
+            <img src={photoStack1} alt="Forum Bâtisseurs — audience à Dakar" />
+            <img src={photoStack2} alt="Soirée networking MCE" />
+            <img src={photoStack3} alt="Femmes leaders — MCE Sénégal" />
           </div>
         </div>
       </section>
@@ -97,71 +102,6 @@ export default function NetworkingEvenements() {
             ))}
           </div>
           <MobileCarouselControls targetId="networking-formats-carousel" />
-        </div>
-      </section>
-
-      <section className="networking-showcase">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <header>
-            <span className="mce-section-pill mce-pill-showcase">RENCONTRES À VALORISER</span>
-            <h2>Des événements qui connectent et créent des opportunités</h2>
-            <p>
-              Networking, emploi, entrepreneuriat féminin et rencontres partenaires : chaque
-              format est conçu autour d’un public, d’un objectif et d’un impact attendu.
-            </p>
-          </header>
-          <div
-            className="event-feature-slide"
-            style={{
-              backgroundImage: `linear-gradient(90deg,rgba(4,15,29,.92),rgba(4,15,29,.35)),url('${IMG[event.img]}')`,
-            }}
-          >
-            <button
-              type="button"
-              aria-label="Événement précédent"
-              onClick={() => setActiveEvent((activeEvent - 1 + EVENTS.length) % EVENTS.length)}
-            >
-              <ArrowLeft />
-            </button>
-            <div>
-              <small>
-                ÉVÉNEMENT {String(activeEvent + 1).padStart(2, '0')} / {String(EVENTS.length).padStart(2, '0')}
-              </small>
-              <span>{event.tag}</span>
-              <h3>{event.title}</h3>
-              <p>{event.desc}</p>
-            </div>
-            <button
-              type="button"
-              aria-label="Événement suivant"
-              onClick={() => setActiveEvent((activeEvent + 1) % EVENTS.length)}
-            >
-              <ArrowRight />
-            </button>
-          </div>
-          <div className="event-slide-progress">
-            {EVENTS.map((item, index) => (
-              <button
-                type="button"
-                key={item.title}
-                className={index === activeEvent ? 'active' : ''}
-                aria-label={`Afficher ${item.title}`}
-                onClick={() => setActiveEvent(index)}
-              />
-            ))}
-          </div>
-          <nav className="event-slide-titles">
-            {EVENTS.map((item, index) => (
-              <button
-                type="button"
-                key={item.title}
-                className={index === activeEvent ? 'active' : ''}
-                onClick={() => setActiveEvent(index)}
-              >
-                {item.title}
-              </button>
-            ))}
-          </nav>
         </div>
       </section>
 

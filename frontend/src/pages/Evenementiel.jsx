@@ -38,6 +38,16 @@ import heroMobile2 from '../assets/hero-evenementiel/mobile1.png'; // Cérémoni
 import heroMobile3 from '../assets/hero-evenementiel/mobile2.png'; // Mariée traditionnelle (fichier: mobile2)
 import heroMobile4 from '../assets/hero-evenementiel/mobile3.png'; // Lanternes (fichier: mobile3)
 
+// ⚠️ GALERIE "Une source d'inspiration" — 8 photos
+import inspi1 from '../assets/networking/inspi1.jpeg';
+import inspi2 from '../assets/networking/inspi2.jpeg';
+import inspi3 from '../assets/networking/inspi3.jpeg';
+import inspi4 from '../assets/networking/inspi4.jpeg';
+import inspi5 from '../assets/networking/inspi5.jpeg';
+import inspi6 from '../assets/networking/inspi6.jpeg';
+import inspi7 from '../assets/networking/inspi7.jpeg';
+import inspi8 from '../assets/networking/inspi8.jpeg';
+
 // ================== CONFIG DES SLIDES ==================
 // Textes courts : titre = 1-2 mots + accent 2-3 mots, description = 2 lignes max
 const HERO_SLIDES = [
@@ -146,12 +156,16 @@ const mobileSlide = MOBILE_SLIDES[mobileIdx];
 const mobileColor = COLOR_MAP[mobileSlide.colorMobile];
 
   // ================== CAROUSEL COVERFLOW (galerie) ==================
+  // ✅ 8 photos importées depuis /assets/networking/
   const gallery = [
-    IMG.event1 || 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800',
-    IMG.event2 || 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800',
-    IMG.event3 || 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800',
-    IMG.event4 || 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',
-    IMG.event5 || 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800',
+    inspi1,
+    inspi2,
+    inspi3,
+    inspi4,
+    inspi5,
+    inspi6,
+    inspi7,
+    inspi8,
   ];
 
   const [activeIdx, setActiveIdx] = useState(0);

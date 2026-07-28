@@ -18,15 +18,134 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { IMG } from '../mock';
-
+import expertiseMCE from '../assets/mce.jpeg'; // ⚠️ adapte le nom exact de ton fichier
 // ⚠️ IMPORT DES DRAPEAUX
-// Place les 3 fichiers dans src/assets/flags/ puis les imports ci-dessous fonctionneront.
 import flagFrance from '../assets/flags/france.webp';
 import flagSenegal from '../assets/flags/senegal.webp';
 import flagMaroc from '../assets/flags/maroc.webp';
 
+// ⚠️ SLIDES DU HERO — DESKTOP (5 images)
+import heroImg1 from '../assets/hero-evenementiel/maroc1.png';
+import heroImg2 from '../assets/hero-evenementiel/maroc2.png';
+import heroImg3 from '../assets/hero-evenementiel/maroc3.png';
+import heroImg4 from '../assets/hero-evenementiel/maroc4.png';
+import heroImg5 from '../assets/hero-evenementiel/maroc5.png';
+
+// ⚠️ SLIDES DU HERO — MOBILE (4 images dédiées, format portrait)
+// ✅ Corrigé pour matcher les vrais fichiers dans le dossier
+import heroMobile1 from '../assets/hero-evenementiel/mobile4.png'; // Musiciens Marrakech (fichier: mobile4)
+import heroMobile2 from '../assets/hero-evenementiel/mobile1.png'; // Cérémonie plage (fichier: mobile1)
+import heroMobile3 from '../assets/hero-evenementiel/mobile2.png'; // Mariée traditionnelle (fichier: mobile2)
+import heroMobile4 from '../assets/hero-evenementiel/mobile3.png'; // Lanternes (fichier: mobile3)
+
+// ================== CONFIG DES SLIDES ==================
+// Textes courts : titre = 1-2 mots + accent 2-3 mots, description = 2 lignes max
+const HERO_SLIDES = [
+  {
+    desktopImg: heroImg1,
+    mobileImg: null,
+    colorDesktop: 'navy',
+    colorMobile: 'navy',
+    line1: 'Vivre la magie',
+    line2: 'du désert.',
+    desc: "Petits-déjeuners face à l'infini et expériences authentiques au cœur des dunes.",
+  },
+  {
+    desktopImg: heroImg2,
+    mobileImg: heroMobile4,      // Lanternes (fond noir/orange sombre)
+    colorDesktop: 'white',
+    colorMobile: 'white',        // ✅ blanc sur fond noir
+    line1: 'Illuminer',
+    line2: 'les instants.',
+    desc: 'Cérémonies lumineuses et mises en scène qui marquent les esprits.',
+  },
+  {
+    desktopImg: heroImg3,
+    mobileImg: heroMobile3,      // Mariée traditionnelle (navy foncé)
+    colorDesktop: 'white',
+    colorMobile: 'white',        // ✅ blanc sur fond navy sombre
+    line1: 'Célébrer',
+    line2: 'avec grandeur.',
+    desc: "Mariages traditionnels et modernes dans le respect des rites et de l'émotion.",
+  },
+  {
+    desktopImg: heroImg4,
+    mobileImg: heroMobile2,      // Cérémonie plage (beige/crème clair)
+    colorDesktop: 'navy',
+    colorMobile: 'navy',         // ✅ navy sur fond beige clair
+    line1: 'Créer des décors',
+    line2: 'de rêve.',
+    desc: 'Scénographies florales et ambiances sur-mesure entre ciel, mer et lumière.',
+  },
+  {
+    desktopImg: heroImg5,
+    mobileImg: heroMobile1,      // Musiciens Marrakech (beige chaud/orange clair)
+    colorDesktop: 'gold',
+    colorMobile: 'navy',         // ✅ navy sur fond beige chaud (au lieu de gold peu lisible)
+    line1: 'Faire rayonner',
+    line2: 'le Maroc.',
+    desc: 'Immersion culturelle et rencontres authentiques au fil des médinas.',
+  },
+];
+// Palette par couleur
+const COLOR_MAP = {
+  navy: {
+    main: 'text-mce-navy',
+    accent: 'text-mce-navy/60',
+    desc: 'text-mce-navy/75',
+    label: 'text-mce-navy',
+    iconBorder: 'border-mce-navy/30',
+    iconFill: 'text-mce-navy',
+    dotActive: 'bg-mce-navy',
+    dotInactive: 'bg-mce-navy/25 hover:bg-mce-navy/50',
+  },
+  white: {
+    main: 'text-white',
+    accent: 'text-white/70',
+    desc: 'text-white/80',
+    label: 'text-white',
+    iconBorder: 'border-white/40',
+    iconFill: 'text-white',
+    dotActive: 'bg-white',
+    dotInactive: 'bg-white/40 hover:bg-white/70',
+  },
+  gold: {
+    main: 'text-mce-gold',
+    accent: 'text-mce-gold/70',
+    desc: 'text-mce-gold/80',
+    label: 'text-mce-gold',
+    iconBorder: 'border-mce-gold/40',
+    iconFill: 'text-mce-gold',
+    dotActive: 'bg-mce-gold',
+    dotInactive: 'bg-mce-gold/30 hover:bg-mce-gold/60',
+  },
+};
+
+// ================== SLIDES MOBILE (filtrés) ==================
+const MOBILE_SLIDES = HERO_SLIDES.filter((s) => s.mobileImg !== null);
+
 export default function Evenementiel() {
-  // ================== CAROUSEL COVERFLOW ==================
+  // ================== SLIDESHOW HERO ==================
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [mobileIdx, setMobileIdx] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
+
+  useEffect(() => {
+    if (heroPaused) return;
+    const t = setInterval(() => {
+      setHeroIdx((i) => (i + 1) % HERO_SLIDES.length);
+      setMobileIdx((i) => (i + 1) % MOBILE_SLIDES.length);
+    }, 4000);
+    return () => clearInterval(t);
+  }, [heroPaused]);
+
+const desktopSlide = HERO_SLIDES[heroIdx];
+const desktopColor = COLOR_MAP[desktopSlide.colorDesktop];
+
+const mobileSlide = MOBILE_SLIDES[mobileIdx];
+const mobileColor = COLOR_MAP[mobileSlide.colorMobile];
+
+  // ================== CAROUSEL COVERFLOW (galerie) ==================
   const gallery = [
     IMG.event1 || 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800',
     IMG.event2 || 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800',
@@ -38,7 +157,6 @@ export default function Evenementiel() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  // Auto-play toutes les 4s (sauf si l'utilisateur survole)
   useEffect(() => {
     if (paused) return;
     const t = setInterval(() => setActiveIdx((i) => (i + 1) % gallery.length), 4000);
@@ -48,7 +166,6 @@ export default function Evenementiel() {
   const next = () => setActiveIdx((i) => (i + 1) % gallery.length);
   const prev = () => setActiveIdx((i) => (i - 1 + gallery.length) % gallery.length);
 
-  // Position relative de chaque carte par rapport à la carte active
   const getCardStyle = (i) => {
     const total = gallery.length;
     let offset = i - activeIdx;
@@ -58,10 +175,10 @@ export default function Evenementiel() {
     const abs = Math.abs(offset);
     if (abs > 2) return { display: 'none' };
 
-    const translate = offset * 220; // décalage horizontal en px
+    const translate = offset * 220;
     const scale = 1 - abs * 0.15;
     const opacity = 1 - abs * 0.25;
-    const rotate = offset * 3; // légère inclinaison
+    const rotate = offset * 3;
 
     return {
       transform: `translateX(${translate}px) scale(${scale}) rotate(${rotate}deg)`,
@@ -74,24 +191,54 @@ export default function Evenementiel() {
   return (
     <div className="pt-[72px]">
       {/* ========================================================= */}
-      {/* ===================== HERO ============================== */}
+      {/* ===================== HERO SLIDESHOW ==================== */}
       {/* ========================================================= */}
-      <section className="relative overflow-hidden bg-mce-navy text-white">
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-12 lg:pt-16 pb-16 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-          <div className="lg:col-span-5">
-            <p className="text-[11px] lg:text-[12px] tracking-[0.25em] font-bold text-mce-teal">
-              ÉVÉNEMENTIEL<br />INTERNATIONAL &amp; CONCIERGERIE
+
+      {/* ================================================= */}
+      {/* ============= VERSION DESKTOP (md+) ============== */}
+      {/* ================================================= */}
+      <section
+        className="hidden md:block relative overflow-hidden h-[620px] lg:h-[680px]"
+        onMouseEnter={() => setHeroPaused(true)}
+        onMouseLeave={() => setHeroPaused(false)}
+      >
+        {HERO_SLIDES.map((s, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+            style={{
+              opacity: i === heroIdx ? 1 : 0,
+              backgroundImage: `url(${s.desktopImg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        ))}
+
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 h-full flex items-center">
+          <div className="max-w-2xl">
+            <p
+              key={`label-desktop-${heroIdx}`}
+              className={`text-[11px] lg:text-[12px] tracking-[0.28em] font-bold transition-colors duration-500 ${desktopColor.label}`}
+            >
+              {desktopSlide.label}
             </p>
 
-            <h1 className="mt-6 text-3xl md:text-4xl lg:text-[44px] font-black leading-[1.1] tracking-tight">
-              Des événements<br />qui marquent.<br />
-              <span className="text-mce-teal">Des expériences<br />qui restent.</span>
+            {/* 🔑 CLÉ IMPORTANTE : key={heroIdx} force le remount du <h1> → pas de superposition */}
+            <h1
+              key={`title-desktop-${heroIdx}`}
+              className={`mt-6 text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.05] tracking-tight transition-colors duration-500 ${desktopColor.main}`}
+            >
+              {desktopSlide.line1}
+              <br />
+              <span className={desktopColor.accent}>{desktopSlide.line2}</span>
             </h1>
 
-            <p className="mt-6 text-[14px] leading-relaxed text-white/85 max-w-md">
-              De l&rsquo;idée à la réalisation, MCE imagine, organise et coordonne
-              vos événements en France, au Sénégal, au Maroc et partout
-              dans le monde.
+            <p
+              key={`desc-desktop-${heroIdx}`}
+              className={`mt-6 text-[14px] lg:text-[15px] leading-relaxed max-w-lg transition-colors duration-500 ${desktopColor.desc}`}
+            >
+              {desktopSlide.desc}
             </p>
 
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl">
@@ -102,57 +249,124 @@ export default function Evenementiel() {
                 { icon: Heart, title: 'Impact humain', sub: '& durable' },
               ].map((f, i) => (
                 <div key={i} className="flex flex-col items-start gap-2">
-                  <div className="w-9 h-9 rounded-full border border-mce-teal/40 flex items-center justify-center">
-                    <f.icon className="w-4 h-4 text-mce-teal" />
+                  <div
+                    className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors duration-500 ${desktopColor.iconBorder}`}
+                  >
+                    <f.icon className={`w-4 h-4 transition-colors duration-500 ${desktopColor.iconFill}`} />
                   </div>
-                  <div className="text-[11px] leading-tight">
+                  <div className={`text-[11px] leading-tight transition-colors duration-500 ${desktopColor.main}`}>
                     <div className="font-semibold">{f.title}</div>
-                    <div className="text-white/60">{f.sub}</div>
+                    <div className={`transition-colors duration-500 ${desktopColor.accent}`}>{f.sub}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
 
-          <div className="lg:col-span-4 relative rounded-2xl overflow-hidden min-h-[300px] shadow-xl">
-            <img
-              src={IMG.eventHero || 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200'}
-              alt="Événement MCE"
-              className="absolute inset-0 w-full h-full object-cover"
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {HERO_SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setHeroIdx(i)}
+              aria-label={`Slide ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === heroIdx ? `w-10 ${desktopColor.dotActive}` : `w-2 ${desktopColor.dotInactive}`
+              }`}
             />
+          ))}
+        </div>
+      </section>
+
+      {/* ================================================= */}
+      {/* ============= VERSION MOBILE (<md) =============== */}
+      {/* ================================================= */}
+      <section className="md:hidden relative overflow-hidden h-[calc(100vh-72px)] min-h-[560px] max-h-[720px]">
+        {/* Précharge invisible des images pour éviter les glitches */}
+        <div className="hidden">
+            {MOBILE_SLIDES.map((s, i) => (
+            <img key={`preload-${i}`} src={s.mobileImg} alt="" />
+            ))}
+        </div>
+
+        {/* Slides avec <img> réels (au lieu de background CSS) */}
+        {MOBILE_SLIDES.map((s, i) => (
+            <img
+            key={i}
+            src={s.mobileImg}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+            style={{
+                opacity: i === mobileIdx ? 1 : 0,
+                zIndex: i === mobileIdx ? 1 : 0,
+            }}
+            />
+        ))}
+
+        {/* Contenu texte + icônes empilés en haut, dots libres en bas */}
+        <div className="relative z-10 h-full flex flex-col px-6 pt-8 pb-6">
+          {/* ---------- HAUT : label + titre + description + icônes ---------- */}
+          <div>
+            {/* Label */}
+            <p
+              key={`label-mobile-${mobileIdx}`}
+              className={`text-[10px] tracking-[0.28em] font-bold transition-colors duration-500 ${mobileColor.label}`}
+            >
+              {mobileSlide.label}
+            </p>
+
+            {/* 🔑 Titre — sur UNE ligne, avec key pour éviter les superpositions */}
+            <h1
+              key={`title-mobile-${mobileIdx}`}
+              className={`mt-3 text-[26px] font-black leading-[1.15] tracking-tight ${mobileColor.main}`}
+            >
+              {mobileSlide.line1}{' '}
+              <span className={mobileColor.accent}>{mobileSlide.line2}</span>
+            </h1>
+
+            {/* Description — 2 lignes max */}
+            <p
+            key={`desc-mobile-${mobileIdx}`}
+            className={`mt-4 text-[13.5px] leading-relaxed max-w-[85%] ${mobileColor.desc}`}
+            >
+              {mobileSlide.desc}
+            </p>
+
+            {/* Icônes 2×2 — remontées juste après la description */}
+           <div className="grid grid-cols-2 gap-x-5 gap-y-5 max-w-[85%] mt-6">
+            {[
+                { icon: Sparkles, title: 'Créativité', sub: '& excellence' },
+                { icon: Globe, title: 'Réseau local &', sub: 'international' },
+                { icon: ShieldCheck, title: 'Gestion complète', sub: '& sur-mesure' },
+                { icon: Heart, title: 'Impact humain', sub: '& durable' },
+            ].map((f, i) => (
+                <div key={i} className="flex flex-col items-start gap-2">
+                <div
+                    className={`w-11 h-11 rounded-full border flex items-center justify-center transition-colors duration-500 ${mobileColor.iconBorder}`}
+                >
+                    <f.icon className={`w-5 h-5 transition-colors duration-500 ${mobileColor.iconFill}`} />
+                </div>
+                <div className={`text-[12px] leading-tight transition-colors duration-500 ${mobileColor.main}`}>
+                    <div className="font-bold">{f.title}</div>
+                    <div className={`transition-colors duration-500 ${mobileColor.accent}`}>{f.sub}</div>
+                </div>
+                </div>
+            ))}
+            </div>
           </div>
 
-          <div className="lg:col-span-3 flex flex-col">
-            <div className="rounded-2xl border border-white/15 bg-mce-navy/60 backdrop-blur-sm p-6 shadow-lg">
-              <h3 className="text-[13px] font-black tracking-wide leading-tight">
-                NOUS ORGANISONS<br />VOS ÉVÉNEMENTS
-              </h3>
-              <ul className="mt-5 space-y-2.5">
-                {[
-                  'Séminaires & conférences',
-                  'Team building & incentives',
-                  'Lancements de produits',
-                  "Cocktails & soirées d'entreprise",
-                  'Mariages & événements privés',
-                  "Voyages d'affaires",
-                  'Conciergerie premium',
-                ].map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-[12.5px] text-white/90">
-                    <CheckCircle2 className="w-4 h-4 mt-0.5 text-mce-teal shrink-0" />
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mt-6 flex items-start gap-3">
-              <div className="flex-1 text-[12.5px] leading-relaxed text-white/85">
-                Un interlocuteur unique,<br />
-                une organisation fluide,<br />
-                un résultat inoubliable.
-              </div>
-              <Plane className="w-8 h-8 text-mce-teal shrink-0 -rotate-45" strokeWidth={1.6} />
-            </div>
+          {/* ---------- BAS : dots ---------- */}
+          <div className="mt-auto pt-4 flex justify-center gap-2">
+            {MOBILE_SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setMobileIdx(i)}
+                aria-label={`Slide ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === mobileIdx ? `w-8 ${mobileColor.dotActive}` : `w-1.5 ${mobileColor.dotInactive}`
+                }`}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -198,7 +412,6 @@ export default function Evenementiel() {
                 <img src={c.img} alt={c.country} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-mce-navy/85 via-mce-navy/50 to-mce-navy/10" />
                 <div className="relative h-full p-6 flex flex-col justify-between text-white">
-                  {/* Drapeau dans le cercle */}
                   <div className="w-14 h-14 rounded-full bg-white overflow-hidden shadow-lg ring-2 ring-white/80">
                     <img
                       src={c.flag}
@@ -262,10 +475,10 @@ export default function Evenementiel() {
           <div className="lg:col-span-5 rounded-2xl bg-mce-navy text-white overflow-hidden flex flex-col md:flex-row shadow-lg">
             <div className="md:w-1/2 relative min-h-[260px]">
               <img
-                src={IMG.founder || 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600'}
+                src={expertiseMCE}
                 alt="Expertise MCE"
                 className="absolute inset-0 w-full h-full object-cover"
-              />
+                />
             </div>
             <div className="md:w-1/2 p-6 flex flex-col justify-center">
               <h3 className="text-[15px] font-black text-mce-teal tracking-wide leading-tight">
@@ -360,7 +573,6 @@ export default function Evenementiel() {
       {/* ========================================================= */}
       <section className="pb-24 pt-4 bg-white overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          {/* Header aligné à gauche comme sur la ref */}
           <div className="flex items-center gap-3 mb-3">
             <div className="h-[2px] w-10 bg-mce-teal" />
             <p className="text-[12px] tracking-[0.3em] font-bold text-mce-teal">GALERIE</p>
@@ -369,13 +581,11 @@ export default function Evenementiel() {
             Une source <span className="text-mce-teal">d&rsquo;inspiration</span>
           </h2>
 
-          {/* Carousel coverflow */}
           <div
             className="relative mt-16 mb-8"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            {/* Zone d'affichage des cartes */}
             <div className="relative h-[420px] flex items-center justify-center">
               {gallery.map((src, i) => (
                 <div
@@ -389,7 +599,6 @@ export default function Evenementiel() {
               ))}
             </div>
 
-            {/* Flèches nav */}
             <button
               onClick={prev}
               aria-label="Précédent"
@@ -406,7 +615,6 @@ export default function Evenementiel() {
             </button>
           </div>
 
-          {/* Dots indicateurs */}
           <div className="flex items-center justify-center gap-2">
             {gallery.map((_, i) => (
               <button

@@ -5,6 +5,8 @@ import {
   MapPin, Phone, Mail, Clock, Calendar, FileText, Globe,
 } from 'lucide-react';
 import logoMCE from '../assets/logo.png';
+// ============ EN HAUT DU FICHIER, avec les autres imports ============
+import ctaBackground from '../assets/degrade.png'; // ⚠️ adapte le nom de fichier
 
 // ============ MENUS ============
 const SOLUTIONS = [
@@ -43,53 +45,57 @@ const SOCIAL_LINKS = [
 export default function Footer() {
   return (
     <>
-      {/* ===================== CTA BLOCK (hors du footer, mais collé) ===================== */}
-      <section className="bg-white pt-8 pb-0">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div
-            className="relative overflow-hidden "
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=400&fit=crop)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              minHeight: '280px',
-            }}
-          >
-            <div className="absolute inset-0 bg-black/60" />
+     
+{/* ===================== CTA BLOCK (image asset, sans overlay) ===================== */}
+<section className="bg-white pt-8 pb-0">
+  <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div
+      className="relative overflow-hidden rounded-t-2xl"
+      style={{
+        backgroundImage: `url(${ctaBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Pas de dégradé overlay : la photo a déjà son dégradé bleu intégré */}
 
-            <div className="relative px-6 lg:px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="md:flex-1">
-                <h2 className="text-3xl md:text-4xl font-black text-white leading-tight mb-3">
-                  Construisons ensemble<br />
-                  votre prochain succès.
-                </h2>
-                <p className="text-white/90 text-[15px] leading-relaxed">
-                  Parlons de vos objectifs et trouvons la meilleure solution<br />
-                  pour les atteindre.
-                </p>
-              </div>
+      <div className="relative px-6 lg:px-10 py-4 flex flex-col md:flex-row md:items-end justify-between gap-5">
+  {/* Texte à gauche */}
+  <div className="md:pt-2 md:max-w-md">
+    <h2 className="text-xl md:text-2xl font-black text-white leading-tight mb-1.5">
+      Construisons ensemble<br />
+      votre prochain succès.
+    </h2>
+    <p className="text-white/90 text-[13px] leading-snug">
+      Parlons de vos objectifs et trouvons la meilleure solution pour les atteindre.
+    </p>
+  </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 md:flex-1 md:justify-end">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-[13px] tracking-wide text-black bg-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                >
-                  <Calendar className="w-4 h-4" />
-                  Prendre rendez-vous
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-bold text-[13px] tracking-wide text-white bg-blue-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-blue-700"
-                >
-                  <FileText className="w-4 h-4" />
-                  Demander un devis
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+  {/* Boutons rapprochés à gauche et descendus */}
+  <div className="flex flex-col sm:flex-row gap-2.5 shrink-0 md:pb 4 md:mr-auto md:ml-80">
+    <Link
+      to="/contact"
+      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-bold text-[13px] tracking-wide bg-white transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+      style={{ color: '#00AEEF' }}
+    >
+      <Calendar className="w-4 h-4" />
+      Prendre rendez-vous
+    </Link>
+    <Link
+      to="/contact"
+      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-bold text-[13px] tracking-wide text-white transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+      style={{ backgroundColor: '#00AEEF' }}
+      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0095CC')}
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#00AEEF')}
+    >
+      <FileText className="w-4 h-4" />
+      Demander un devis
+    </Link>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
       {/* ===================== FOOTER ===================== */}
       <footer className="bg-slate-900 text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-10 pb-8">

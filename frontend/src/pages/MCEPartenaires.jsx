@@ -6,6 +6,9 @@ import {
 } from 'lucide-react';
 import { IMG, REASONS } from '../mock';
 import CTASection from '../components/CTASection';
+import kebaPng from '../assets/keba.jpeg';
+import womenPng from '../assets/femmes.jpeg';  
+import mcePng from '../assets/mce.jpeg'; // À adapter selon ton vrai nom
 
 const ICONS = { Target, Eye, Gem, Users, ShieldCheck, Heart, Puzzle, BarChart3, Globe };
 
@@ -183,15 +186,15 @@ export default function MCEPartenaires() {
           <h2 className="section-title mb-12">NOS <span className="text-mce-gold">PARTENAIRES</span> CLÉS</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: 'KEBA CONSULTING', desc: 'Conseil en management, leadership et transformation organisationnelle.', img: IMG.team2 },
-              { name: 'WOMEN BUILD AFRICA', desc: 'Promouvoir l’entrepreneuriat féminin, l’inclusion et l’impact social à travers des actions concrètes.', img: IMG.women1 },
-              { name: 'SPARCK PROJECT', desc: 'Innovation, digital et développement de projets à fort impact pour un avenir durable.', img: IMG.coding },
-            ].map((partner) => (
-              <article key={partner.name} className="mce-partner-card">
-                <img src={partner.img} alt={partner.name} />
-                <div><h3>{partner.name}</h3><p>{partner.desc}</p><button>DÉCOUVRIR LE PARTENARIAT <ArrowRight /></button></div>
-              </article>
-            ))}
+            { name: 'KEBA CONSULTING', desc: '...', img: kebaPng },
+            { name: 'WOMEN BUILD AFRICA', desc: '...', img: womenPng },
+            { name: 'SPARCK PROJECT', desc: '...', img: mcePng },
+          ].map((partner) => (
+            <article key={partner.name} className="mce-partner-card">
+              <img src={partner.img} alt={partner.name} />
+              <div><h3>{partner.name}</h3><p>{partner.desc}</p><button>DÉCOUVRIR LE PARTENARIAT <ArrowRight /></button></div>
+            </article>
+          ))}
           </div>
         </div>
       </section>

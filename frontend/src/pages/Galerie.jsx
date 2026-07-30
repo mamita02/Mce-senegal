@@ -10,6 +10,9 @@ import { ArrowLeft, ArrowRight, CalendarDays, GraduationCap, Grid3X3, Handshake,
 // Événements MCE
 import event1 from '../assets/networking/event1.jpeg';
 import event2 from '../assets/networking/event2.jpeg';
+import partageSavoirGofar from '../assets/networking/partage-savoir-gofar.jpg';
+import sessionTravailMce from '../assets/networking/session-travail-mce.jpg';
+import remisePrixStayup from '../assets/networking/remise-prix-stayup.png';
 
 // Inspiration / Gala / Portraits
 import inspi1 from '../assets/networking/inspi1.jpeg';
@@ -32,6 +35,8 @@ import kebaSignature from '../assets/networking/keba-signature.jpg';
 import sport1 from '../assets/networking/sport1.jpeg';
 import sport2 from '../assets/networking/sport2.jpeg';
 import sport3 from '../assets/networking/sport3.jpeg';
+import sportEffort from '../assets/networking/sport-effort.png';
+import sportPartage from '../assets/networking/sport-partage.png';
 
 // Forum Stayup 2025
 import stayip1 from '../assets/networking/stayip1.jpeg';
@@ -41,6 +46,7 @@ import afterworkGofar from '../assets/networking/afterwork-gofar.jpg';
 // Femmes leaders & entrepreneuriat féminin
 import women1 from '../assets/networking/women1.jpg';
 import women2 from '../assets/networking/women2.jpg';
+import socialEnfantImpact from '../assets/networking/social-enfant-impact.png';
 
 // ============================================================
 // FILTRES
@@ -54,47 +60,55 @@ const FILTERS = [
   ['Formations', GraduationCap],
 ];
 
-const PARTNERS = ['Tous les partenaires', 'GoFar Holding', 'Keba Consulting', 'Sparck Project'];
+const PARTNERS = ['Tous les partenaires', 'GoFar Holding', 'Keba Consulting', 'Sparks Project'];
 
 // ============================================================
-// ITEMS DE LA GALERIE — 23 photos uniques
+// ITEMS DE LA GALERIE — 29 photos uniques
 // 📌 id unique, title unique, image unique → pas de collisions React
 // 📐 sizes alternées (wide / tall / standard) pour un beau masonry
 // 💡 Ordre pensé pour un rendu équilibré en mode "Tous"
 // ============================================================
 const ITEMS = [
   // ============ ÉVÉNEMENTS (7) ============
-  { id: 'ev-01', title: 'Forum Bâtisseurs',           subtitle: 'Dakar · Avril 2026',              category: 'Événements',  image: event1,   size: 'wide' },
+  { id: 'ev-01', title: 'Assise des Bâtisseurs avec IDRISS ABERKANE', subtitle: 'FORUM DE L’ÉCONOMIE RÉELLE & DE LA CRÉATION DE VALEUR', description: 'Au Grand Théâtre National de Dakar en avril 2026', category: 'Événements', partner: 'Sparks Project', image: event1, size: 'wide' },
   { id: 'ev-02', title: 'Queen Buffet Mai 2026',       subtitle: 'Soirée de Gala',                  category: 'Événements',  image: event2,   size: 'wide' },
   { id: 'ev-03', title: 'Queen Buffet Mai 2026',       subtitle: 'Soirée de Gala',                  category: 'Événements',  image: inspi6,   size: 'tall' },
   { id: 'ev-04', title: 'Salon Stayup — Panel',       subtitle: 'Paysages & Numérique',            category: 'Événements', partner: 'GoFar Holding', image: stayup2, size: 'standard' },
   { id: 'ev-05', title: 'Stay-Up 2025',                subtitle: 'Cérémonie de remise de prix',      category: 'Événements', partner: 'GoFar Holding', image: stayip1, size: 'tall' },
-  { id: 'ev-06', title: 'Une soirée d\'exception',    subtitle: 'Gala MCE',                        category: 'Événements', partner: 'Keba Consulting', image: inspi1, size: 'tall' },
-  { id: 'ev-07', title: 'Instants partagés',          subtitle: 'Événement de fin d\'année',       category: 'Événements',  image: inspi7,   size: 'tall' },
-  { id: 'ev-08', title: 'Afterwork organisé par GoFar Holding', subtitle: 'Thématique : Women Build Africa', category: 'Événements', partner: 'GoFar Holding', image: afterworkGofar, size: 'tall' },
+  { id: 'ev-06', title: 'Atelier autour du Pardon', description: 'Développement Personnel & Confiance', category: 'Événements', partner: 'Keba Consulting', image: inspi1, size: 'tall' },
+  { id: 'ev-07', title: 'Mme AMANE Mounia au Forum des Bâtisseurs avec IDRISS ABERKANE', category: 'Événements', partner: 'Sparks Project', image: inspi7, size: 'tall' },
+  { id: 'ev-08', title: 'Collaboration entre MCE Sénégal & GoFar Holding', description: 'Entretien autour de la Femme Africaine', category: 'Événements', partner: 'GoFar Holding', image: afterworkGofar, size: 'tall' },
+  { id: 'ev-09', title: 'Un moment de partage de savoir', subtitle: 'Chaque apprentissage est une pierre posée sur le chemin de l’excellence.', description: 'Avec la Directrice de MCE', category: 'Événements', partner: 'GoFar Holding', image: partageSavoirGofar, size: 'tall' },
+  { id: 'ev-10', title: 'Session de travail avec l’équipe de MCE', description: 'Des esprits engagés, une vision commune, des résultats à construire.', category: 'Événements', image: sessionTravailMce, size: 'tall' },
+  { id: 'ev-11', title: 'Honneur aux performances, hommage aux parcours', description: 'Remise de prix lors d’une cérémonie organisée par StayUp', category: 'Événements', partner: 'GoFar Holding', image: remisePrixStayup, size: 'standard' },
 
   // ============ PARTENAIRES (4) ============
-  { id: 'pa-01', title: 'Mise en place d’un accord avec Wellness Family', subtitle: '',             category: 'Partenaires', image: inspi3, size: 'tall' },
-  { id: 'pa-02', title: 'Signature d\'accord KEBA',    subtitle: 'Formalisation des engagements',  category: 'Partenaires', partner: 'Keba Consulting', image: kebaSignature, size: 'tall' },
-  { id: 'pa-03', title: 'Queen Buffet Mai 2026',       subtitle: 'Soirée de Gala',                  category: 'Événements',  image: inspi8,  size: 'tall' },
-  { id: 'pa-04', title: 'Queen Buffet Mai 2026',       subtitle: 'Soirée de Gala',                  category: 'Événements',  image: inspi13, size: 'tall' },
+  { id: 'pa-01', title: 'Ensemble pour transformer les ambitions en résultats.', subtitle: 'Wellness Family International X MCE Sénégal', category: 'Partenaires', image: inspi3, size: 'tall' },
+  { id: 'pa-02', title: 'Deux expertises. Une ambition commune.', subtitle: 'Un partenariat stratégique au service de votre réussite', description: 'Keba Consulting X MCE Sénégal', category: 'Partenaires', partner: 'Keba Consulting', image: kebaSignature, size: 'tall' },
+  { id: 'pa-03', title: 'Mor DIOP - Directeur de Sparks Projet', subtitle: 'Au Queen Buffet - Mai 2026', category: 'Événements', partner: 'Sparks Project', image: inspi8, size: 'tall' },
+  { id: 'pa-04', title: 'Équipe de MCE Sénégal', subtitle: 'Au Queen Buffet - Mai 2026', category: 'Événements', partner: 'Sparks Project', image: inspi13, size: 'tall' },
 
   // ============ SOCIAL (5) ============
-  { id: 'so-02', title: 'Projets à impact',            subtitle: 'Inclusion & proximité',          category: 'Social', image: social2, size: 'wide' },
-  { id: 'so-03', title: 'Une communauté engagée',      subtitle: 'Actions terrain',                category: 'Social', image: social3, size: 'standard' },
-  { id: 'so-04', title: 'Afterwork organisé par GoFar Holding', subtitle: 'Thématique : Women Build Africa', category: 'Événements', partner: 'GoFar Holding', image: women1, size: 'tall' },
-  { id: 'so-05', title: 'Afterwork organisé par GoFar Holding', subtitle: 'Thématique : Women Build Africa', category: 'Événements', partner: 'GoFar Holding', image: women2, size: 'standard' },
+  { id: 'so-02', title: 'Directrice MCE au contact de la population', subtitle: 'MCE au Cœur de la Communauté', category: 'Social', image: social2, size: 'standard' },
+  { id: 'so-03', title: 'Une journée avec Empire des Enfants', subtitle: 'MCE - La Solidarité en Action', category: 'Social', image: social3, size: 'standard' },
+  { id: 'so-04', title: 'Chef de Projet MCE', subtitle: 'Quand l’équipe participe, chaque activité devient une opportunité de grandir ensemble.', category: 'Événements', partner: 'GoFar Holding', image: women1, size: 'tall' },
+  { id: 'so-05', title: 'Un partenariat qui crée de la valeur.', subtitle: 'MCE Sénégal X GoFar Holding : un partenariat pour accompagner les entreprises, les talents et les territoires.', category: 'Événements', partner: 'GoFar Holding', image: women2, size: 'standard' },
 
   // ============ SPORT (3) ============
   { id: 'sp-01', title: 'Cohésion par le sport',       subtitle: 'Équipe & fair-play',             category: 'Sport', image: sport1, size: 'wide' },
   { id: 'sp-02', title: 'Dépassement collectif',       subtitle: 'Endurance & ambition',           category: 'Sport', image: sport2, size: 'standard' },
   { id: 'sp-03', title: 'L\'énergie du terrain',       subtitle: 'Team building actif',            category: 'Sport', image: sport3, size: 'wide' },
+  { id: 'sp-04', title: 'Unis par le sport, renforcés par l’effort', subtitle: 'Une occasion de se dépasser, de s’amuser et de construire un esprit d’équipe solide.', category: 'Sport', image: sportEffort, size: 'tall' },
+  { id: 'sp-05', title: 'Pause, partage et bonne humeur', subtitle: 'Au-delà des missions, ce sont les liens humains qui font la force d’une équipe.', category: 'Sport', image: sportPartage, size: 'wide' },
+
+  // ============ NOUVELLE ACTION SOCIALE ============
+  { id: 'so-06', title: 'Un geste, un sourire, un impact', subtitle: 'Parce que chaque enfant mérite d’être valorisé, écouté et accompagné.', category: 'Social', image: socialEnfantImpact, size: 'tall' },
 
   // ============ FORMATIONS (4) ============
-  { id: 'fo-01', title: 'Coaching stratégique',        subtitle: 'Accompagnement personnalisé',    category: 'Formations', partner: 'Keba Consulting', image: inspi2, size: 'tall' },
-  { id: 'fo-02', title: 'Atelier en action',           subtitle: 'Pratique & collaboration',       category: 'Formations', image: inspi10, size: 'standard' },
-  { id: 'fo-03', title: 'Transmettre les savoirs',     subtitle: 'Pédagogie & confiance',          category: 'Formations', partner: 'Keba Consulting', image: inspi11, size: 'standard' },
-  { id: 'fo-04', title: 'Formations sur-mesure',       subtitle: 'Montée en compétences',          category: 'Formations', partner: 'Keba Consulting', image: inspi12, size: 'standard' },
+  { id: 'fo-01', title: 'Atelier autour du Pardon', subtitle: 'MCE X Keba Consulting : Main dans la Main', category: 'Formations', partner: 'Keba Consulting', image: inspi2, size: 'tall' },
+  { id: 'fo-02', title: 'Réflexion autour de la jeunesse', subtitle: 'À l’Université Cheikh Anta Diop (UCAD) de Dakar', category: 'Formations', image: inspi10, size: 'standard' },
+  { id: 'fo-03', title: 'Au-delà du partenariat, c’est une transmission de savoir.', description: 'MCE X Keba Consulting : Main dans la Main', category: 'Formations', partner: 'Keba Consulting', image: inspi11, size: 'standard' },
+  { id: 'fo-04', title: 'La Directrice de MCE avec l’équipe de Keba Consulting', subtitle: 'Atelier sur le Pardon.', description: 'Une période pour apprendre, une étape pour se révéler.', category: 'Formations', partner: 'Keba Consulting', image: inspi12, size: 'standard' },
 ];
 
 // ============================================================
@@ -222,8 +236,9 @@ export default function Galerie() {
                       <span>#{item.category}</span>
                       {item.partner && <span>#{item.partner}</span>}
                     </div>
-                    <b>{item.title}</b>
-                    <small>{item.subtitle}</small>
+                    <b className={item.title.length > 46 ? 'gallery-card-title-long' : ''}>{item.title}</b>
+                    {item.subtitle && <small>{item.subtitle}</small>}
+                    {item.description && <p className="gallery-card-description">{item.description}</p>}
                     <i><Maximize2 /></i>
                   </figcaption>
                 </motion.figure>
@@ -266,7 +281,8 @@ export default function Galerie() {
                   {selected.partner && <span>#{selected.partner}</span>}
                 </div>
                 <h2>{selected.title}</h2>
-                <p>{selected.subtitle}</p>
+                {selected.subtitle && <p className="gallery-lightbox-subtitle">{selected.subtitle}</p>}
+                {selected.description && <p className="gallery-lightbox-description">{selected.description}</p>}
               </figcaption>
             </motion.figure>
             <button className="gallery-lightbox-next" type="button" onClick={(e) => { e.stopPropagation(); moveLightbox(1); }} aria-label="Image suivante">

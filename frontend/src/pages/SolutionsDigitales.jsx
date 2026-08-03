@@ -41,7 +41,10 @@ const technologies = [
 export default function SolutionsDigitales() {
   return <main className="digital-hub pt-[72px]">
     <section className="digital-hub-hero">
-      <img src="/assets/solutions-digitales-hero.jpg" alt="Écosystème technologique professionnel sur ordinateur, tablette et mobile" />
+      <picture className="hero-responsive-media">
+        <source media="(max-width: 760px)" srcSet="/assets/solutions-digitales-hero-mobile.jpg" />
+        <img src="/assets/solutions-digitales-hero.jpg" alt="Écosystème technologique professionnel sur ordinateur, tablette et mobile" />
+      </picture>
       <div className="digital-hub-overlay" />
       <div className="digital-hero-centered relative mx-auto max-w-[1200px] px-6 py-24 lg:py-32">
         <h1>Des solutions tech<br />pour des entreprises <em>performantes.</em></h1>

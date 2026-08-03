@@ -17,6 +17,8 @@ import { Link } from 'react-router-dom';
 import { IMG } from '../mock';
 import heroImage from '../assets/hero.png';
 import ordi from '../assets/ordi.png';
+import kebaConsultingLogo from '../assets/keba-consulting-logo.png';
+import sparksProjectLogo from '../assets/sparks-project-logo.png';
 
 export default function Home() {
   return (
@@ -87,12 +89,12 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mt-8">
               <Link
-                to="/contact"
+                to="/accompagnement-evenements"
                 className="inline-flex items-center justify-center sm:justify-start gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto"
                 style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
               >
                 <FileText className="w-4 h-4" style={{ color: '#0099CC' }} />
-                Nos evenements
+                Nos évènements
               </Link>
               <Link
                 to="/contact"
@@ -315,7 +317,7 @@ export default function Home() {
                   <s.icon className="w-6 h-6" style={{ color: typeof s.color === 'string' && s.color.startsWith('#') ? s.color : undefined }} />
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-mce-navy leading-none">{s.value}</div>
+                  <div className="home-stat-value text-3xl font-black text-mce-navy leading-none">{s.value}</div>
                   <div className="text-[12px] text-mce-navy/70 leading-tight mt-2 whitespace-pre-line">
                     {s.label}
                     <br />
@@ -340,10 +342,7 @@ export default function Home() {
             {[
               {
                 logo: (
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-blue-700 leading-none">KEBA</div>
-                    <div className="text-[10px] tracking-[0.35em] font-bold text-blue-700 mt-1">CONSULTING</div>
-                  </div>
+                  <img src={kebaConsultingLogo} alt="KEBA Consulting" className="w-full h-16 object-contain" />
                 ),
                 desc: 'Conseil, formation et accompagnement des leaders et organisations.',
               },
@@ -358,10 +357,7 @@ export default function Home() {
               },
               {
                 logo: (
-                  <div className="text-center">
-                    <div className="text-2xl font-black text-mce-navy leading-tight">SPARCK</div>
-                    <div className="text-[11px] tracking-[0.3em] font-bold text-mce-navy/70">PROJECT</div>
-                  </div>
+                  <img src={sparksProjectLogo} alt="Sparks Project" className="w-full h-16 object-contain" />
                 ),
                 desc: 'Projets innovants, formation et transformation digitale.',
               },

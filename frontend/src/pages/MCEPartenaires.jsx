@@ -8,7 +8,7 @@ import { IMG, REASONS } from '../mock';
 import CTASection from '../components/CTASection';
 import kebaPng from '../assets/keba.jpeg';
 import womenPng from '../assets/femmes.jpeg';
-import mcePng from '../assets/networking/inspi6.jpeg'; // À adapter selon ton vrai nom
+import sparksPng from '../assets/networking/inspi6.jpeg';
 
 const ICONS = { Target, Eye, Gem, Users, ShieldCheck, Heart, Puzzle, BarChart3, Globe };
 
@@ -65,19 +65,22 @@ const PARTNERS = [
     name: 'KEBA CONSULTING',
     desc: '...',
     img: kebaPng,
-    objectPosition: 'center 25%', // remonte l'image pour révéler les visages en haut
+    objectFit: 'cover',
+    objectPosition: 'center 25%',
   },
   {
     name: 'WOMEN BUILD AFRICA',
     desc: '...',
     img: womenPng,
+    objectFit: 'cover',
     objectPosition: 'center 20%', // les deux femmes — visages en haut de l'image
   },
   {
-  name: 'SPARCK PROJECT',
+  name: 'SPARKS PROJECT',
   desc: '...',
-  img: mcePng,
-  objectPosition: 'center 12%', // ✅ affiche le haut de l'image → visages visibles
+  img: sparksPng,
+  objectFit: 'cover',
+  objectPosition: 'center 12%',
 },
 ];
 
@@ -220,7 +223,7 @@ export default function MCEPartenaires() {
                   src={partner.img}
                   alt={partner.name}
                   style={{
-                    objectFit: 'cover',
+                    objectFit: partner.objectFit,
                     objectPosition: partner.objectPosition,
                   }}
                 />

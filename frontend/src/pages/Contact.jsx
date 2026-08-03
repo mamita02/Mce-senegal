@@ -158,7 +158,14 @@ export default function Contact() {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              <button className="btn-primary text-[12px] w-full justify-center"><Calendar className="w-4 h-4" />CALENDLY</button>
+              <a
+                href="https://calendly.com/amane-mounia/coaching-decouverte-gratuit?month=2026-08"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-[12px] w-full justify-center"
+              >
+                <Calendar className="w-4 h-4" />CALENDLY
+              </a>
               <a href="https://wa.me/221781839973" target="_blank" rel="noreferrer" className="btn-primary text-[12px] w-full justify-center bg-green-500 hover:bg-green-600"><MessageCircle className="w-4 h-4" />WHATSAPP</a>
             </div>
           </div>

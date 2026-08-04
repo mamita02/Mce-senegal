@@ -1,649 +1,346 @@
- Version actuelle des CGV (Conditions Générales de Ventes & Services) : 02/11/2024
- Identification de l’entreprise, également appelé “Prestataire” :
- La société MCE, SARL au capital de 500€, représentée par Mounia AMANE, gérante et dûment habilité aux présentes.
-
-● Activité du prestataire : agence de communication
-● Nom commercial : MCE
-● Siège social : 9 rue des colonnes 75002 Paris
-● Forme juridique : SAS au capital de 500€
-● SIREN : 985191162
-● SIRET : 98519116200017
-● Numéro TVA intracommunautaire : FR 85985191162
-● RCS Paris B 985 191 162
-● NAF : 7311Z Activités des agences de publicités
-● Adresse de courrier électronique : contact@mce-pro.agency
-● Téléphone : 06.98.68.11.50
-Préambule et champ d’application
-● Est appelé “Client” : la personne physique ou morale signataire du bon de
-commande, du devis ou ayant signifié sa commande par écrit.
-● Est appelé “Prestation(s)” : le(s) service(s) mis à la disposition du CLIENT par le
-PRESTATAIRE, telles que par exemple :
-o Créations et conceptions graphiques (aussi appelé « Print ») comme
-l’identité visuelle, logo, supports, reportages photos et vidéos, etc … mais
-aussi la recherche de naming (nom commercial)
-o Créations et conceptions digitales (aussi appelé « Web ») comme les
-sites Internet, l’animation des réseaux sociaux, etc …
-o Réalisation d’outils et de campagnes de communication comme la
-visibilité et référencement Google, l’e-réputation, etc …
-o Études et conseils en matière de stratégie de communication globale
-o Et toutes Prestations demandées par le Client ayant fait l’objet d’une
-proposition formelle de la part du Prestataire.
-
-Le Client souhaite ainsi se doter d’outils de communication – Prestation(s) – et a lancé
-une consultation préalable, qui a été communiquée à MCE et a permis d’élaborer une
-proposition commerciale et technique. Après négociations, les parties se sont
-rapprochées et ont convenu du présent contrat qui a pour objet de définir les
-conditions d’intervention de MCE pour la réalisation du (ou des) projet(s).
-Par défaut, et sauf oubli ou manquement de notre part, nous transmettons
-systématiquement au moins 1 fois lors des premiers échanges par mail à nos clients &
-prospects, notre « Contrat de confiance » en fichier PDF ; bien entendu, ce dernier est
-également amené à évoluer en termes de contenus, process et informations, mais
-dans tous les cas, ce dernier fait référence à nos présentes CGV.
-Ainsi, les présentes conditions générales (CGV) déterminent les conditions
-contractuelles applicables à la fourniture de prestations de services proposées par
-MCE à ses clients.
-
-
-MCE se réserve la faculté de modifier à tout moment les présentes conditions
-générales, sans l’obligation d’en avertir les clients déjà en compte ; ces modifications
-seront donc applicables aux contrats en cours dès la dernière mise à jour publiée.
-Tout achat de prestations commercialisées par MCE entraîne l’adhésion pleine et
-entière (sans réserve) des présentes conditions générales de vente/service. Aucune
-condition particulière ne peut, sauf acceptation formelle écrite de MCE, prévaloir
-contre les conditions générales de ventes de MCE. Toute condition contraire posée par
-le Client sera donc inopposable à défaut d’acceptation expresse et écrite de notre part.
-Le fait que nous ne nous prévalons pas, à quelque moment que ce soit, de l’une
-quelconque des présentes conditions générales de vente ne peut être interprété
-comme valant renonciation à se prévaloir ultérieurement de l’une quelconque
-desdites conditions. Elles sont accessibles à tout moment sur le site internet de MCE à
-l’adresse htpps:// mce-pro.agency et prévaudront, le cas échéant, sur toute autre
-version et sur les propres conditions d’achat du Client.
-
-
-Article 1 – Objet du contrat
-La société MCE, ci-après dénommée « le prestataire », fournit à ses clients un service
-payant, comprenant le plus souvent la création d’un site Internet, et des prestations
-de suivi et de webmarketing, en contrepartie du paiement de frais de création ou de
-setup, et d’un abonnement.
-Le détail des prestations de services, objet du présent contrat, figure dans le bulletin
-de souscription signé entre le prestataire et le Client.
-Ce bulletin de souscription et les présentes Conditions Générales de Vente,
-constituent le Contrat de Service.
-
-
-Article 2 – Définitions
-Les termes et expressions utilisés au singulier ou au pluriel dans le présent contrat ont
-la signification suivante :
-● CMS: Système de gestion de contenus (Content Management System) est une
-famille de logiciels destinés à la conception et à la mise à jour dynamique de
-sites web. (Exemples : WordPress, Joomla, Drupal, Prestashop, Jimdo, etc …) ;
-● Œuvre : désigne le programme informatique et/ou, de façon plus générale, les
-résultats de la Prestation décrite, et réalisée par le Prestataire pour le Client
-dans le cadre du Contrat et de ses Annexes. L’œuvre comprend l’œuvre
-Générique et l’œuvre spécifique ;
-● Œuvre Générique : désigne toute partie de l’œuvre conçue, en vue d’un usage
-élargi à plusieurs clients, pour procurer l’exécution d’une (de) fonction(s)
-déterminée(s) et qui n’a pas été conçue, réalisée et paramétrée uniquement
-pour répondre aux besoins exprimés par le Client ;
-● Œuvre Spécifique : désigne l’intégralité de l’œuvre à l’exception de l’œuvre
-générique, c’est-à-dire toute partie de l’œuvre dont les fonctionnalités ont été
-conçues, réalisées et paramétrées spécifiquement pour répondre aux besoins
-et demandes uniques exprimés par le Client ;
-● Parties : désignent le Client et le Prestataire, signataires du contrat.
-
-
-Article 3 – Prise d’effet et Durée
-Le contrat entre en vigueur à sa date de signature par les deux parties et est conclu
-pour la durée nécessaire à la réalisation et au paiement complet des prestations en
-objet, incluant la réalisation du site ou l’élaboration de la stratégie marketing et son
-exploitation.
-Le Client déclare avoir pris connaissance des conditions générales de vente de
-prestations de services et les avoir acceptées sans réserve avant de passer commande
-en retournant le devis ou l’offre commerciale faite par MCE. Il renonce à l’application
-de ses conditions générales d’achat ainsi qu’à toutes les stipulations qui pourraient
-être imprimées sur ses commandes ou sa correspondance.
-Toute intervention de MCE emporte obligation pour le Client de payer intégralement
-le prix de la prestation. En cas d’établissement d’un devis, la prestation ne commence
-qu’à compter de la réception de celui-ci dûment signé, auquel doit être joint le
-paiement de l’acompte convenu par celui-ci le cas échéant.
-
-
-Article 4 – Documents contractuels
-Les présentes conditions particulières déterminent les conditions contractuelles
-applicables à l’objet du contrat définis à l’article « Objet » du présent contrat.
-La proposition commerciale et les annexes au Contrat font partie intégrante du
-présent Contrat et en sont indissociables et forment par conséquent un ensemble
-contractuel.
-Il est entendu entre les Parties qu’en cas de contradiction, la proposition commerciale
-constituant les conditions particulières de vente prévaut sur les autres contrats et
-annexes.
-
-4.1 Par « Contrat » les Parties conviennent expressément d’entendre les documents
-contractuels suivants dans leur ordre de hiérarchie juridique décroissante, à l’exclusion
-de tout autre :
-● La proposition commerciale et ses annexes
-● Les présentes Conditions Générales de Vente
-Ces documents expriment l’intégralité de l’accord entre les Parties en ce qui concerne
-l’objet du Contrat et se substituent à tous autres documents éventuellement émis par
-l’une ou l’autre des Parties.
-Toute modification du Contrat intervenue entre les Parties ne peut s’effectuer que par
-voie d’Avenant.
-En cas de contradiction entre deux documents de même niveau, le plus récent
-l’emporte. En cas de difficulté d’interprétation ou de contradiction entre l’un
-quelconque des titres figurant en tête des clauses et l’une quelconque des clauses, les
-titres seront déclarés inexistants.
-La nullité d’une clause contractuelle n’entraîne pas la nullité des conditions générales,
-à l’exception de celle d’une clause déterminante ayant amené l’une des parties à
-contracter.
-
-4.2 Enregistrement électronique
-Le prestataire peut proposer au Client de conclure au contrat par voie électronique,
-par l’acceptation d’une offre en ligne ; Le Client a la possibilité de vérifier la commande
-et de la faire modifier par le prestataire, puis de la confirmer. La confirmation de
-commande donne lieu à l’envoi immédiat par email d’un avis de réception par le
-prestataire. Sauf preuve contraire, les données enregistrées et archivées par la société
-MCE constituent la preuve de l’ensemble des transactions.
-
-
-Article 5 – Obligations et responsabilités respectives des parties
-5.1. Obligations du Client
-Le Client s’engage à collaborer avec le Prestataire en lui remettant toutes les
-informations utiles et nécessaires à la bonne exécution des Prestations et au respect
-des délais d’exécution.
-Le Client est tenu à une obligation d’information auprès de MCE sur ses besoins et
-attentes notamment par la remise d’un cahier des charges. En l’absence de ce dernier,
-MCE utilise sa méthodologie de travail sans remise en question possible par le Client.
-De plus, à noter qu’un projet de création de site Internet (ou de prestation
-webmarketing / print) nécessite une participation constructive du Client. MCE précise
-également qu’Internet peut être considéré comme un lieu public et qu’il appartient
-au Client de vérifier que les documents fournis, quel que soit leur support ou leur
-nature, sont en conformité vis-à-vis du Code de la Propriété Intellectuelle. Seule la
-responsabilité du Client pourra être engagée à ce titre.
-
-Il doit être titulaire de tous les droits d’exploitation des œuvres ou droits de propriété
-intellectuelle apportés au Prestataire en vue de leur reproduction. Il en va de même
-pour tous les signes distinctifs et de charte graphique (dessins, marques,
-photographies, etc.) qui pourraient être apposés sur tout support de communication.
-Plus largement le Client reconnaît la pleine et entière responsabilité de ses choix dans
-tous les contenus qu’elle présente, fourni ou demande au Prestataire pour la
-réalisation des Prestations.
-
-Le Client reconnaît aussi avoir pris connaissance des mises en garde légales
-concernant les lois du copyright, de la propriété intellectuelle, les mentions légales à
-faire paraître et des peines pouvant être encourues au regard de leur violation.
-La responsabilité du Prestataire ne pourra en aucun cas être recherchée ou engagée
-dans l’hypothèse où ces contenus ne se révéleraient pas libres de droits ou seraient
-attentatoires aux droits de propriétés intellectuelles d’un tiers. Le Client garantit le
-Prestataire à cet égard de prendre à sa charge toute condamnation, frais et honoraires
-mis à la charge ou supportés par le Prestataire pour se défendre du fait de la
-défaillance du Client ou dans le cadre de toute procédure à l’encontre du Prestataire
-en lien avec la Prestation délivrée au Client.
-
-Le Client doit donc :
-● Fournir les éléments demandés (chartes graphiques, logos, questionnaire
-graphique, ou technique, etc.) dans un délai raisonnable
-● Valider les propositions graphiques, textuelles ou fonctionnelles dans les
-meilleurs délais afin que les échanges restent les plus courts possibles entre les
-2 parties
-● Dans le cas où ces délais ne seraient pas respectés, le prestataire est fondé à
-exiger le règlement du solde de création, et à faire démarrer par conséquent
-l’abonnement du site Internet le cas échéant
-Si des changements sont demandés après validation des propositions graphiques ou
-fonctionnelles, ils feront l’objet d’un devis séparé, et de ce titre, d’une facturation
-supplémentaire. Un refus, par le Client, du devis proposé dans ce cas de figure, ne
-peut en aucun cas remettre en cause le présent contrat, et notamment les
-développements initialement prévus. Le Client est responsable pendant la durée de
-l’abonnement du paiement de l’ensemble des sommes dues au titre de la fourniture
-des services du prestataire. Il s’engage également à respecter le mode et le délai de
-règlement défini dans les conditions particulières.
-
-Le Client s’engage enfin à :
-● fournir l’ensemble des informations demandées, et à ce qu’elles soient exactes,
-complètes et à jour
-● à être lié par les présentes conditions en son nom propre ou pour celui d’une
-société dont il a reçu mandat
-
-5.2. Obligations du prestataire
-Pour l’accomplissement des prestations prévues, le Prestataire s’engage à donner ses
-meilleurs soins, conformément aux règles de l’art. La présente obligation, n’est de
-convention expresse, que pure obligation de moyens.
-Le Prestataire s’engage à mettre tout en œuvre pour assurer la permanence, la
-continuité et la qualité des services fournis au Client et souscrit à ce titre à une
-obligation de moyens. Le Prestataire garantit, conformément aux dispositions légales,
-le Client, contre tout défaut de conformité des Prestations et tout vice caché,
-provenant d’un défaut de conception ou de fourniture desdites Prestations à
-l’exclusion de toute négligence ou faute du Client. Cependant, compte tenu de la
-nature du réseau Internet, le prestataire ne peut garantir l’absence d’interruption ou
-de dégradation de ses services. Le prestataire s’engage à respecter le caractère
-strictement confidentiel des éléments qui lui sont confiés par le Client tels que sa
-stratégie et ses objectifs.
-
-Les délais de réalisation mentionnés dans la proposition commerciale sont à titre
-indicatif. Le Client ne peut exiger de MCE ni la livraison de la commande à la date
-prévue, ni indemnité de quelque nature que ce soit sauf clause contraire des
-conditions particulières de vente. Le Client reste redevable de la somme prévue à la
-proposition commerciale.
-
-Dans le cadre de la création de sites Internet géré par le Client, les défauts d’affichages
-relatifs aux systèmes d’exploitation, aux mises à jour, plugins, widgets ou tous autres
-réglages et paramétrages du support sur lequel le Client visionne son site internet, du
-type de machines, des terminaux utilisés, ne peuvent en aucun cas êtres imputés aux
-travaux de webdesign et d’intégration de MCE. Généralement, les sites Internet et
-boutiques en lignes sont adaptés et testés sur la dernière version lors de la signature
-de la proposition commerciale des principaux navigateurs web reconnus et à jour de
-sécurité/performances comme Chrome, Firefox, Safari, … MCE n’offre pas de garantie
-pour des versions précédant la version courante des navigateurs cités ni sur d’autres
-navigateurs.
-
-MCE s’interdit de divulguer les informations relatives à son Client ou à ses biens
-auxquelles il a pu avoir accès dans l’exécution de son service. Le Client considérera
-comme strictement confidentiels et s’interdit de divulguer toute information donnée
-dont il pourra avoir connaissance à l’occasion du présent contrat. Pour l’application de
-la présente clause, le Client répond de ses salariés comme de lui-même. Le Client
-toutefois ne saurait être tenu pour responsable d’aucune divulgation si les éléments
-divulgués étaient dans le domaine public ou s’il en avait connaissance ou les obtient
-de tiers par des moyens légitimes.
-
-Sous-traitance : MCE peut confier à un tiers l’exécution de tout ou partie des
-prestations de services. Le sous-traitant sera présenté au Client avant le début de
-l’exécution de la mission. Le Client pourra accepter comme modalité de paiement du
-sous-traitant la délégation imparfaite.
-
-Cependant, il ne pourra être reproché, à quelque titre que ce soit, à MCE tous
-dommages de toute nature ainsi que de tous coûts, directs et indirects, qui
-résulteraient de l’inexécution de son obligation de délivrance conforme à la
-commande. Toute clause contraire est réputée non écrite. En d’autres termes, la
-responsabilité de MCE ne pourrait être engagée dans le cadre d’utilisation de services
-tiers (Google, Facebook, Instagram, etc …), qui en cas de fermeture ou coupure du
-dit-service, et ce de manière totalement indépendante vis-à-vis de MCE, malgré notre
-volonté et efforts de compréhension pour résoudre le problème et apporter des
-réponses à notre Client.
-
-Par ailleurs, dans le cadre d’animation des réseaux sociaux (Facebook, Instagram et
-LinkedIn notamment), si le Client intervient dans la cogestion ou pleine animation de
-ses propres comptes en effectuant de son plein gré des modifications ou
-manquements quelconques en termes d’usage et de publications, MCE serait là-aussi
-totalement déchargée de toute responsabilité juridique.
-
-Enfin, la responsabilité du Prestataire ne peut être engagée qu’en cas de faute ou de
-négligence prouvée et limitée aux préjudices directs à l’exclusion de tout préjudice
-indirect, de quelque nature que ce soit. En nulle circonstance, le Prestataire ne pourra
-être tenue d’indemniser les dommages immatériels consécutifs ou non à un
-dommage matériel tels que notamment mais sans que cela soit exhaustif, les pertes
-d’exploitation, les pertes de production, le manque à gagner, la perte de profits, la
-perte de contrat, la perte d’image, la perte d’une chance, le préjudice commercial, les
-surcoûts de production, l’immobilisation du personnel ou d’équipements ainsi que
-tout dommage indirect.
-
-Afin de faire valoir ses droits, le Client devra, sous peine de déchéance de toute action
-s’y rapportant, informer le Prestataire, par écrit, de l’existence des vices dans un délai
-maximum de 72 heures à compter de la livraison des Prestations.
-Le Prestataire rectifiera ou fera rectifier, à ses frais exclusifs, selon les modalités
-adéquates et agréées par le Client, les Prestations jugées défectueuses. En tout état
-de cause, au cas où la responsabilité du Prestataire serait retenue, la garantie serait
-limitée au montant HT payé par le Client pour la fourniture des Prestations.
-
- 
-
-Article 6 – Tarifs, modalités de paiement et conditions de règlement
-6.1. Tarif
-Les tarifs des prestations sont stipulés en HT (hors taxes) et exprimés en euros (€)
-portant sur le montant total à payer. Le coût d’un service (création de site Internet,
-prestation webmarketing ou print) est fixé selon plusieurs critères et besoins du
-Client, en fonction notamment du temps à passer sur son dossier client, du niveau
-graphique, du canal de communication souhaité et des options choisies. Ne sont pas
-compris dans le prix tel que fixé dans le devis tous les frais extraordinaires pouvant
-être engagés par le Prestataire en cours de mission et non prévus initialement : coût
-d’acquisition des polices typographiques, des photographies ou illustrations issues de
-banques d’images, ou des frais de déplacements… ainsi que le coût de toute
-prestation ou modification supplémentaire demandée par le Client en cours de
-mission. Ces frais donnent lieu à un devis supplémentaire.
-
-Par défaut, un acompte correspondant à 60% du prix total des Prestations
-commandées est exigé lors de la passation de la commande (hors cas particulier ou
-institutionnel avec paiement à la livraison des Prestations via Chorus Pro, cela sera
-cependant bien notifié et indiqué sur le devis de MCE dans les conditions de
-règlement). Le travail du dossier Client ne commencera que dès réception effective du
-paiement reçu et encaissé sur le compte de MCE. Les frais de virement et de change
-éventuellement applicables sont à la charge du client. Le solde du prix est payable au
-jour de la fourniture desdites Prestations.
-
-A noter également ces 2 précisions :
-● d’une part, pour tout dossier client non achevé au bout des 6 premiers mois
-post-validation du devis, MCE se réserve le droit d’établir une facture des
-éléments déjà livrés (ou sur lesquels nous avons travaillés) à date de facturation.
-● d’autre part, pour tout dossier client non achevé au bout d’1 an post-validation
-du devis, MCE se réserve le droit d’établir la facturation complète de ce dernier.
-Par ailleurs, en cas de cessation de paiement, MCE se réserve le droit d’arrêter ses
-services, le bénéficiaire reste redevable des sommes restantes à devoir. Il pourra
-également résilier le contrat sans préavis.
-
-En outre, tout incident de paiement est passible de pénalités de retard calculées sur la
-base d’un taux annuel de 10%, avec un montant d’indemnité forfaitaire minimum de
-40€. Aucun escompte ne sera accordé en cas de paiement anticipé. Cette facture sera
-payable à réception.
-MCE se réserve la faculté de modifier les prix des montants liés aux différents
-abonnements de ses clients actifs (mensuels, trimestriels, semestriels, ou annuels) de
-ses prestations et services, comme par exemple :
-
-● sites web : volet « suivi/hébergement », aussi appelé prestation
-d’Accompagnement et de Maintenance corrective (TMA : Tierce Maintenance
-Applicative)
-● réseaux sociaux : volet animation et publicité
-● référencement Google : volets « SEO » + « SEA » etc …
-Ces tarifs seront actualisés de plein droit et malgré l’absence de formalité ni de
-notification préalable au Client, soit :
-● le 1er janvier de chaque année, par application d’un pourcentage lié à l’éventuel
-taux d’inflation au niveau national (en France),
-● ou à compter de l’année suivant la première année d’abonnement du Client,
-● ou en cours d’année avec un préavis d’un mois de notification au Client pour
-tout contexte particulier subissant des hausses tarifaires que nous devons
-répercuter à court terme à nos Clients concernés par ces services.
-
-De plus, MCE se réserve le droit de cesser à tout moment cette éventuelle prestation
-(TMA) vis-à-vis du Client sous réserve d’un délai de prévenance d’un (1) mois par mail
-ou courrier sans obligation de préciser le motif.
-
-6.2 Défaut de paiement
-De convention expresse, le défaut de paiement partiel ou total à l’échéance entraînera
-de plein droit l’exigibilité immédiate de toutes les sommes dues, d’une indemnité
-correspondant aux frais de gestion administrative du dossier d’un montant de
-quarante (40) euros, d’une pénalité de retard correspondant à un taux annuel de 10%
-en vigueur à la date d’émission de la facture correspondante, calculée dès le
-lendemain du jour où la facture est exigible, et le cas échéant, d’une indemnité
-correspondant aux frais de gestion administrative de rejet bancaire de paiement du
-Client de quatre (4) euros non assujettie à la TVA, et ce sans préjudice des dommages
-et intérêts ou des frais de justice que pourrait demander le Prestataire.
-Le Client ne peut, sous prétexte de réclamation formulée par lui, retenir tout ou partie
-des sommes dues à MCE.
-
-Réserve de propriété
-Le transfert de propriété (cession des droits d’auteur et de
-propriété intellectuelle) du Prestataire est expressément subordonné au paiement
-intégral du prix en principal. De plus, tout défaut de paiement jusqu’à 60 jours après
-l’émission de la facture (malgré les relances préalables formulées par MCE: téléphone,
-email ou courrier) pourra engendrer la fermeture des services afférents sans délai.
-
-6.3 Taxes
-MCE se réserve le droit de répercuter, sans délai, toute nouvelle taxe ou toute
-augmentation de taux des taxes existantes.
-
- 
-
-Article 7 – Reconduction du contrat de suivi
-Le contrat d’abonnement est tacitement renouvelable à chaque échéance pour une
-même durée (soit mensuel, trimestriel, semestriel, ou annuel). Le prix est défini en
-fonction de la complexité du produit et est indiqué dans la proposition commerciale.
-Cette reconduction s’applique donc sur l’ensemble des prestations webmarketing
-dans sa globalité et comprend l’accès à notre support téléphonique (pendant les
-horaires de bureau), le suivi technique et la maintenance corrective sur les travaux de
-MCE tout au long de l’année.
-
- 
-
-Article 8 – Résiliation
-Le Client est libre de résilier les prestations d’abonnement à n’importe quel moment,
-la dénonciation du contrat se fait par lettre recommandée avec accusé de réception, 1
-mois au moins avant le terme de la période contractuelle en cours. L’abonnement
-prendra alors fin, sans aucune pénalité ou indemnité de quelque sorte que ce soit
-versée au Client ou au prestataire.
-Dans le cas où la totalité des frais de création ou de setup n’aurait pas été réglée au
-moment de la résiliation du contrat d’abonnement, le solde restant dû doit être payé
-dans le mois suivant, et ce, quels que soient les motifs de la résiliation.
-La résiliation ne pourra donner lieu au remboursement de toute somme versée au
-titre du présent contrat.
-
-A noter que MCE pourra également résilier tout ou partie du contrat aux torts du
-client, signifiée par LRAR à ce dernier comme suit :
-sans délai :
-● En cas de violation des lois et règlements en vigueur
-● En cas de procédure ou liquidation judiciaire
-● En cas de radiation/cessation d’activité
-sous quinze (15) jours
-● En cas d’inexécution par le Client de l’une quelconque des obligations figurant
-au Contrat, notamment en cas de défaut de paiement. La résiliation
-interviendra après une mise en demeure, restée sans effet.
-sous un (1) mois
-● En cas de différent quelconque (par exemple, lors d’un brief non conforme a la
-demande initiale)
-● En cas de défaut de compétences techniques et savoir-faire par MCE (dû
-notamment à des évolutions techniques et/ou de soucis de qualité et de suivi).
-sous deux (2) mois
-● En cas de défaut de paiement jusqu’à 60 jours après l’émission de la facture
-(malgré les relances préalables formulées par MCE: téléphone, email ou
-courrier)
-
-Le Client devra cesser d’utiliser les prestations fournies et payer l’ensemble des
-sommes restant dues (facturées ou non encore facturées) au titre du contrat à la date
-de résiliation.
-D’une part, en fonction de l’état d’avancement du projet, MCE se réserve le droit de
-rembourser ou non l’éventuel acompte Client versé.
-D’autre part, aucun dédommagement ou préjudice quelconque ne pourra être
-demandé à l’encontre de MCE.
-
-La cession des droits d’auteur et de propriété intellectuelle ne seront cédés qu’après
-paiement définitif par le Client, c’est à dire que la marchandise livrée (ceci correspond
-à l’ensemble des prestations créées et mises en place directement par MCE pour le
-compte du Client, telles que les compétences Internet/web et/ou graphique/print ;
-dont l’utilisation du logo par exemple, ou encore la propriété du site web et du/des
-noms de domaine notamment) demeure propriété de MCE jusqu’au paiement
-complet du prix convenu lors du devis initial.
-
- 
-
-Article 9 – Droit de communication et de rectification
-Conformément à la loi informatique et libertés N°78-17 du 6 janvier 1978, le Client
-dispose d’un droit de communication et de rectification des informations nominatives
-le concernant ; Toute demande est à adresser au siège social du prestataire par lettre
-simple.
-Le Client fait son affaire de toute déclaration auprès de la Commission Nationale
-Informatique et Liberté (CNIL) relative à l’utilisation de son site Internet sauf
-disposition conventionnelle contraire.
-
-
-Article 10 – Etendue de la responsabilité
-Tout dysfonctionnement constaté par le Client doit être communiqué au prestataire
-dans les plus brefs délais.
-Dans la limite de la réglementation applicable, le prestataire n’offre aucune garantie
-expresse ou tacite concernant notamment, mais de manière non exhaustive ni
-limitative, la capacité de son service de mise à disposition de site internet à satisfaire
-les besoins propres, du Client, ni l’adéquation de son service à la réglementation et
-aux normes applicables au secteur d’activité du Client
-
-En conséquence, le prestataire, ne pourra en aucun cas être tenu responsable d’une
-perte d’activité, d’un manque à gagner ou d’une perte d’actifs, d’une perte d’usage ou
-de données, du nombre de personnes qui accèderont au site du Client, des profits que
-le Client pourra tirer de l’utilisation du service, ou d’un dommage indirect ou spécial
-résultant, de quelque façon que ce soit.
-
-Néanmoins, il est convenu un engagement du prestataire sur le niveau de
-disponibilité du site. La disponibilité du site est définie par l’accès aux pages sans
-message d’erreur. De même, le site ne présente aucune anomalie bloquante
-empêchant son fonctionnement.
-
-Hébergement web
-MCE remplit son devoir de conseil quant à la solution d’hébergement adaptée aux
-besoins du Client via ses différents partenaires sur des serveurs mutualités, localisés
-dans des data centers français (O2switch et OVH).
-Néanmoins, dans le cadre d’un bon fonctionnement pour le suivi global du site web
-du Client, ce dernier (après validation de MCE) pourra alors souscrire directement
-l’offre conseillée en son nom, mais il sera obligatoire de rester parmi l’un des
-hébergeurs utilisés par MCE; c’est-à-dire que le Client paiera directement le service
-annuel (dont la reconduction annuelle), mais ceci ne pourra en aucun cas être
-déductible de l’abonnement annuel facturé par MCE.
-
-Nom de domaine
-MCE peut se charger de la réservation et du renouvellement du domaine du Client. Si
-tel est le cas dans la proposition commerciale, MCE s’engage à tout mettre en œuvre
-auprès des organismes compétents pour procéder à l’enregistrement du nom de
-domaine choisi mais ne souscrit à ce titre aucune obligation de résultat.
-Le Client est seul responsable du choix du nom de domaine dont il a sollicité et / ou
-obtenu l’enregistrement. En aucun cas, MCE ne saurait être tenu pour responsable à
-quelque titre que ce soit de recours, amiables ou contentieux, dont le Client pourrait
-faire l’objet consécutivement à l’enregistrement d’un ou plusieurs noms de domaine.
-Le Client s’engage à garantir MCE de toutes condamnations qui pourraient être
-prononcées à son encontre du fait de l’enregistrement d’un ou plusieurs noms de
-domaine.
-
-Travaux d’impressions
-En cas d’impression, MCE invite son Client à vérifier avec attention l’ensemble des
-textes, coordonnées, orthographes, images et colorimétrie, etc… La transmission du
-bon à tirer (BAT) pour validation définitive déchargera la société MCE de toute
-responsabilité concernant d’éventuelles erreurs. La validation des fichiers transmis
-engage donc la pleine responsabilité du Client.
-
-
-Limitation de Responsabilité
-En aucun cas, MCE ne saurait voir sa responsabilité engagée à la suite de toute action
-ou recours de tiers, notamment du fait : d’informations, d’images, de sons, de textes,
-de vidéos contraires aux législations et réglementations en vigueur, contenus et/ou
-diffusés sur le ou les sites du Client ; de produits ou services défectueux que le Client a
-vendu par l’intermédiaire de son ou ses sites ; de la violation des droits de propriété
-intellectuelle relatifs aux œuvres diffusées, en intégralité ou partiellement, sur le ou les
-sites du Client ; de la suspension et/ou de la résiliation des comptes, notamment à la
-suite du non règlement des sommes dues à la conservation des nom de domaines.
-MCE ne peut être redevable d’aucune taxation ou autres frais en relation avec les
-achats faits à partir du site Client. Le Client accepte de prendre la pleine responsabilité
-des taxes et frais de toutes natures associés aux produits vendus.
-
-Du fait des caractéristiques et limites de l’Internet, MCE ne saurait voir sa
-responsabilité engagée pour, notamment les difficultés d’accès, indisponibilité, ou
-dysfonctionnements du site hébergé du fait du dysfonctionnement ou de la
-saturation des réseaux à certaines périodes; du dysfonctionnement d’un web service
-ou logiciel tiers ; la contamination par virus des données et/ou logiciels du Client ; les
-intrusions malveillantes de tiers sur le site du Client ; le mauvais fonctionnement des
-équipements ou le non savoir-faire du Client, de problèmes liés au réseau
-téléphonique ou à internet et/ou en cas de force majeure ; les détournements
-éventuels des mots de passe, codes confidentiels, et plus généralement de toute
-information à caractère sensible pour le Client.
-
-Le compte Client est strictement personnel, il est accessible par un login et un mot de
-passe confidentiel. Le Client est responsable de l’usage de son login et de son mot de
-passe, toute connexion effectuée en utilisant ces login et mot de passe sera réputée
-l’avoir été par le Client. MCE ne sera en aucun cas responsable de la perte, du vol ou de
-la diffusion des login et mot de passe.
-
-
-Article 11 – Propriété intellectuelle, mentions commerciales et droit de publicité
-Le Client sait que MCE reste seul propriétaire des droits de reproduction de ses
-œuvres, résultant notamment de la propriété littéraire et artistique. Toute
-représentation ou reproduction même partielle faite sans autorisation est illicite.
-Sauf mention contraire explicite du Client, le Prestataire se réserve les droits :
-● d’inclure dans la réalisation de ses Prestations une mention commerciale
-indiquant clairement sa contribution, sous la forme d’une mention du type :
-“Réalisation MCE ” ;
-de conserver la base de données et des sources de l’ensemble des travaux et
-réalisations effectués pour le compte du Client sans limitation ;
-● de mentionner ses Prestations avec logo du Client comme une de ses
-références dans ses démarches de prospection commerciale, de
-communication externe et de toute publicité ;
-● d’utiliser, à des fins purement démonstratives, les prestations réalisées. Cette
-autorisation s’étend plus particulièrement aux éléments constitutifs de la
-réalisation et comprend sans restriction la présentation publique des contenus
-textuels et des contenus iconographiques.
-
-
-Article 12 – Cas de force majeure
-Aucune des deux parties ne sera tenue pour responsable vis-à-vis de l’autre de la
-non-exécution ou des retards dans l’exécution d’une obligation née du présent
-contrat qui seraient dus au fait de l’autre partie consécutivement à la survenance d’un
-cas de force majeure habituellement reconnu par la jurisprudence ou non comme en
-particulier, tout acte émanant d’une autorité civile ou militaire, de fait ou de droit de
-grève, incendie, inondation, dégâts des eaux, tempête et foudre, accident, émeute,
-attentat, de non livraison des documents pour la création ou la mise en service du
-produit, tout fait imputable à un tiers, ou autre circonstance ayant une cause externe
-et l’empêchant, directement ou au travers d’un tiers, de répondre aux dites
-obligations.
-
-Le cas de force majeure suspend les obligations nées du présent contrat
-pendant toute la durée de son existence. Toutefois, si le cas de force majeure avait une
-durée d’existence supérieure à 30 jours consécutifs, il ouvrirait droit à la résiliation de
-plein droit du présent contrat par l’une ou l’autre des parties en le notifiant et
-prévenant la partie adverse par quelque moyen que ce soit.
-
-
-Article 13 – Confidentialité
-Les documents ou renseignements portant une mention de confidentialité confiés
-par le Client ainsi que le présent contrat (ci-après dénommés « les Informations
-Confidentielles ») sont couverts par la confidentialité.
-Les parties s’engagent à respecter cette confidentialité pendant toute la durée du
-présent contrat et pour une durée de deux ans à dater de l’expiration du présent
-contrat.
-Le prestataire s’engage à restituer l’ensemble de la documentation confidentielle,
-quel qu’en soit le support, remise par le Client à l’expiration du contrat, et à détruire les
-copies qui auraient pu être faites.
-
- 
-
-Article 14 – Compétence
-En cas de contestation relative à l’interprétation ou à l’exécution du présent contrat, le
-Tribunal de commerce de Châteauroux (Indre, 36) sera seul compétent, le texte en
-langue française du présent règlement faisant foi.
-
-
-Article 15 – Acceptation du Client
-Les présentes Conditions Générales de Ventes & Services (CGV) sont donc
-expressément agréées et acceptées par le Client, qui déclare et reconnaît en avoir une
-parfaite connaissance, et renonce, de ce fait, à se prévaloir de tout document
-contradictoire et, notamment, ses propres conditions générales d’achat, qui seront
-inopposables au Prestataire, même s’il en a eu connaissance.
-
-
-Disposition Légales Applicables (FRANCE)
- 
-Article 16. Obligation de paiement du client
-Conformément à l’article 1103 du Code civil, « les contrats légalement formés tiennent lieu de loi à ceux qui les ont faits ».
-Toute acceptation d’un devis (signature, email, message ou paiement) vaut engagement contractuel ferme et définitif.
-En application de l’article 1104 du Code civil, les contrats doivent être exécutés de bonne foi.
-Le client est donc tenu de régler l’intégralité du prix convenu, sans pouvoir modifier unilatéralement les conditions validées.
-Conformément à l’article 1217 du Code civil, en cas d’inexécution, le prestataire pourra :
-– Suspendre l’exécution de ses obligations
-– Exiger l’exécution forcée
-– Demander une réduction du prix ou la résolution du contrat
-– Engager la responsabilité du client
- 
-Article 17. Nature du Contrat – Prestation de Service
-Conformément à l’article 1710 du Code civil, le présent contrat constitue un contrat de prestation de service.
-Le prestataire est tenu à une obligation de moyens.
-Le client est tenu à une obligation essentielle de paiement du prix convenu, indépendamment de toute évolution de ses besoins ou de ses décisions en cours de projet.
- 
-Article 18. Délais de réalisation
-Le délai de réalisation est estimé à 4 semaines, à compter de la validation du devis et de la réception complète de l’ensemble des éléments nécessaires (contenus, textes, images, accès techniques).
-Conformément à l’article 1219 du Code civil, le prestataire pourra suspendre l’exécution de la prestation en cas de manquement du client à ses obligations (notamment absence de transmission des éléments nécessaires).
-Tout retard imputable au client entraînera automatiquement un report du délai de livraison, sans engagement de responsabilité du prestataire.
- 
- 
-Article 19. Validation de maquette et modifications
-Une première maquette est présentée au client pour validation.
-Une seule série de modifications est incluse.
-Toute demande supplémentaire ou modification postérieure à validation fera l’objet d’une facturation complémentaire.
-Conformément à l’article 1193 du Code civil, le contrat ne peut être modifié que par un accord mutuel des parties.
-Ainsi, toute modification du périmètre initial constitue une nouvelle prestation.
- 
- 
-Article 20. Principe d’exécution et facturation
-Toute prestation engagée ou réalisée est due.
-Conformément à l’article 1231-1 du Code civil, tout manquement du client à ses obligations engage sa responsabilité contractuelle et peut donner lieu à indemnisation.
-Aucun changement d’avis, arrêt du projet ou modification en cours ne peut justifier un refus de paiement.
- 
- 
-Article 21. Retard de paiement
-Conformément à l’article L441-10 du Code de commerce :
-– Des pénalités de retard sont exigibles sans rappel dès le lendemain de la date d’échéance
-– Le taux applicable est égal au taux directeur de la Banque Centrale Européenne majoré de 10 points
-Une indemnité forfaitaire de 40 euros pour frais de recouvrement est également due (article D441-5 du Code de commerce).
-Le prestataire se réserve le droit de suspendre toute prestation en cas de non-paiement.
- 
- 
-Article 22. Exception d’inexécution
-Conformément à l’article 1219 du Code civil, le prestataire peut refuser d’exécuter ou suspendre ses obligations si le client ne respecte pas ses engagements (notamment paiement ou transmission des éléments).
- 
- 
-Article 23. Interdiction de remise en cause abusive
-Toute tentative de remise en cause du contrat après validation (retard imputable au client, changements répétés, absence de validation) ne pourra être opposée au prestataire.
-Les échanges écrits (emails, messages, validations) feront foi en cas de litige.
- 
- 
-Article 24. Force obligatoire et irrévocabilité du devis
-Le devis accepté constitue un engagement irrévocable.
-Conformément à l’article 1224 du Code civil, la résolution du contrat ne pourra intervenir qu’en cas de manquement grave, et n’exonère pas le client du paiement des prestations déjà réalisées.
+CONDITIONS GÉNÉRALES DE VENTE (CGV) – MANAGEMENT COMMUNICATION EVENT – SÉNÉGAL
+Prestations digitales – Développement – Marketing – Formation – Coaching – Communication – Supports commerciaux
+Version Premium – Applicable à l’ensemble des prestations réalisées par Management Communication Event (MCE) – Sénégal
+
+---
+
+ARTICLE 1 – OBJET
+
+Les présentes Conditions Générales de Vente (CGV) encadrent l’ensemble des prestations commercialisées par Management Communication Event (MCE) au Sénégal, à destination des professionnels, associations, institutions et particuliers.
+
+Les prestations concernées incluent notamment :
+
+1.1 – Pôle Digital & Développement
+
+• Création de sites vitrines
+• Création de sites e-commerce
+• Développement WordPress
+• Développement web sur mesure
+• Développement d’applications mobiles
+• Logiciels métiers
+• Plateformes digitales / SaaS / Marketplace
+• Intégration CRM / ERP
+• Intégration API
+• Solutions de paiement
+• Hébergement
+• Maintenance
+• Sécurisation technique
+• Refonte / migration digitale
+
+1.2 – Pôle Communication & Marketing
+
+• Branding
+• Community Management
+• Création de contenus
+• Calendriers éditoriaux
+• Copywriting
+• Stratégie digitale
+• SEO / SEA
+• Google Ads
+• Meta Ads
+• Campagnes sponsorisées
+• Email marketing
+• Automatisation marketing
+• Landing pages
+• Funnels de conversion
+• Relations presse / communication corporate
+
+1.3 – Pôle Création & Supports
+
+• Catalogues commerciaux
+• Brochures
+• Flyers
+• Cartes professionnelles
+• Présentations commerciales
+• Dossiers sponsors
+• Identité visuelle
+• Packaging
+• Supports imprimés / digitaux
+• Templates
+• Kits de communication
+
+1.4 – Pôle Conseil / Formation / Coaching
+
+• Coaching individuel
+• Coaching entreprise
+• Accompagnement stratégique
+• Audit communication
+• Formations digitales
+• Formations commerciales
+• Workshops
+• Séminaires
+• Masterclass
+• Mentorat
+
+Toute commande implique acceptation pleine et entière des présentes CGV.
+
+---
+
+ARTICLE 2 – FORMATION DU CONTRAT
+
+Le contrat est réputé formé dès :
+
+• signature d’un devis ;
+• accord écrit par email ;
+• validation écrite par message ;
+• bon pour accord ;
+• paiement d’un acompte ;
+• commencement d’exécution ;
+• validation d’un brief ;
+• lancement opérationnel demandé par le client.
+
+Les échanges électroniques, confirmations écrites, validations, comptes-rendus, correspondances professionnelles et paiements ont valeur probatoire dans la relation contractuelle.
+
+---
+
+ARTICLE 3 – CONDITIONS DE PAIEMENT
+
+3.1 – Développement / Sites / Applications / Logiciels
+
+60% à la commande
+40% avant livraison finale, mise en production ou remise des accès
+
+Tout acompte versé reste acquis à MCE au titre des ressources mobilisées, de la réservation des équipes et des travaux engagés.
+
+---
+
+3.2 – Réseaux sociaux / Community Management
+
+100% payable d’avance
+
+Aucune prestation ne débute avant règlement complet.
+
+---
+
+3.3 – Coaching / Accompagnement
+
+100% payable d’avance
+
+Toute séance réservée est due.
+
+---
+
+3.4 – Formation
+
+100% payable avant démarrage
+
+La réservation devient ferme après règlement.
+
+---
+
+3.5 – Supports commerciaux / Catalogues / Branding / Création visuelle
+
+100% payable d’avance
+
+La phase créative ne débute qu’après encaissement complet.
+
+---
+
+3.6 – Campagnes sponsorisées / Meta Ads / Google Ads
+
+Le client règle distinctement :
+
+1 – Honoraires de gestion MCE : 100% payable d’avance
+2 – Budget publicitaire : réglé séparément par le client
+
+Le budget publicitaire reste la propriété exclusive du client.
+
+MCE ne finance aucune campagne pour le compte du client.
+
+---
+
+ARTICLE 4 – DÉLAIS D’EXÉCUTION
+
+Les délais communiqués constituent des estimations.
+
+Ils commencent uniquement après réunion cumulative des conditions suivantes :
+
+• validation écrite ;
+• paiement requis ;
+• réception complète des éléments ;
+• brief validé ;
+• accès techniques transmis ;
+• arbitrages fonctionnels arrêtés.
+
+Les délais sont automatiquement suspendus en cas de :
+
+• retard client ;
+• absence de validation ;
+• brief incomplet ;
+• modification de stratégie ;
+• changements successifs ;
+• demandes complémentaires ;
+• indisponibilité du client ;
+• blocage tiers (hébergeur, API, store, paiement, etc.) ;
+• cas de force majeure.
+
+Aucune pénalité ne peut être imputée à MCE dans ces cas.
+
+Pour les projets complexes (applications, logiciels, plateformes, SaaS, marketplace), aucun délai ferme ne peut être contractuellement garanti, sauf engagement écrit exprès sur un jalon précis.
+
+Les roadmaps communiquées constituent des estimations évolutives.
+
+---
+
+ARTICLE 5 – MODIFICATIONS / HORS PÉRIMÈTRE
+
+Deux modifications maximum sont incluses dans la prestation initiale.
+
+Au-delà :
+
+→ facturation complémentaire.
+
+Toute demande impliquant :
+
+• nouvelle fonctionnalité ;
+• refonte importante ;
+• changement de logique ;
+• nouvelle intégration ;
+• nouveau parcours utilisateur ;
+• évolution structurelle ;
+• changement de modèle économique ;
+
+constitue une nouvelle prestation ou un avenant contractuel.
+
+---
+
+ARTICLE 6 – VALIDATION TACITE
+
+Toute livraison intermédiaire ou finale est réputée acceptée :
+
+• après validation écrite ;
+ou
+• à défaut de retour écrit motivé sous 7 jours calendaires ;
+ou
+• dès exploitation commerciale ;
+ou
+• dès utilisation publique ;
+ou
+• dès mise en diffusion.
+
+Cette validation devient définitive pour la phase concernée.
+
+---
+
+ARTICLE 7 – PROPRIÉTÉ INTELLECTUELLE / CODE SOURCE
+
+Tous droits sur :
+
+• concepts ;
+• créations ;
+• visuels ;
+• maquettes ;
+• textes ;
+• scripts ;
+• code source ;
+• architecture ;
+• modules ;
+• outils ;
+• frameworks ;
+• méthodes ;
+• briques techniques réutilisables ;
+
+demeurent la propriété exclusive de MCE, sauf cession expresse écrite.
+
+Le client bénéficie d’un droit d’exploitation de la solution livrée après règlement intégral.
+
+Option de cession de code source :
+
+• site simple : +10%
+• site dynamique / e-commerce : +15%
+• plateforme / SaaS / application : +20%
+• architecture complexe : sur devis
+
+La cession n’inclut pas les bibliothèques tierces, modules propriétaires, outils internes et composants génériques réutilisables.
+
+---
+
+ARTICLE 8 – OBLIGATION DE MOYENS
+
+MCE est tenue à une obligation de moyens professionnels.
+
+Aucun résultat commercial n’est garanti concernant :
+
+• ventes ;
+• chiffre d’affaires ;
+• leads ;
+• viralité ;
+• audience ;
+• ROI ;
+• classement SEO ;
+• performance publicitaire ;
+• conversion commerciale.
+
+---
+
+ARTICLE 9 – PUBLICITÉ / ADS / PLATEFORMES TIERCES
+
+MCE pilote la stratégie, le paramétrage et l’exécution des campagnes.
+
+Toutefois, les plateformes publicitaires demeurent souveraines sur :
+
+• validation annonces ;
+• diffusion ;
+• CPC ;
+• CPM ;
+• reach ;
+• refus publicitaires ;
+• restrictions comptes ;
+• changements algorithmiques ;
+• politiques internes.
+
+MCE ne peut être tenue responsable des décisions de Meta, Google, TikTok ou toute régie tierce.
+
+---
+
+ARTICLE 10 – CONFIDENTIALITÉ
+
+Les informations commerciales, stratégiques, financières, techniques, documents, concepts, propositions, supports et données échangés restent strictement confidentiels.
+
+Cette obligation est bilatérale.
+
+---
+
+ARTICLE 11 – SUSPENSION / IMPAYÉS / RECOUVREMENT
+
+En cas d’impayé, de retard de paiement ou de défaut de règlement :
+
+MCE peut suspendre immédiatement :
+
+• travaux ;
+• maintenance ;
+• accès ;
+• support ;
+• accompagnement ;
+• campagnes ;
+• diffusion ;
+• remises techniques ;
+• livraisons.
+
+En cas de non-paiement persistant, MCE pourra engager toute procédure amiable ou judiciaire de recouvrement conformément au droit applicable au Sénégal et, le cas échéant, aux mécanismes de recouvrement prévus par les actes uniformes OHADA applicables.
+
+---
+
+ARTICLE 12 – DROIT APPLICABLE / FONDEMENT JURIDIQUE
+
+Les présentes CGV sont régies par le droit applicable en République du Sénégal.
+
+Elles s’inscrivent notamment dans le respect :
+
+• des dispositions applicables du Code des obligations civiles et commerciales du Sénégal relatives à la formation, l’exécution et la preuve des contrats ;
+• des dispositions pertinentes de l’Organisation pour l’Harmonisation en Afrique du Droit des Affaires (OHADA) relatives au droit commercial général ;
+• des dispositions OHADA applicables aux sociétés commerciales lorsque celles-ci trouvent à s’appliquer ;
+• des dispositions applicables en matière de recouvrement des créances et voies d’exécution ;
+• ainsi que de toute réglementation sénégalaise applicable à l’activité concernée.
+
+Tout litige fera l’objet d’une tentative amiable préalable.
+
+À défaut d’accord amiable :
+
+compétence exclusive des juridictions compétentes de Dakar.
+
+---
+
+ARTICLE 13 – ACCEPTATION
+
+Toute commande, signature, règlement, validation écrite, accord électronique ou commencement d’exécution vaut acceptation intégrale des présentes Conditions Générales de Vente.

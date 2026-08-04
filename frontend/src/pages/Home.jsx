@@ -82,12 +82,12 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <Link
-                to="/contact"
+                to="/accompagnement-evenements/evenementiel"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
               >
                 <FileText className="w-4 h-4" style={{ color: '#0099CC' }} />
-                Nos evenements
+                Nos événements
               </Link>
               <Link
                 to="/contact"
@@ -173,12 +173,12 @@ export default function Home() {
         {/* Boutons — EN BAS */}
         <div className="relative z-10 px-6 pb-6 flex flex-col gap-3">
           <Link
-            to="/contact"
+            to="/accompagnement-evenements/evenementiel"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full"
             style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
           >
             <FileText className="w-4 h-4" style={{ color: '#0099CC' }} />
-            Nos evenements
+            Nos événements
           </Link>
           <Link
             to="/contact"

@@ -287,7 +287,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link
-                to="/solutions-digitales"
+                to="/solutions-digitales/saas-logiciels"
                 className="mt-6 inline-flex items-center gap-2 text-white text-[13px] font-bold py-3.5 px-6 rounded-md transition-colors w-full justify-center shadow-lg"
                 style={{ backgroundColor: '#0099CC' }}
               >

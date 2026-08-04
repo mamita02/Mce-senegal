@@ -10,35 +10,35 @@ import ctaBackground from '../assets/degrade.png'; // ⚠️ adapte le nom de fi
 
 // ============ MENUS ============
 const SOLUTIONS = [
-  { label: 'SaaS & Plateformes', to: '/solutions-digitales' },
-  { label: 'Logiciels métiers & CRM', to: '/solutions-digitales' },
-  { label: 'Applications web & mobiles', to: '/solutions-digitales' },
-  { label: 'Sites web & e-commerce', to: '/solutions-digitales' },
-  { label: 'Hébergement & Infrastructure', to: '/solutions-digitales' },
-  { label: 'Sécurité & Maintenance', to: '/solutions-digitales' },
+  { label: 'SaaS & Plateformes', to: '/solutions-digitales/saas-logiciels#services-offerts' },
+  { label: 'Logiciels métiers & CRM', to: '/solutions-digitales/saas-logiciels#approche-technique' },
+  { label: 'Applications web & mobiles', to: '/solutions-digitales/sites-plateformes#notre-approche' },
+  { label: 'Sites web & e-commerce', to: '/solutions-digitales/sites-plateformes#landing-page' },
+  { label: 'Hébergement & Infrastructure', to: '/solutions-digitales/hebergement-securite#tarifs-hebergement' },
+  { label: 'Sécurité & Maintenance', to: '/solutions-digitales/hebergement-securite#tarifs-maintenance' },
 ];
 
 const TALENTS = [
-  { label: 'Formations professionnelles', to: '/talents-rh' },
-  { label: 'Recrutement & Placement', to: '/talents-rh' },
-  { label: 'Accompagnement RH', to: '/talents-rh' },
+  { label: 'Formations professionnelles', to: '/talents-rh/academy#catalogue' },
+  { label: 'Recrutement & Placement', to: '/talents-rh/recrutement#nos-services' },
+  { label: 'Accompagnement RH', to: '/talents-rh/accompagnement-rh#nos-interventions' },
   { label: 'Leadership & Management', to: '/talents-rh' },
-  { label: 'Coaching & Développement', to: '/talents-rh' },
+  { label: 'Coaching & Développement', to: '/talents-rh/academy#notre-philosophie' },
 ];
 
 const ACCOMP_EVENTS = [
-  { label: 'Accompagnement stratégique', to: '/accompagnement-evenements' },
-  { label: 'Séminaires & Conférences', to: '/evenementiel' },
+  { label: 'Accompagnement stratégique', to: '/accompagnement-evenements/accompagnement#axes-accompagnement' },
+  { label: 'Séminaires & Conférences', to: '/accompagnement-evenements/networking#notre-intention' },
   { label: 'Networking & Impact', to: '/accompagnement-evenements' },
-  { label: 'Événementiel international', to: '/evenementiel' },
-  { label: 'Conciergerie premium', to: '/evenementiel' },
+  { label: 'Événementiel international', to: '/accompagnement-evenements/evenementiel' },
+  { label: 'Conciergerie premium', to: '/accompagnement-evenements/networking#notre-intention' },
 ];
 
 const SOCIAL_LINKS = [
-  { Icon: Linkedin, url: '#', label: 'LinkedIn' },
-  { Icon: Facebook, url: '#', label: 'Facebook' },
-  { Icon: Instagram, url: '#', label: 'Instagram' },
-  { Icon: Youtube, url: '#', label: 'YouTube' },
+  { Icon: Linkedin, url: 'https://www.linkedin.com/company/mce-management-communication-event/', label: 'LinkedIn' },
+  { Icon: Facebook, url: 'https://www.facebook.com/mce.monde', label: 'Facebook' },
+  { Icon: Instagram, url: 'https://www.instagram.com/mce_group1/', label: 'Instagram' },
+  { Icon: Youtube, url: 'https://www.youtube.com/@MCEAgency', label: 'YouTube' },
 ];
 
 // ============ COMPOSANT ============
@@ -82,7 +82,7 @@ export default function Footer() {
       Prendre rendez-vous
     </Link>
     <Link
-      to="/contact"
+      to="/contact#formulaire-devis"
       className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-bold text-[13px] tracking-wide text-white transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
       style={{ backgroundColor: '#00AEEF' }}
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0095CC')}
@@ -99,7 +99,6 @@ export default function Footer() {
       {/* ===================== FOOTER ===================== */}
       <footer className="bg-slate-900 text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-10 pb-8">
-          {/* Grid : 5 colonnes égales (brand + 3 catégories + contact) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
             {/* ---------- Brand column ---------- */}
             <div>
@@ -120,6 +119,8 @@ export default function Footer() {
                   <a
                     key={i}
                     href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
                     className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 hover:bg-blue-600 hover:scale-110"
                   >
@@ -147,18 +148,18 @@ export default function Footer() {
                 <li className="flex items-start gap-3">
                   <Phone className="w-4 h-4 mt-0.5 shrink-0 text-blue-500" />
                   <div className="flex flex-col gap-1">
-                    <a href="tel:+221771234567" className="hover:text-blue-500 transition-colors">
-                      🇸🇳 +221 77 123 45 67
+                    <a href="tel:+221338200936" className="hover:text-blue-500 transition-colors">
+                      🇸🇳 +221 33 820 09 36
                     </a>
-                    <a href="tel:+33612345678" className="hover:text-blue-500 transition-colors">
-                      🇫🇷 +33 6 12 34 56 78
+                    <a href="tel:+33698681150" className="hover:text-blue-500 transition-colors">
+                      🇫🇷 +33 6 98 68 11 50 (WhatsApp)
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail className="w-4 h-4 mt-0.5 shrink-0 text-blue-500" />
-                  <a href="mailto:contact@mce.sn" className="hover:text-blue-500 transition-colors">
-                    contact@mce.sn
+                  <a href="mailto:mceproagency@gmail.com" className="hover:text-blue-500 transition-colors">
+                    mceproagency@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start gap-3">

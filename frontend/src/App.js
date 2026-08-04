@@ -22,8 +22,37 @@ import AccompagnementRH from './pages/AccompagnementRH';
 import { Toaster } from './components/ui/toaster';
 
 function ScrollToTop() {
-  const { pathname } = require('react-router-dom').useLocation();
-  React.useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
+  const { pathname, hash } = require('react-router-dom').useLocation();
+  React.useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      return;
+    }
+
+    const sectionSelectors = {
+      '#services-offerts': '.saas-services-offered',
+      '#approche-technique': '.saas-technical-grid',
+      '#notre-approche': '.approach-section',
+      '#landing-page': '.landing-offer-section',
+      '#catalogue': '.rh-catalogue',
+      '#nos-services': '.rh-services-grid',
+      '#nos-interventions': '.rh-interventions',
+      '#notre-philosophie': '.rh-detail-section',
+      '#axes-accompagnement': '.strategy-axes',
+      '#notre-intention': '.networking-intro',
+    };
+
+    const frame = window.requestAnimationFrame(() => {
+      const matchedSection = document.querySelector(sectionSelectors[hash]);
+      const target = document.getElementById(hash.slice(1)) || matchedSection?.closest('section') || matchedSection;
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top, behavior: 'instant' });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname, hash]);
   return null;
 }
 

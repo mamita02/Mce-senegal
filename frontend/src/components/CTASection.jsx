@@ -12,7 +12,7 @@ export default function CTASection({ title, subtitle }) {
             <p className="text-white/80 text-sm mt-1">{subtitle || 'Parlons de votre projet ou de vos besoins.'}</p>
           </div>
           <CTAItem icon={<Calendar className="w-5 h-5" />} title="PRENDRE RENDEZ-VOUS" sub="(Calendly) Échange découverte offert" color="bg-purple-500" to="/contact" />
-          <CTAItem icon={<FileText className="w-5 h-5" />} title="DEMANDER UN DEVIS" sub="Réponse rapide – Étude personnalisée" color="bg-mce-teal" to="/contact" />
+          <CTAItem icon={<FileText className="w-5 h-5" />} title="DEMANDER UN DEVIS" sub="Réponse rapide – Étude personnalisée" color="bg-mce-teal" to="/contact#formulaire-devis" />
           <CTAItem icon={<MessageCircle className="w-5 h-5" />} title="ÉCRIRE SUR WHATSAPP" sub="Réponse immédiate. Nous sommes disponibles" color="bg-green-500" to="https://wa.me/221771234567" />
         </div>
       </div>

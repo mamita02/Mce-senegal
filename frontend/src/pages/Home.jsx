@@ -17,6 +17,8 @@ import { IMG } from '../mock';
 import heroImage from '../assets/hero.png';
 import heroMobileImage from '../assets/hero-mobile.png';
 import ordi from '../assets/ordi.png';
+import kebaConsultingLogo from '../assets/keba-consulting-logo.png';
+import sparksProjectLogo from '../assets/sparks-project-logo.png';
 
 export default function Home() {
   return (
@@ -423,10 +425,7 @@ export default function Home() {
             {[
               {
                 logo: (
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-blue-700 leading-none">KEBA</div>
-                    <div className="text-[10px] tracking-[0.35em] font-bold text-blue-700 mt-1">CONSULTING</div>
-                  </div>
+                  <img src={kebaConsultingLogo} alt="Keba Consulting" className="w-full h-20 object-contain" />
                 ),
                 desc: 'Conseil, formation et accompagnement des leaders et organisations.',
               },
@@ -441,10 +440,7 @@ export default function Home() {
               },
               {
                 logo: (
-                  <div className="text-center">
-                    <div className="text-2xl font-black text-mce-navy leading-tight">SPARCK</div>
-                    <div className="text-[11px] tracking-[0.3em] font-bold text-mce-navy/70">PROJECT</div>
-                  </div>
+                  <img src={sparksProjectLogo} alt="Sparks Project" className="w-full h-20 object-contain" />
                 ),
                 desc: 'Projets innovants, formation et transformation digitale.',
               },

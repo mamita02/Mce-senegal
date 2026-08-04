@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  ArrowRight, BarChart3, BriefcaseBusiness, Check, Eye, FileText, Gem, Globe, GraduationCap, Heart,
-  Mic2, Monitor, Network, Puzzle, Rocket, ShieldCheck, Target,
+  ArrowLeft, ArrowRight, BarChart3, BriefcaseBusiness, Check, Eye, FileText, Gem, Globe, GraduationCap, Heart,
+  Mic2, Monitor, Network, Puzzle, Quote, Rocket, ShieldCheck, Star, Target,
   Users,
 } from 'lucide-react';
 import { IMG, REASONS } from '../mock';
@@ -84,7 +84,59 @@ const PARTNERS = [
 },
 ];
 
+const REVIEWS = [
+  {
+    name: 'Aurelie Goubier',
+    date: 'Juillet 2025',
+    url: 'https://www.google.com/maps/contrib/104142318056676824561/reviews?hl=fr',
+    text: 'Mounia est dynamique, ambitieuse, sérieuse et consciencieuse. Elle a une empathie extraordinaire, donne toujours de sa personne pour satisfaire les autres et son énergie boost toute une troupe ! Les services MCE sont irréprochables, réactifs et répondent aux besoins des clients. Foncez vous ne serez pas déçu !',
+  },
+  {
+    name: 'Lili Lili',
+    date: 'Octobre 2024',
+    text: 'Je ne peux que recommander les services de cette entreprise. L’équipe est extrêmement professionnelle, réactive et à l’écoute des besoins de ses clients. Leurs attentions aux détails et leur capacité à anticiper les imprévus ont été impressionnantes. Chaque étape du processus a été gérée avec soin, ce qui a rendu la collaboration agréable et sans stress.',
+  },
+  {
+    name: 'Aurélie Robin',
+    date: 'Octobre 2024',
+    text: 'Mounia est une conseillère en communication, très humaine, professionnelle, elle saura vous orienter vers l’outil le mieux adapté, afin de faire évoluer votre société, comme elle a sût si bien faire avec la mienne, je ne la remercierais jamais assez d’avoir eu les bons mots au bon moment. Vous pouvez lui faire confiance les yeux fermés 😊',
+  },
+  {
+    name: 'Rosa Kazanci',
+    date: 'Mai 2024',
+    text: 'Dès le premier contact, elle a été à l’écoute de mes besoins, m’accompagnant à chaque étape. Son dévouement et son professionnalisme m’ont vraiment impressionné. Je la recommande vivement à ceux qui recherchent un service personnalisé et de qualité. Vous ne serez pas déçu !',
+  },
+  {
+    name: 'Sakina',
+    date: 'Mai 2024',
+    text: 'J’ai eu l’occasion de collaborer avec MCE et j’en suis pleinement satisfaite. Le résultat était au-delà de mes attentes. Les conseils donnés par Mounia et son travail sont au top. Je ne peux que recommander MCE. Bienveillance, écoute, réactivité et conseils sont les qualités que j’ai pu voir en faisant appel à MCE.',
+  },
+  {
+    name: 'Hiba Doudar',
+    date: 'Mars 2024',
+    url: 'https://www.google.com/maps/contrib/105712461894677453276/reviews?hl=fr',
+    text: 'Merci à l’équipe MCE pour leur professionnalisme et leur réactivité ! Je recommande vivement !',
+  },
+  {
+    name: 'Christine Baranger',
+    date: 'Juillet 2024',
+    url: 'https://www.google.com/maps/contrib/102970826365543566834/reviews?hl=fr',
+    text: 'Merci à l’équipe MCE de m’avoir écoutée. Une très bonne collaboration. Très professionnelle, sérieuse, à l’écoute de nos besoins et réactive à tout moment. Je recommande sans problème.',
+  },
+];
+
 export default function MCEPartenaires() {
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const review = REVIEWS[reviewIndex];
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    const timer = window.setInterval(() => {
+      setReviewIndex((index) => (index + 1) % REVIEWS.length);
+    }, 6500);
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <main className="pt-[72px] mce-about-page">
       <section className="founder-section">
@@ -247,6 +299,40 @@ export default function MCEPartenaires() {
               return <article key={reason.title}><Icon /><b>{reason.title}</b><p>{reason.desc}</p></article>;
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="mce-reviews" aria-labelledby="mce-reviews-title">
+        <div className="mce-reviews-shell">
+          <header>
+            <span>AVIS CLIENTS</span>
+            <h2 id="mce-reviews-title">Ils ont choisi MCE.<br /><em>Ils racontent leur expérience.</em></h2>
+            <p>Des collaborations fondées sur l’écoute, la réactivité et la qualité du travail accompli.</p>
+          </header>
+
+          <div className="mce-review-stage" key={review.name}>
+            <Quote className="mce-review-quote" aria-hidden="true" />
+            <div className="mce-review-stars" aria-label="5 étoiles sur 5">
+              {[1, 2, 3, 4, 5].map((star) => <Star key={star} />)}
+            </div>
+            <blockquote>{review.text}</blockquote>
+            <footer>
+              <span>{review.name.split(' ').map((part) => part[0]).join('').slice(0, 2)}</span>
+              <div>
+                {review.url
+                  ? <a href={review.url} target="_blank" rel="noopener noreferrer">{review.name}</a>
+                  : <b>{review.name}</b>}
+                <small>5 étoiles · {review.date}</small>
+              </div>
+            </footer>
+          </div>
+
+          <nav className="mce-review-controls" aria-label="Navigation entre les avis clients">
+            <button type="button" onClick={() => setReviewIndex((reviewIndex - 1 + REVIEWS.length) % REVIEWS.length)} aria-label="Avis précédent"><ArrowLeft /></button>
+            <div>{REVIEWS.map((item, index) => <button type="button" key={item.name} className={index === reviewIndex ? 'active' : ''} onClick={() => setReviewIndex(index)} aria-label={`Afficher l’avis de ${item.name}`} aria-current={index === reviewIndex ? 'true' : undefined} />)}</div>
+            <span>{String(reviewIndex + 1).padStart(2, '0')} / {String(REVIEWS.length).padStart(2, '0')}</span>
+            <button type="button" onClick={() => setReviewIndex((reviewIndex + 1) % REVIEWS.length)} aria-label="Avis suivant"><ArrowRight /></button>
+          </nav>
         </div>
       </section>
 

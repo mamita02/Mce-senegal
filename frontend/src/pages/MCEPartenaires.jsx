@@ -19,7 +19,7 @@ const FOUNDER_POINTS = [
 ];
 
 const FOUNDATIONS = [
-  ['votre VISION', 'Devenir le connecteur de référence entre l’Europe, le Maroc et l’Afrique de l’Ouest pour les talents et la transformation des organisations.', Eye],
+  ['NOTRE VISION', 'Devenir le connecteur de référence entre l’Europe, le Maroc et l’Afrique de l’Ouest pour les talents et la transformation des organisations.', Eye],
   ['NOTRE MISSION', 'Apporter des solutions concrètes aux entreprises, institutions, ONG, écoles, universités et entrepreneurs pour structurer, former, recruter, digitaliser et accélérer leur croissance.', Target],
   ['NOS VALEURS', 'Excellence, transmission, proximité, innovation, inclusion et impact mesurable.', Gem],
 ];
@@ -196,9 +196,9 @@ export default function MCEPartenaires() {
 
           <div className="presence-stats">
             <div className="presence-stats-intro">MCE, votre partenaire<br />de proximité pour des<br />projets à portée mondiale.<i /></div>
-            <article><Globe /><b>3</b><span>PAYS<br />D’IMPLANTATION</span></article>
-            <article><Users /><b>+200</b><span>CLIENTS<br />ACCOMPAGNÉS</span></article>
-            <article><BriefcaseBusiness /><b>+50</b><span>PARTENAIRES<br />STRATÉGIQUES</span></article>
+            <article><Globe /><b>3</b><span>PAYS<br />D’IMPLANTATIONS</span></article>
+            <article><Users /><b>+50</b><span>CLIENTS<br />ACCOMPAGNÉS</span></article>
+            <article><BriefcaseBusiness /><b>+20</b><span>PARTENAIRES<br />STRATÉGIQUES</span></article>
             <article><BarChart3 /><b>100%</b><span>ENGAGEMENT POUR<br />VOS SUCCÈS</span></article>
             <div className="presence-mobile-landmarks" aria-label="Présence de MCE en France, au Sénégal et au Maroc">
               <figure><img src="/assets/mce-about/mobile-france.jpg" alt="Tour Eiffel, France" /><figcaption>FRANCE</figcaption></figure>

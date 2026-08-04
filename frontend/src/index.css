@@ -1127,6 +1127,32 @@ a[href*='wa.me'],a[href*='whatsapp.com']{background:var(--whatsapp)!important;bo
   }
 }
 
+/* Pages juridiques */
+.legal-page{background:#f4f7fb;color:#0b1d35;text-align:left}
+.legal-hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#07182d 0%,#0a3152 64%,#087ea4 100%);color:#fff}
+.legal-hero::after{content:"";position:absolute;right:-8rem;top:-10rem;width:32rem;height:32rem;border:1px solid rgba(255,255,255,.14);border-radius:50%;box-shadow:0 0 0 4rem rgba(255,255,255,.035),0 0 0 8rem rgba(255,255,255,.025)}
+.legal-hero-inner{position:relative;z-index:1;width:min(100% - 3rem,1100px);margin:auto;padding:5.5rem 0 5rem}
+.legal-hero-inner>span{display:inline-flex;align-items:center;gap:.55rem;color:#7ddcf2;font-size:.72rem;font-weight:800;letter-spacing:.18em}
+.legal-hero-inner>span svg{width:1.15rem}
+.legal-hero h1{max-width:850px;margin:1rem 0;font-size:clamp(2.5rem,5vw,4.7rem);font-weight:900;line-height:1.03;letter-spacing:-.035em}
+.legal-hero p{max-width:690px;color:rgba(255,255,255,.76);font-size:1rem;line-height:1.7}
+.legal-layout{display:grid;grid-template-columns:260px minmax(0,800px);align-items:start;gap:2rem;width:min(100% - 3rem,1100px);margin:0 auto;padding:4rem 0 6rem}
+.legal-aside{position:sticky;top:96px;padding:1.6rem;background:#082f4f;color:#fff;border-radius:1rem;box-shadow:0 18px 50px rgba(8,47,79,.14)}
+.legal-aside>svg{width:2rem;height:2rem;color:#65d3ec}
+.legal-aside h2{margin:.9rem 0 .55rem;font-size:1.1rem;font-weight:850}
+.legal-aside p{color:rgba(255,255,255,.7);font-size:.78rem;line-height:1.65}
+.legal-aside a{display:flex;align-items:center;gap:.45rem;margin-top:1.2rem;color:#7ddcf2;font-size:.73rem;font-weight:700;overflow-wrap:anywhere}
+.legal-aside a svg{width:1rem;flex:0 0 auto}
+.legal-document{padding:clamp(1.5rem,4vw,3.25rem);background:#fff;border:1px solid #e5ebf2;border-radius:1rem;box-shadow:0 16px 50px rgba(7,24,45,.07)}
+.legal-document>.legal-paragraph:first-child{margin-top:0;padding:1rem 1.2rem;background:#eaf8fc;color:#075477;border-left:4px solid #0f86b1;border-radius:.35rem;font-weight:750}
+.legal-section{padding-top:1.7rem;margin-top:1.7rem;border-top:1px solid #e5ebf2}
+.legal-section:first-of-type{margin-top:.7rem}
+.legal-section h2{margin:0 0 .8rem;color:#082f4f;font-size:clamp(1.15rem,2vw,1.45rem);font-weight:850;line-height:1.35}
+.legal-section p,.legal-paragraph{margin:.85rem 0;color:#34465d;font-size:.91rem;line-height:1.85;white-space:pre-line}
+.legal-loading,.legal-error{padding:1rem;border-radius:.5rem;background:#f4f7fb;color:#526278}
+@media(max-width:850px){.legal-layout{grid-template-columns:1fr}.legal-aside{position:static}.legal-hero-inner{padding:4.5rem 0 4rem}}
+@media(max-width:560px){.legal-hero-inner,.legal-layout{width:min(100% - 2rem,1100px)}.legal-layout{padding:2rem 0 4rem}.legal-document{padding:1.15rem}.legal-section p,.legal-paragraph{font-size:.86rem;line-height:1.75}}
+
 /* Taille renforcée uniquement pour les pastilles des sections internes. */
 .digital-section-head>span,.saas-section-heading>span,.web-eyebrow,
 .hosting-plans header>span,.rh-head>span,.rh-doors header>span,

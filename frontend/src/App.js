@@ -19,6 +19,7 @@ import EventsImpactOverview from './pages/EventsImpactOverview';
 import Academy from './pages/Academy';
 import RecrutementRH from './pages/RecrutementRH';
 import AccompagnementRH from './pages/AccompagnementRH';
+import { PrivacyPage, TermsPage } from './pages/LegalDocument';
 import { Toaster } from './components/ui/toaster';
 
 function ScrollToTop() {
@@ -110,6 +111,8 @@ function App() {
           <Route path="/mce-partenaires" element={<MCEPartenaires />} />
           <Route path="/mce-partenaires/galerie" element={<Galerie />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/politique-de-confidentialite" element={<PrivacyPage />} />
+          <Route path="/conditions-generales-de-vente" element={<TermsPage />} />
         </Routes>
         <Footer />
         <Toaster />

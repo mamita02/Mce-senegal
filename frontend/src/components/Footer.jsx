@@ -178,15 +178,12 @@ export default function Footer() {
           <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-gray-400">
             <span>© 2024 MCE GROUP – Tous droits réservés.</span>
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Mentions légales
-              </a>
-              <a href="#" className="hover:text-blue-500 transition-colors">
+              <Link to="/politique-de-confidentialite" className="hover:text-blue-500 transition-colors">
                 Politique de confidentialité
-              </a>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                CGV
-              </a>
+              </Link>
+              <Link to="/conditions-generales-de-vente" className="hover:text-blue-500 transition-colors">
+                Conditions Générales de Vente
+              </Link>
             </div>
           </div>
         </div>

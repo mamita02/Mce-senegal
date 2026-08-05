@@ -17,14 +17,12 @@ import { IMG } from '../mock';
 import heroImage from '../assets/hero.png';
 import heroMobileImage from '../assets/hero-mobile.png';
 import ordi from '../assets/ordi.png';
-import kebaConsultingLogo from '../assets/keba-consulting-logo.png';
-import sparksProjectLogo from '../assets/sparks-project-logo.png';
 
 export default function Home() {
   return (
     <div className="pt-[72px]">
       {/* ===================== HERO ===================== */}
-      
+
       {/* ============= VERSION DESKTOP (lg+) ============= */}
       <section
         className="hidden lg:block relative overflow-hidden"
@@ -52,17 +50,8 @@ export default function Home() {
 
         <div className="relative max-w-[1400px] mx-auto pl-10 pr-10 pt-14 pb-20 grid grid-cols-12 gap-10 items-center">
           {/* ============ COLONNE GAUCHE : TEXTE ============ */}
-          <div className="col-span-5 fade-up">
-            <span
-              className="inline-flex items-center px-4 py-2 rounded-full border text-[11px] font-bold tracking-[0.2em]"
-              style={{
-                borderColor: 'rgba(0,26,61,0.5)',
-                backgroundColor: 'rgba(255,255,255,0.9)',
-                color: '#001a3d',
-              }}
-            >
-              CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; ÉVÉNEMENTIEL
-            </span>
+          <div className="col-span-5">
+            
 
             <h1
               className="mt-6 text-[38px] font-black leading-[1.1] tracking-tight"
@@ -82,12 +71,12 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <Link
-                to="/accompagnement-evenements/evenementiel"
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
               >
                 <FileText className="w-4 h-4" style={{ color: '#0099CC' }} />
-                Nos événements
+                Nos evenements
               </Link>
               <Link
                 to="/contact"
@@ -132,65 +121,101 @@ export default function Home() {
 
       {/* ============= VERSION MOBILE (<lg) ============= */}
       <section
-        className="lg:hidden relative overflow-hidden flex flex-col"
+        className="lg:hidden overflow-hidden"
         style={{
-          backgroundImage: `url(${heroMobileImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: 'calc(100vh - 72px)',
-          minHeight: '520px',
+          background:
+            'linear-gradient(180deg, #f5faff 0%, #ffffff 100%)',
         }}
       >
-        {/* Dégradé noir/transparent de bas en haut pour lisibilité du texte */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 100%)',
-          }}
-        />
-
-        {/* Contenu texte — EN HAUT */}
-        <div className="relative z-10 px-6 pt-8 flex-1 flex flex-col">
+        {/* Texte du hero - CENTRÉ */}
+        <div className="px-6 pt-10 pb-2 flex flex-col items-center text-center">
           <h1
-            className="text-2xl font-black leading-[1.2] tracking-tight"
-            style={{ color: '#ffffff' }}
+            className="font-black leading-[1.2] tracking-[-0.02em] text-[clamp(1.5rem,5.5vw,2.25rem)]"
+            style={{ color: '#001a3d' }}
           >
-            Des solutions concrètes pour transformer{' '}
-            <span style={{ color: '#0099CC' }}>vos ambitions en résultats.</span>
+            Transformez <span style={{ color: '#0099CC' }}>vos ambitions</span>
+            <br />
+            en résultats.
           </h1>
 
+          {/* Petit trait bleu */}
+          <div
+            className="mt-4 h-[3px] w-12 rounded-full"
+            style={{ backgroundColor: '#0099CC' }}
+          />
+
+          {/* Texte résumé */}
           <p
-            className="mt-3 text-[14px] leading-relaxed max-w-lg"
-            style={{ color: '#ffffff', opacity: 0.95 }}
+            className="mt-5 max-w-[520px] text-[clamp(0.9rem,2.8vw,1.05rem)] leading-[1.6]"
+            style={{ color: 'rgba(0,26,61,0.78)' }}
           >
-            MCE accompagne les entreprises, organisations et talents avec des solutions sur mesure,
-            humaines et performantes pour un impact durable.
+            MCE accompagne entreprises, organisations et talents avec des
+            solutions sur mesure, humaines et performantes.
           </p>
         </div>
 
-        {/* Boutons — EN BAS */}
-        <div className="relative z-10 px-6 pb-6 flex flex-col gap-3">
-          <Link
-            to="/accompagnement-evenements/evenementiel"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full"
-            style={{ backgroundColor: '#001a3d', color: '#ffffff' }}
+        {/* Photo avec découpe en arche */}
+        <div className="mt-6 w-full h-[clamp(300px,58vw,520px)]">
+          <div
+            className="h-full w-full overflow-hidden"
+            style={{
+              clipPath: 'ellipse(90% 100% at 50% 100%)',
+              WebkitClipPath: 'ellipse(90% 100% at 50% 100%)',
+            }}
           >
-            <FileText className="w-4 h-4" style={{ color: '#0099CC' }} />
-            Nos événements
+            <img
+              src={heroMobileImage}
+              alt="Équipe professionnelle réunie autour d'un projet"
+              className="h-full w-full object-cover"
+              style={{
+                objectPosition: 'center 30%',
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Boutons sous la photo - version compacte */}
+        <div className="bg-white px-5 pt-5 pb-8 space-y-3">
+          {/* Bouton événements */}
+          <Link
+            to="/accompagnement-evenements"
+            className="group flex min-h-[52px] w-full items-center gap-3 rounded-lg px-4 shadow-[0_4px_14px_rgba(0,26,61,0.12)] transition-all active:scale-[0.99]"
+            style={{
+              backgroundColor: '#001a3d',
+              color: '#ffffff',
+            }}
+          >
+            <Calendar
+              className="h-5 w-5 shrink-0"
+              style={{ color: '#00A8E8' }}
+            />
+
+            <span className="flex-1 text-left text-[15px] font-bold">
+              Nos événements
+            </span>
+
+            <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
           </Link>
+
+          {/* Bouton rendez-vous */}
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md transition-all font-bold text-[13px] tracking-wide border-2 shadow-md hover:shadow-lg hover:-translate-y-0.5 w-full"
+            className="group flex min-h-[52px] w-full items-center gap-3 rounded-lg border-2 bg-white px-4 transition-all active:scale-[0.99]"
             style={{
-              backgroundColor: 'rgba(255,255,255,0.95)',
               borderColor: '#001a3d',
               color: '#001a3d',
             }}
           >
-            <Calendar className="w-4 h-4" style={{ color: '#0099CC' }} />
-            Prendre rendez-vous
+            <Calendar
+              className="h-5 w-5 shrink-0"
+              style={{ color: '#00A8E8' }}
+            />
+
+            <span className="flex-1 text-left text-[15px] font-bold">
+              Prendre rendez-vous
+            </span>
+
+            <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </section>
@@ -319,7 +344,8 @@ export default function Home() {
           </div>
 
           {/* LE FUTUR EST DIGITAL */}
-          <div className="mt-16 rounded-2xl bg-mce-navy text-white p-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center overflow-hidden relative shadow-xl">
+          {/* LE FUTUR EST DIGITAL */}
+          <div className="mt-16 rounded-2xl bg-mce-navy text-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center overflow-hidden relative shadow-xl">
             <div className="md:col-span-4 flex items-center justify-center">
               <div className="relative w-full max-w-sm">
                 <img
@@ -329,15 +355,31 @@ export default function Home() {
                 />
               </div>
             </div>
+
             <div className="md:col-span-5 text-left">
-              <h3 className="text-3xl md:text-4xl font-black leading-tight text-white">
-                LE FUTUR EST DIGITAL.<br />
-                <span style={{ color: '#0099CC' }}>PRENEZ UNE LONGUEUR D'AVANCE.</span>
+              {/* ===== TITRE DESKTOP (md+) ===== */}
+              <h3 className="hidden md:block text-3xl md:text-4xl font-black leading-tight text-white">
+                
+                 PRENEZ UNE <span style={{ color: '#0099CC' }}>LONGUEUR D'AVANCE.</span>
               </h3>
-              <p className="text-white/90 text-[15px] mt-5 leading-relaxed">
+              
+
+              {/* ===== TITRE MOBILE (<md) - une seule ligne ===== */}
+              <h3 className="md:hidden font-black leading-tight text-white text-[clamp(1.05rem,4.4vw,1.5rem)] whitespace-nowrap">
+                PRENEZ UNE <span style={{ color: '#0099CC' }}>LONGUEUR D'AVANCE.</span>
+              </h3>
+
+              {/* ===== TEXTE DESKTOP ===== */}
+              <p className="hidden md:block text-white/90 text-[15px] mt-5 leading-relaxed">
                 CRM, plateformes, applications métiers, tableaux de bord... Nos solutions SaaS et personnalisées simplifient vos processus, améliorent votre productivité et accélèrent votre croissance.
               </p>
+
+              {/* ===== TEXTE MOBILE (raccourci) ===== */}
+              <p className="md:hidden text-white/90 text-[13.5px] mt-4 leading-relaxed">
+                Nos solutions SaaS simplifient vos processus et accélèrent votre croissance.
+              </p>
             </div>
+
             <div className="md:col-span-3 text-left space-y-3">
               <ul className="space-y-3">
                 {[
@@ -362,7 +404,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+       </div>
       </section>
 
       {/* ===================== MCE EN CHIFFRES ===================== */}
@@ -370,7 +412,7 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <h2 className="section-title mt-3 text-center">MCE en chiffres.</h2>
           <div className="h-1 w-16 mx-auto rounded-full mt-3 mb-8" style={{ backgroundColor: '#0099CC' }} />
-          
+
           {/* ========== DESKTOP (md+) ========== */}
           <div className="hidden md:grid rounded-2xl bg-white shadow-md border border-gray-100 px-8 py-8 grid-cols-4 gap-8">
             {[
@@ -425,7 +467,10 @@ export default function Home() {
             {[
               {
                 logo: (
-                  <img src={kebaConsultingLogo} alt="Keba Consulting" className="w-full h-20 object-contain" />
+                  <div className="text-center">
+                    <div className="text-3xl font-black text-blue-700 leading-none">KEBA</div>
+                    <div className="text-[10px] tracking-[0.35em] font-bold text-blue-700 mt-1">CONSULTING</div>
+                  </div>
                 ),
                 desc: 'Conseil, formation et accompagnement des leaders et organisations.',
               },
@@ -440,7 +485,10 @@ export default function Home() {
               },
               {
                 logo: (
-                  <img src={sparksProjectLogo} alt="Sparks Project" className="w-full h-20 object-contain" />
+                  <div className="text-center">
+                    <div className="text-2xl font-black text-mce-navy leading-tight">SPARCK</div>
+                    <div className="text-[11px] tracking-[0.3em] font-bold text-mce-navy/70">PROJECT</div>
+                  </div>
                 ),
                 desc: 'Projets innovants, formation et transformation digitale.',
               },

@@ -50,17 +50,8 @@ export default function Home() {
 
         <div className="relative max-w-[1400px] mx-auto pl-10 pr-10 pt-14 pb-20 grid grid-cols-12 gap-10 items-center">
           {/* ============ COLONNE GAUCHE : TEXTE ============ */}
-          <div className="col-span-5 fade-up">
-            <span
-              className="inline-flex items-center px-4 py-2 rounded-full border text-[11px] font-bold tracking-[0.2em]"
-              style={{
-                borderColor: 'rgba(0,26,61,0.5)',
-                backgroundColor: 'rgba(255,255,255,0.9)',
-                color: '#001a3d',
-              }}
-            >
-              CONSEIL &nbsp;&ndash;&nbsp; FORMATION &nbsp;&ndash;&nbsp; DIGITAL &nbsp;&ndash;&nbsp; RH &nbsp;&ndash;&nbsp; ÉVÉNEMENTIEL
-            </span>
+          <div className="col-span-5">
+            
 
             <h1
               className="mt-6 text-[38px] font-black leading-[1.1] tracking-tight"
@@ -368,9 +359,10 @@ export default function Home() {
             <div className="md:col-span-5 text-left">
               {/* ===== TITRE DESKTOP (md+) ===== */}
               <h3 className="hidden md:block text-3xl md:text-4xl font-black leading-tight text-white">
-                LE FUTUR EST DIGITAL.<br />
-                <span style={{ color: '#0099CC' }}>PRENEZ UNE LONGUEUR D'AVANCE.</span>
+                
+                 PRENEZ UNE <span style={{ color: '#0099CC' }}>LONGUEUR D'AVANCE.</span>
               </h3>
+              
 
               {/* ===== TITRE MOBILE (<md) - une seule ligne ===== */}
               <h3 className="md:hidden font-black leading-tight text-white text-[clamp(1.05rem,4.4vw,1.5rem)] whitespace-nowrap">

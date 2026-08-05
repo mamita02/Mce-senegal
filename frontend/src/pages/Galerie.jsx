@@ -111,6 +111,43 @@ const ITEMS = [
   { id: 'fo-04', title: 'La Directrice de MCE avec l’équipe de Keba Consulting', subtitle: 'Atelier sur le Pardon.', description: 'Une période pour apprendre, une étape pour se révéler.', category: 'Formations', partner: 'Keba Consulting', image: inspi12, size: 'standard' },
 ];
 
+const GALLERY_COPY = {
+  'ev-01': ['Les bâtisseurs en mouvement', 'Forum avec Idriss Aberkane', 'À Dakar, les idées deviennent des leviers de valeur.'],
+  'ev-02': ['L’élégance en partage', 'Queen Buffet 2026', 'Une soirée pensée pour célébrer et connecter.'],
+  'ev-03': ['Une scène, mille émotions', 'Gala Queen Buffet', 'Des rencontres fortes dans un cadre d’exception.'],
+  'ev-04': ['Le numérique en débat', 'Panel Stay-Up', 'Regards croisés sur les paysages de demain.'],
+  'ev-05': ['L’excellence récompensée', 'Stay-Up 2025', 'Des talents mis en lumière et des parcours célébrés.'],
+  'ev-06': ['Choisir de se libérer', 'Atelier autour du pardon', 'Un temps fort pour grandir et retrouver confiance.'],
+  'ev-07': ['Au cœur des bâtisseurs', 'Leadership en action', 'Mounia Amane porte la vision MCE sur la scène du forum.'],
+  'ev-08': ['Des voix qui rassemblent', 'MCE × GoFar Holding', 'Un échange inspirant autour de la femme africaine.'],
+  'ev-09': ['Partager pour progresser', 'Transmission de savoir', 'Chaque apprentissage nous rapproche de l’excellence.'],
+  'ev-10': ['Une vision, une équipe', 'Session de travail MCE', 'Des idées alignées pour construire des résultats durables.'],
+  'ev-11': ['Célébrer les parcours', 'Remise de prix Stay-Up', 'L’engagement et la performance placés sous les projecteurs.'],
+  'pa-01': ['Unis pour réussir', 'Wellness Family × MCE', 'Une alliance qui transforme les ambitions en résultats.'],
+  'pa-02': ['Deux expertises, un cap', 'Keba Consulting × MCE', 'Un partenariat stratégique au service de votre réussite.'],
+  'pa-03': ['Les partenaires du succès', 'Sparks Project', 'Mor Diop partage une vision ambitieuse de l’événementiel.'],
+  'pa-04': ['L’équipe derrière l’impact', 'MCE Sénégal', 'Des talents engagés pour faire vivre chaque expérience.'],
+  'so-02': ['Au plus près des communautés', 'MCE sur le terrain', 'Écouter, comprendre et agir là où l’impact compte.'],
+  'so-03': ['Des sourires qui comptent', 'Empire des Enfants', 'Une journée solidaire placée sous le signe du partage.'],
+  'so-04': ['Grandir ensemble', 'L’équipe en action', 'Chaque expérience collective renforce nos talents.'],
+  'so-05': ['Créer plus de valeur', 'MCE × GoFar Holding', 'Une alliance au service des entreprises et des territoires.'],
+  'sp-01': ['Plus forts ensemble', 'Cohésion par le sport', 'Le terrain révèle l’esprit d’équipe.'],
+  'sp-02': ['Dépasser ses limites', 'Endurance collective', 'L’effort partagé transforme l’ambition en énergie.'],
+  'sp-03': ['L’énergie du collectif', 'Team building actif', 'Bouger, coopérer et gagner en cohésion.'],
+  'sp-04': ['Unis dans l’effort', 'Sport et dépassement', 'Une équipe soudée va toujours plus loin.'],
+  'sp-05': ['La force des liens', 'Pause et partage', 'La convivialité nourrit aussi la performance.'],
+  'so-06': ['Un geste, un impact', 'L’enfance au cœur', 'Valoriser chaque enfant pour ouvrir de nouveaux possibles.'],
+  'fo-01': ['Apprendre à avancer', 'Atelier autour du pardon', 'MCE et Keba Consulting accompagnent la transformation.'],
+  'fo-02': ['La jeunesse imagine demain', 'Rencontre à l’UCAD', 'Des échanges pour inspirer une génération d’acteurs.'],
+  'fo-03': ['Transmettre pour élever', 'MCE × Keba Consulting', 'Le savoir partagé devient une force collective.'],
+  'fo-04': ['Révéler les potentiels', 'Formation et transformation', 'Une expérience pour apprendre, évoluer et s’affirmer.'],
+};
+
+const GALLERY_ITEMS = ITEMS.map(item => {
+  const [title, subtitle, description] = GALLERY_COPY[item.id];
+  return { ...item, title, subtitle, description };
+});
+
 // ============================================================
 // COMPOSANT
 // ============================================================
@@ -120,16 +157,46 @@ export default function Galerie() {
   const [selected, setSelected] = useState(null);
 
   // ✅ Filtrage combiné : catégorie + sous-partenaire
-  const visible = ITEMS.filter(item =>
+  const visible = GALLERY_ITEMS.filter(item =>
     (filter === 'Tous' || item.category === filter || (filter === 'Partenaires' && item.partner)) &&
     (filter !== 'Partenaires' || partnerFilter === 'Tous les partenaires' || item.partner === partnerFilter)
   );
 
   // ✅ Navigation lightbox — utilise l'id (unique) au lieu du title
   const moveLightbox = (direction) => {
-    const index = ITEMS.findIndex(item => item.id === selected.id);
-    setSelected(ITEMS[(index + direction + ITEMS.length) % ITEMS.length]);
+    const index = GALLERY_ITEMS.findIndex(item => item.id === selected.id);
+    setSelected(GALLERY_ITEMS[(index + direction + GALLERY_ITEMS.length) % GALLERY_ITEMS.length]);
   };
+
+  const mobileSlides = [];
+  const mobileItemsByFormat = ['wide', 'standard', 'tall'].flatMap(size => visible.filter(item => item.size === size));
+  for (let index = 0; index < mobileItemsByFormat.length; index += 4) mobileSlides.push(mobileItemsByFormat.slice(index, index + 4));
+
+  const renderCard = (item, index, mobile = false) => (
+    <motion.figure
+      key={`${item.id}${mobile ? '-mobile' : ''}`}
+      data-gallery-id={item.id}
+      className={`mce-gallery-card mce-gallery-${item.size}`}
+      initial={{ opacity: 0, y: 26 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -14 }}
+      transition={{ duration: .5, delay: index * .045, ease: [.2, .8, .2, 1] }}
+      whileHover={{ y: -7 }}
+      onClick={() => setSelected(item)}
+    >
+      <img src={item.image} alt={item.title} loading="lazy" style={{objectPosition:item.size === 'tall' ? 'center 24%' : 'center'}} />
+      <figcaption>
+        <b className={item.title.length > 46 ? 'gallery-card-title-long' : ''}>{item.title}</b>
+        <small>{item.subtitle}</small>
+        <p className="gallery-card-description">{item.description}</p>
+        <div className="gallery-card-tags">
+          <span>#{item.category}</span>
+          {item.partner && <span>#{item.partner}</span>}
+        </div>
+        <i><Maximize2 /></i>
+      </figcaption>
+    </motion.figure>
+  );
 
   // ✅ Correction : dependency array pour éviter les recréations d'event listener
   useEffect(() => {
@@ -219,31 +286,18 @@ export default function Galerie() {
 
           <div className="mce-gallery-grid">
             <AnimatePresence initial={false}>
-              {visible.map((item, index) => (
-                <motion.figure
-                  key={item.id}
-                  className={`mce-gallery-card mce-gallery-${item.size}`}
-                  initial={{ opacity: 0, y: 26 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -14 }}
-                  transition={{ duration: .5, delay: index * .045, ease: [.2, .8, .2, 1] }}
-                  whileHover={{ y: -7 }}
-                  onClick={() => setSelected(item)}
-                >
-                  <img src={item.image} alt={item.title} loading="lazy" style={{objectPosition:item.size === 'tall' ? 'center 24%' : 'center'}} />
-                  <figcaption>
-                    <div className="gallery-card-tags">
-                      <span>#{item.category}</span>
-                      {item.partner && <span>#{item.partner}</span>}
-                    </div>
-                    <b className={item.title.length > 46 ? 'gallery-card-title-long' : ''}>{item.title}</b>
-                    {item.subtitle && <small>{item.subtitle}</small>}
-                    {item.description && <p className="gallery-card-description">{item.description}</p>}
-                    <i><Maximize2 /></i>
-                  </figcaption>
-                </motion.figure>
-              ))}
+              {visible.map((item, index) => renderCard(item, index))}
             </AnimatePresence>
+          </div>
+
+          <div className="mce-gallery-mobile-slider" aria-label="Galerie mobile">
+            {mobileSlides.map((slide, slideIndex) => (
+              <section className="mce-gallery-mobile-row" key={`slide-${slide[0].id}`}>
+                <div className="mce-gallery-mobile-slide">
+                  {slide.map((item, itemIndex) => renderCard(item, slideIndex * 4 + itemIndex, true))}
+                </div>
+              </section>
+            ))}
           </div>
         </div>
       </section>

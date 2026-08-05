@@ -62,7 +62,7 @@ function ScrollReveal() {
 
   React.useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
-      const sections = document.querySelectorAll('section:not(.landing-offer-section)');
+      const sections = document.querySelectorAll('section:not(.landing-offer-section):not(.mce-gallery)');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           entry.target.classList.toggle('section-visible', entry.isIntersecting);

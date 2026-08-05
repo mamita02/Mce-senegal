@@ -107,10 +107,7 @@ export default function Navbar() {
           );})}
         </nav>
 
-        <Link to="/contact#formulaire-devis" className="hidden md:inline-flex btn-gold text-[13px]">
-          <Calendar className="w-4 h-4" />
-          DEMANDER UN DEVIS
-        </Link>
+       
 
         <button className="lg:hidden text-mce-navy" onClick={() => setOpen(!open)}>
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -134,7 +131,7 @@ export default function Navbar() {
                 )}
               </div>
             );})}
-            <Link to="/contact#formulaire-devis" className="btn-gold text-xs mt-3 w-fit"><Calendar className="w-4 h-4" />DEMANDER UN DEVIS</Link>
+           
           </div>
         </div>
       )}
